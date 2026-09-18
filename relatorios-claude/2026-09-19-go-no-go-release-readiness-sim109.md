@@ -68,8 +68,8 @@ Esta versão substitui uma revisão anterior deste mesmo arquivo (commit `d2ff80
 
 ## VERDICT
 
-**GO FOR INTERNAL TEST** — condicionado a resolver as pendências 1, 2 e 4 antes de submeter ao Play Console. Nenhuma delas é um bloqueio de código; são confirmações operacionais que só o Joel pode dar.
+**ATUALIZAÇÃO 2026-09-18/19**: as 4 pendências foram resolvidas pelo Joel e/ou por investigação adicional. Servidor de produção atualizado para `7fd99e8` e AAB de produção já gerado e assinado. Detalhes completos: https://raw.githubusercontent.com/aulasonline18-blip/BOM-APK-Downloads/main/relatorios-claude/2026-09-19-aab-producao-gerado-sim109.md
 
-Nenhum BLOCKER de código permanece em aberto. Os dois blockers reais encontrados nesta sessão (perda de pending em sync multi-device, e travamento de preparação de item) foram corrigidos, testados e commitados.
+**GO FOR INTERNAL TEST** — build pronto (`/root/sim-release-artifacts/sim109-v1.0.0+108-e89aa32-app-release.aab`, SHA-256 `a2c003d97f8fbd8c448d44fe352eeebe8c839f407cba3a952eec13e5094507e2`). Nenhum BLOCKER de código em aberto.
 
-Não declarar GO FOR PRODUCTION antes da validação real do Internal Testing e da compra de créditos via Google Play.
+Não foi feita nenhuma publicação no Play Console — aguardando autorização manual do Joel. Não declarar GO FOR PRODUCTION antes da validação real do Internal Testing e da compra de créditos via Google Play.
