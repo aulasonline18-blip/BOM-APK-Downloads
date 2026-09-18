@@ -44,4 +44,8 @@ App (`/root/worktrees/sim109-nplus1-scroll`):
 
 ## Status
 
-Nenhum commit feito ainda em nenhum dos dois repositórios — aguardando confirmação do usuário antes de commitar/push.
+Commitado e publicado:
+- Servidor: `7fd99e8` em https://github.com/aulasonline18-blip/Servidor-BOM (branch `main`)
+- App: `89ca488` em https://github.com/aulasonline18-blip/BOM (branch `feature/nplus1-image-and-canonical-scroll`)
+
+Auditoria completa do servidor (comparação com padrões ideais de engenharia): https://raw.githubusercontent.com/aulasonline18-blip/BOM-APK-Downloads/main/relatorios-claude/2026-09-18-auditoria-servidor-retry-resiliencia-sim.md
