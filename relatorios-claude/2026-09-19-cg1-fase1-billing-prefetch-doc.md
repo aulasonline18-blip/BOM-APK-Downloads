@@ -138,6 +138,43 @@ Estas fazem parte da missão CG-1 completa e continuam pendentes:
 3. **Deploy do servidor**: nada desta missão está no droplet de produção — a regra de cobrança e a matriz de validação só existem no código, não em produção, até o deploy ser feito.
 4. **Pendências de missões anteriores permanecem em aberto** (não escondidas): RTDN para compras PENDING, política de refund/revoke, guarda de propriedade em `/api/student-state/persist`, storage seguro, R8, staleness incidental de Revisão/Recuperação.
 
-## Veredito até aqui
+## Veredito até aqui (missão CG-1)
 
-O que foi entregue está **verificado automaticamente** (servidor + app, suítes completas verdes, `flutter analyze` limpo) e **commitado/pushado**. Não há validação física nem AAB ainda. A missão CG-1 completa (94 seções + adendo de 25 seções) permanece em andamento; até aqui foram concluídas as Fases 1 (mapeamento), 2 (tabela KEEP/ADJUST/DELETE), 3 (contrato normativo), 4 (mapeamento de particionamento consolidado), 5 (prefetch), 6 (cobrança por parte), 7 (projeção de menu consolidada — incluindo a correção do bug real de exclusão/renomeação órfã), 8 (investigação de código morto — nada a apagar com segurança) e 9 (fronteira legada confirmada somente-leitura). A Fase 10 está majoritariamente coberta (matriz de fronteira completa, menu de 4 partes, idempotência econômica por construção, multi-dispositivo, restart); falta apenas o teste de integração 300/400 ponta-a-ponta. Resta a validação final integrada com novo APK físico na tablet — este é o item de maior porte ainda pendente, e não foi tentado nesta sessão por exigir acesso físico ao dispositivo/ADB.
+O que foi entregue está **verificado automaticamente** (servidor + app, suítes completas verdes, `flutter analyze` limpo) e **commitado/pushado**. Não há validação física nem AAB ainda. A missão CG-1 completa (94 seções + adendo de 25 seções) permanece em andamento; até aqui foram concluídas as Fases 1 (mapeamento), 2 (tabela KEEP/ADJUST/DELETE), 3 (contrato normativo), 4 (mapeamento de particionamento consolidado), 5 (prefetch), 6 (cobrança por parte), 7 (projeção de menu consolidada — incluindo a correção do bug real de exclusão/renomeação órfã), 8 (investigação de código morto — nada a apagar com segurança) e 9 (fronteira legada confirmada somente-leitura). A Fase 10 está majoritariamente coberta (matriz de fronteira completa, menu de 4 partes, idempotência econômica por construção, multi-dispositivo, restart); falta apenas o teste de integração 300/400 ponta-a-ponta.
+
+---
+
+## Missão 2 (mesma sessão): Preparação Visual Antecipada (ADENDO CIRÚRGICO)
+
+**Problema relatado:** a imagem da Experiência 2 (E2) de um item só começava a ser gerada quando o aluno era promovido para ela, causando "Preparando imagem..." visível no momento da transição E1→E2, mesmo com E1 já pronta há tempo.
+
+### Investigação
+
+Confirmado por leitura direta de código (não só por hipótese da missão):
+
+- A restrição "só L1" citada na missão (`dopamine_ready_window_engine.dart`) **existe**, mas na prática é inofensiva para o caso principal: o plano da janela viva só gera um slot quando a camada atual é L1, então um slot L2 de item não-revisão nunca chega a essa restrição. Esse mecanismo serve para prefetch de **item N+1** em background, um propósito diferente e legítimo — não foi alterado.
+- A causa real: o texto de E1 e E2 chega junto em uma única resposta T02 (`Sim109ItemPackage` com `experience1`/`experience2`), mas nada disparava a preparação visual de E2 antes da promoção — o único gatilho existente era `queueActiveLessonImageIfMissing`, acionado quando o controlador de mídia se vincula à aula **ativa**.
+- Ao implementar o disparo antecipado, foram descobertos dois bugs reais e mais profundos que a causa citada pela missão:
+  1. O cache de conteúdo do orchestrator compartilha **um único slot por item** entre as duas experiências (design intencional: é o que evita uma segunda chamada T02 para buscar E2). A contabilidade da **rota visual em si** (guarda de "já em andamento", contador de tentativas, timer de retry) usava essa **mesma chave compartilhada** — então a rota de uma experiência sempre bloqueava a da outra. Corrigido tornando essa contabilidade específica por experiência (`_visualRouteKeyFor`), sem tocar no cache de conteúdo compartilhado nem no comportamento de "sem segunda chamada T02".
+  2. `_patchPackageImage`/`_mediaPositionFor` resolviam a identidade do item (itemIdx/marker/layer) a partir de um mapa de "última requisição lembrada" **também** keyed pela chave compartilhada — então, ao gravar o resultado da geração de imagem de uma experiência, podiam usar por engano a camada da OUTRA experiência, corrompendo o campo errado do pacote. Corrigido para sempre confiar nos parâmetros do próprio callback (nunca ambíguos), usando o mapa lembrado só como fallback para casos legados sem itemIdx.
+
+### Decisão de escopo (confirmada com o usuário)
+
+Uma primeira tentativa sequenciou o disparo de E2 usando `Future.delayed(Duration.zero)` para esperar a liberação do guard compartilhado. Isso funcionou isoladamente, mas causou **10 regressões reais** em `classroom_phase_test.dart` ao rodar a suíte completa (confirmado limpo no HEAD anterior via `git stash`) — parte por colisão com testes que usam `fakeAsync` (Timer real não descartado), parte por conteúdo de placeholder de teste vazando para asserções não relacionadas. Reportado ao usuário antes de prosseguir; a decisão foi corrigir a implementação (não adaptar testes) e trocar o sequenciamento por algo sem Timer, o que levou às duas correções acima (chave de rota visual por experiência + precedência correta de identidade). Com isso, o gatilho de E2 foi movido para disparar exatamente quando uma busca T02 genuína (`_mirrorPreparedAndCurrentLessonMaterial`) retorna — nunca quando o app apenas relê estado já persistido (`_mirrorCurrentLessonMaterial`, usado em restart/reabertura) — o que também resolveu, por construção, o vazamento de conteúdo de teste (fixtures legadas que só populam uma experiência nunca disparam preparação nova).
+
+### Testes
+
+Dois testes causais novos em `test/sim109_item_package_orchestrator_test.dart`: (1) E2 é enfileirada assim que a busca T02 de E1 completa, sem esperar promoção — e uma releitura de E1 a partir do estado não reenfileira nada; (2) promover para uma E2 já assentada não dispara uma segunda geração visual. Suíte completa do app rodada integralmente após as correções: **1441 testes, todos passam** (incluindo os 95 de `classroom_phase_test.dart` e os 9 de `M-EXP2` em `first_lesson_ready_window_test.dart`, sem nenhuma asserção enfraquecida ou test-only bypass). `flutter analyze`: limpo.
+
+### Commit
+
+`17c8594` — `fix(visual-prep): prepare E2's image as soon as E1's T02 fetch arrives` (branch `feature/nplus1-image-and-canonical-scroll`, pushado).
+
+### Pendências desta missão
+
+- Testes dedicados de troca de conta/aula durante o preparo do visual antecipado, e regressão explícita de salas auxiliares/scroll não foram escritos como testes **novos e dedicados** — mas a suíte completa existente (que já cobre esses cenários em outros arquivos) permanece 100% verde sem nenhuma alteração de asserção relacionada a eles, o que dá confiança indireta razoável sem ser uma prova causal dedicada.
+- Prova física no tablet (E1→E2 e N→N+1 com timestamps) não foi feita — depende do mesmo APK final combinado mencionado abaixo.
+
+## Veredito consolidado (CG-1 + Preparação Visual)
+
+Ambas as missões desta sessão estão **verificadas automaticamente e commitadas/pushadas**, sem validação física nem AAB. O próximo passo natural para as duas é o mesmo: gerar um novo APK debug do HEAD final combinado, instalar via ADB no Samsung Galaxy Tab A9 SM-X216B, e validar fisicamente (fronteira 80→81 do CG-1; transição E1→E2 sem "Preparando imagem..." da missão visual) — isso requer autorização explícita do usuário para prosseguir, dado que envolve build+instalação em dispositivo físico.
