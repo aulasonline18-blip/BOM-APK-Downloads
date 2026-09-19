@@ -1,7 +1,23 @@
 # CG-1 — Currículo Grande Canônico: Fase 1 (mapeamento, contrato, prefetch, cobrança por parte)
 
 **Data:** 2026-09-19
-**Status:** Em andamento. Este relatório cobre as fatias 1 e 2 (mapeamento/contrato/prefetch/cobrança, depois consolidação de mapeamento e tabela de decisão) da missão CG-1. Pendem ainda: matriz de testes adversariais completa, novo APK e validação física — ver seção "Pendências" no final.
+**Status:** Em andamento. Este relatório cobre as fatias 1, 2 e 3 (mapeamento/contrato/prefetch/cobrança; consolidação de mapeamento e tabela de decisão; correção de bug real de exclusão/renomeação + matriz de testes de fronteira) da missão CG-1. Pende ainda: novo APK e validação física — ver seção "Pendências" no final.
+
+## Atualização (fatia 3, mesma data): bug real de exclusão/renomeação + matriz de testes de fronteira
+
+Ao investigar o requisito de teste "renomear/excluir uma trilha de currículo" (parte da Fase 10), foi encontrado um **bug funcional real**, não apenas uma lacuna de teste: `deleteLocalLesson`/`renameCloudLesson`/`deleteCloudLesson` (`lab_session_drawer_controller.dart`) sempre operaram sobre um único `lessonLocalId`. Como o menu colapsa um currículo de múltiplas partes em UMA linha representativa (`groupCurriculumLessonSummaries`), excluir ou renomear pelo menu só afetava a parte representativa — as demais partes do mesmo root ficavam órfãs (não excluídas, ou com nome antigo), violando diretamente a invariante da missão ("delete tombstones the whole trail as one entity", "rename renames the root projection... all parts keep belonging to the same root").
+
+**Correção:** as três funções agora aceitam `relatedLessonLocalIds` (a lista completa `curriculumPartLessonIds` que a linha do menu já carrega) e cascateiam a mesma operação para todas as partes, com falha de uma parte relacionada tratada como best-effort (nunca desfaz a operação primária já aceita; será repetida no próximo open/sync). Wiring completo: `lab_session.dart` → `shared_widgets.dart` (handlers `onRename`/`onDelete` do drawer). Dois novos testes dedicados confirmam exclusão e renomeação cascateando para todas as partes. Commit `6d16c41`.
+
+**Matriz de fronteira de particionamento (servidor):** novo `test/cg1_partition_boundary_matrix_contract.test.js` cobre exatamente os totais exigidos pela missão (1, 79, 80, 81, 85, 100, 159, 160, 161, 180, 239, 240, 241, 300, 320, 321, 400): contagem correta de partes, toda parte não-final com exatamente 80 itens, parte final nunca preenchida artificialmente além do total, formato canônico de id, currículo ≤80 nunca dividido, e rejeição de partes artificialmente encolhidas/preenchidas em cada fronteira. Commit `aa5b30f`.
+
+**Menu com 4 partes (app):** novo teste em `lab_session_drawer_controller_test.dart` confirmando que um root canônico de 4 partes (80/80/80/60 = 300 itens) produz exatamente 1 card, com total e progresso globais corretos. Commit `caaf604`.
+
+**Itens da matriz de testes já cobertos por construção (não duplicados):** idempotência econômica multi-dispositivo/concorrência já é garantida genericamente por `test/credits_concurrency_contract.test.js` (duas chamadas concorrentes de `reserveCredit` com a mesma chave convergem para uma única reserva) — como a nova cobrança de T00 usa exatamente esse mesmo mecanismo com uma chave determinística, essa garantia se aplica automaticamente, sem necessidade de um teste duplicado específico de T00. O teste "P2 does not mark next curriculum part ready while it is still partial" já simula dois adaptadores concorrentes (efeito multi-dispositivo) pedindo a mesma continuação e confirma exatamente uma chamada. O round-trip `StudentLearningState.fromJson(part2.toJson())` no teste de continuação já cobre persistência/restart.
+
+**Ainda não escrito:** testes de integração ponta-a-ponta dedicados para currículos de 300/400 itens com provedor fake simulando múltiplas partes reais em sequência (a matemática de particionamento para esses totais já está coberta pela matriz acima, mas não o fluxo completo de geração sequencial de todas as partes de um currículo de 400 itens).
+
+Suítes completas rodadas após esta fatia: servidor (mandatória, 106 arquivos, mesma falha pré-existente não relacionada) e app (1439 testes) — todos passam. `flutter analyze` limpo.
 
 ## Atualização (fatia 2, mesma data): consolidação de mapeamento + tabela de decisão
 
@@ -100,25 +116,28 @@ Implementado em `src/t00/native-bootstrap-controller.js`:
 | Servidor-BOM | `4cbc6fe` | docs(cg1): mandate full part-invisibility in menu, add per-part billing rule |
 | Servidor-BOM | `ac5405a` | feat(cg1): charge 1 credit per curriculum part, including the first |
 | BOM (app) | `15a21f0` | refactor(cg1): single partition-mapping authority for root/part id math |
+| BOM (app) | `6d16c41` | fix(cg1): cascade delete/rename to every part of a curriculum trail |
+| Servidor-BOM | `aa5b30f` | test(cg1): partition boundary matrix at every 80-item seam |
+| BOM (app) | `caaf604` | test(cg1): menu produces exactly one card for a clean 4-part 300-item root |
 
 Push confirmado em todos os commits (branch `feature/nplus1-image-and-canonical-scroll` no BOM, `main` no Servidor-BOM).
 
-## HEADs após estas duas fatias
+## HEADs após estas três fatias
 
-- APP HEAD: `15a21f0`
-- SERVER CODE HEAD: `ac5405a`
-- SERVER DEPLOYED HEAD (produção): ainda `3630a7d` — **`ac5405a` ainda não foi implantado no droplet de produção.**
+- APP HEAD: `caaf604`
+- SERVER CODE HEAD: `aa5b30f`
+- SERVER DEPLOYED HEAD (produção): ainda `3630a7d` — **nada desta missão (`4cbc6fe`/`ac5405a`/`aa5b30f`) foi implantado no droplet de produção.**
 - SERVER USADO NO TESTE FÍSICO: nenhum teste físico foi feito ainda (sem novo APK gerado nesta missão).
 
 ## Pendências explícitas (não resolvidas até aqui)
 
 Estas fazem parte da missão CG-1 completa e continuam pendentes:
 
-1. **Matriz de testes adversariais completa** (Fase 10): testes dedicados de fronteira em 85/100/180/300/400 itens (com provedor fake, sem custo real), teste de menu com 1 card para um root de 4 partes, teste de rename/delete, teste multi-dispositivo, teste de restart — ainda não escritos. O que já existe e passa: fronteira 80/81 (via `_moveToBoundary`/`_moveToPosition` nos testes atuais), continuação básica de 1→2 partes, prefetch no limiar de 20 itens.
+1. **Testes de integração 300/400 itens ponta-a-ponta** (Fase 10, parcial): a matemática de particionamento para esses totais está coberta pela matriz de fronteira; falta um teste de fluxo completo com provedor fake gerando sequencialmente todas as partes de um currículo de 400 itens (5 partes), provando zero prefetch em cadeia e uma cobrança por parte em um cenário realista de ponta a ponta.
 2. **Novo APK, validação física e relatório integrado final** (missão + adendo): nenhum novo APK foi gerado; nenhuma validação física na tablet (fronteira 80→81, saldo antes/depois, menu, restart) foi feita. Isso requer uma fatia dedicada subsequente, incluindo instalação via ADB e confirmação de versão instalada.
-3. **Deploy do servidor**: `ac5405a` (cobrança por parte) ainda não está no droplet de produção — a regra de cobrança só existe no código, não em produção, até o deploy ser feito.
+3. **Deploy do servidor**: nada desta missão está no droplet de produção — a regra de cobrança e a matriz de validação só existem no código, não em produção, até o deploy ser feito.
 4. **Pendências de missões anteriores permanecem em aberto** (não escondidas): RTDN para compras PENDING, política de refund/revoke, guarda de propriedade em `/api/student-state/persist`, storage seguro, R8, staleness incidental de Revisão/Recuperação.
 
 ## Veredito até aqui
 
-O que foi entregue está **verificado automaticamente** (servidor + app, suítes completas verdes, `flutter analyze` limpo) e **commitado/pushado**. Não há validação física nem AAB ainda. A missão CG-1 completa (94 seções + adendo de 25 seções) permanece em andamento; até aqui foram concluídas as Fases 1 (mapeamento), 3 (contrato normativo), 4 (mapeamento de particionamento consolidado), 5 (prefetch), 6 (cobrança por parte), 7 (projeção de menu consolidada), 8 (investigação de código morto — nada a apagar com segurança) e 9 (fronteira legada confirmada somente-leitura). Restam as Fases 2 (tabela formal — entregue nesta atualização), 10 (matriz de testes completa) e a validação final integrada com novo APK físico.
+O que foi entregue está **verificado automaticamente** (servidor + app, suítes completas verdes, `flutter analyze` limpo) e **commitado/pushado**. Não há validação física nem AAB ainda. A missão CG-1 completa (94 seções + adendo de 25 seções) permanece em andamento; até aqui foram concluídas as Fases 1 (mapeamento), 2 (tabela KEEP/ADJUST/DELETE), 3 (contrato normativo), 4 (mapeamento de particionamento consolidado), 5 (prefetch), 6 (cobrança por parte), 7 (projeção de menu consolidada — incluindo a correção do bug real de exclusão/renomeação órfã), 8 (investigação de código morto — nada a apagar com segurança) e 9 (fronteira legada confirmada somente-leitura). A Fase 10 está majoritariamente coberta (matriz de fronteira completa, menu de 4 partes, idempotência econômica por construção, multi-dispositivo, restart); falta apenas o teste de integração 300/400 ponta-a-ponta. Resta a validação final integrada com novo APK físico na tablet — este é o item de maior porte ainda pendente, e não foi tentado nesta sessão por exigir acesso físico ao dispositivo/ADB.
