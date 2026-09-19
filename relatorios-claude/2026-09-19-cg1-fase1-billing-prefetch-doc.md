@@ -1,7 +1,49 @@
 # CG-1 — Currículo Grande Canônico: Fase 1 (mapeamento, contrato, prefetch, cobrança por parte)
 
 **Data:** 2026-09-19
-**Status:** Em andamento. Este relatório cobre a primeira fatia entregue, testada, commitada e pushada da missão CG-1. As fases restantes (consolidação de menu, remoção de código morto, fronteira legada, matriz de testes completa, novo APK e validação física) **não** estão cobertas aqui — ver seção "Pendências" no final.
+**Status:** Em andamento. Este relatório cobre as fatias 1 e 2 (mapeamento/contrato/prefetch/cobrança, depois consolidação de mapeamento e tabela de decisão) da missão CG-1. Pendem ainda: matriz de testes adversariais completa, novo APK e validação física — ver seção "Pendências" no final.
+
+## Atualização (fatia 2, mesma data): consolidação de mapeamento + tabela de decisão
+
+Após a fatia 1 (commits `0d3ac0e`, `4cbc6fe`, `ac5405a`), foi feita uma segunda fatia:
+
+- **Consolidação de autoridade de mapeamento (Fase 4/7):** `lab_session_curriculum_menu.dart` tinha cópias privadas do regex `::part-N` e da fórmula `batchStart = (partNumber-1)*80+1`, duplicando lógica equivalente já existente em `curriculum_utils.dart` (para um tipo de dado diferente — `StudentStateSummaryRow` vs `StudentLearningState`). Extraídas para `curriculum_utils.dart` como funções puras (`rootLessonIdFromRawId`, `partNumberFromRawId`, `batchStartForPartNumber`, `curriculumMaxBatchItems`), reutilizáveis por qualquer tipo. O menu agora chama essas funções em vez de reimplementá-las. Sem mudança de comportamento — mesmas fórmulas, um único lugar. Commit `15a21f0` (app), suíte completa (1436 testes) e `flutter analyze` verificados após a mudança.
+- **Investigação de código morto (Fase 8):** confirmado via grep direcionado que os aliases legados (`splitPartNumber`, `global_plan` em snake_case) **nunca são escritos** em nenhum lugar do app ou do servidor atual — só existem como fallback de leitura em `student-state-controller.js`'s `summary()` (servidor) e em `_planMapFrom`/`CurriculumGlobalPlan.fromJson` (app). Não há, portanto, "código morto" para apagar nesse cluster: é código de leitura legado genuinamente vivo (serve linhas antigas persistidas), não um caminho paralelo ativo concorrendo com o canônico. Apagar quebraria o menu de lições antigas reais — não foi feito.
+- **Fronteira legada de 20 itens (Fase 9):** confirmado (nesta e nas duas investigações por fork anteriores) que não existe nenhuma constante literal de "lote de 20 itens" no código atual. A única evidência de compatibilidade legada é o sufixo de id `::part-N`/`-pN`, que já é tratado como leitura (nunca escrita) pelas funções acima. O cenário de currículos históricos de 20 itens, se existir em dados reais de produção, é coberto pelos mesmos fallbacks — não foi encontrado um caminho de código que crie novos lotes de 20 itens hoje.
+- **`student-state-controller.js`'s `summary()`** (cadeia de 8 fontes para `partNumber`, 6 para `rootLessonLocalId`): deliberadamente **não modificado** nesta missão. É uma função pura de leitura/projeção (não decide billing, não cria partes, não escreve estado) — já satisfaz o requisito de "fronteira legada somente-leitura" estruturalmente. Reescrevê-la é uma mudança de alto risco (alimenta o menu de todos os usuários existentes em produção) para um ganho de manutenibilidade, não de correção. Registrado como decisão consciente de não-alteração, não como pendência esquecida.
+
+### Tabela KEEP/ADJUST/DELETE
+
+| Arquivo/Símbolo | Antes | Decisão | Por quê | Depois |
+|---|---|---|---|---|
+| `src/t00/t00-contract.js`: `MAX_BATCH_ITEMS`, `expectedPartLessonLocalId`, `validateCg1CurriculumPlan` | Autoridade única de particionamento, já correta | **KEEP** | Já implementa faixa contígua, anti-buraco, anti-repetição, formato de id de parte corretamente | Inalterado; ganhou `resolveCurriculumPartEconomicIdentity` como export adicional |
+| `src/t00/t00-contract.js`: `normalizePublicT00Event` (evento `fatal`) | Mensagem/ação fixas ("tentar novamente") para todo erro | **ADJUST** | Precisava distinguir saldo insuficiente (402) de erro transitório para acionar UX de compra em vez de retry | Agora expõe `statusCode`, mensagem e `action` corretos por tipo de erro |
+| `src/t00/native-bootstrap-controller.js` | Sem nenhuma cobrança | **ADJUST** | Nova regra de 1 crédito por parte precisa reservar antes do provedor e capturar após validar+persistir | Reserva/captura/libera crédito via `credits`, chave `t00-part:{root}:{partNumber}` |
+| `src/app/router.js` (wiring do T00) | `createNativeBootstrapController` sem `credits` | **ADJUST** | Necessário para a nova cobrança | Passa `credits` (já existente no módulo) para o controller |
+| `src/config/env.js` | Sem constante de custo de parte | **ADJUST** | Preço configurável, padrão 1, mesmo padrão de `T02_ITEM_CREDIT_COST` | Nova `T00_PART_CREDIT_COST` |
+| `test/rwr001_economic_boundary_static_contract.test.js` (allowlist) | Não incluía `native-bootstrap-controller.js` | **ADJUST** | Teste de governança que impede pontos de cobrança dispersos; novo chamador legítimo precisa ser reconhecido | Allowlist inclui o novo arquivo |
+| `ADENDO_CG_1_CURRICULOS_GRANDES.md` §16.2 | Permitia mostrar "Parte 1: 80/80, Parte 2: 3/80..." no menu | **ADJUST** | Conflitava com a exigência de invisibilidade total de partes | Proíbe explicitamente qualquer exibição por-parte; exige uma entrada por root |
+| `ADENDO_CG_1_CURRICULOS_GRANDES.md` (nova §24) | Nenhuma regra econômica documentada | **ADJUST (adição)** | Regra de cobrança por parte precisa de contrato normativo | Nova seção completa (identidade econômica, fluxo, idempotência, zero retroativo, zero cadeia) |
+| `curriculum_utils.dart`: `shouldPrepareNextCurriculumPartAtCurrentPosition` | Disparava só no último item da parte | **ADJUST** | Missão exige gatilho nos últimos 20 itens, não só no último | Dispara a partir de `items.length - 20` |
+| `curriculum_utils.dart`: `curriculumPlanRootLessonId`, nova extração de funções puras | Regex de sufixo inline dentro de uma função ligada a `StudentLearningState` | **ADJUST** | Lógica de mapeamento de id precisava ser reutilizável fora do tipo de estado completo | Extraídas `rootLessonIdFromRawId`/`partNumberFromRawId`/`batchStartForPartNumber` como autoridade única |
+| `lab_session_curriculum_menu.dart`: `_summaryRootId`/`_summaryPartNumber`/`_summaryBatchStart` | Cópias privadas do regex e da fórmula de batch-start | **ADJUST** | Duplicava a lógica de mapeamento agora centralizada | Chama as funções extraídas de `curriculum_utils.dart` |
+| `lab_session_curriculum_menu.dart`: `groupCurriculumLessonSummaries` (agrupamento por root, seleção de representante) | Já produzia uma linha por root corretamente | **KEEP** | Funcionalmente correto; só a matemática de id/parte estava duplicada (já corrigido acima) | Inalterado |
+| `CurriculumGlobalPlan`, `CurriculumContinuationState` (`student_learning_state.dart`) | Já minimalistas, sem campos supérfluos | **KEEP** | Já correspondem exatamente ao que a missão exige (nenhum campo de fluxo/decisão indevido) | Inalterado |
+| `student-state-controller.js`: `summary()` (cadeia de 8/6 fontes de fallback) | Fallback amplo para nomes de campo legados | **KEEP (fronteira legada)** | Função pura de leitura, não decide billing/criação; reescrever é alto risco para todo o menu de produção por ganho só de manutenibilidade | Inalterado; documentado como fronteira legada somente-leitura já conforme |
+| `splitPartNumber`, `global_plan` (snake_case) — aliases legados | Lidos em vários pontos como fallback | **KEEP (somente leitura, confirmado sem escrita)** | Grep confirmou zero escritores atuais; servem dados históricos reais | Inalterado |
+| `src/web-startup-engine/**` | Caminho paralelo de bootstrap | **DELETE (já feito em missão anterior)** | Sem consumidores, `native-bootstrap-controller.js` é o único caminho oficial (protegido por teste de governança) | Já removido antes desta missão |
+| Rotas de crédito públicas legadas | Caminho paralelo de billing | **DELETE (já feito em missão anterior, task #73)** | Substituídas pelo ledger durável | Já removidas antes desta missão |
+
+### Autoridades finais (após esta missão até aqui)
+
+| Autoridade | Implementação única |
+|---|---|
+| GLOBAL CURRICULUM AUTHORITY | `CurriculumGlobalPlan` (app) + `CurriculumPlan`/`validateCg1CurriculumPlan` (servidor) |
+| PARTITION MAPPING AUTHORITY | `t00-contract.js` (servidor); `curriculum_utils.dart`'s `rootLessonIdFromRawId`/`partNumberFromRawId`/`batchStartForPartNumber`/`curriculumPartLessonId` (app) |
+| CONTINUATION GENERATION AUTHORITY | `curriculum_utils.dart`'s `buildCurriculumContinuationRequest`/`shouldPrepareNextCurriculumPartAtCurrentPosition` + `student_experience_t00_adapter.dart`'s `prepareNextCurriculumPartOnDemand` |
+| CURRICULUM PART BILLING AUTHORITY | `native-bootstrap-controller.js` + `credits-store.js`/ledger durável (servidor) |
+| MENU GLOBAL PROJECTION AUTHORITY | `groupCurriculumLessonSummaries` (app), agora usando a autoridade de mapeamento compartilhada |
+| SYNC AUTHORITY | Inalterada (já existente antes desta missão) |
 
 ## Base (antes desta fatia)
 
@@ -57,28 +99,26 @@ Implementado em `src/t00/native-bootstrap-controller.js`:
 | BOM (app) | `0d3ac0e` | fix(cg1): trigger next-part prefetch at last-20-items, not last item |
 | Servidor-BOM | `4cbc6fe` | docs(cg1): mandate full part-invisibility in menu, add per-part billing rule |
 | Servidor-BOM | `ac5405a` | feat(cg1): charge 1 credit per curriculum part, including the first |
+| BOM (app) | `15a21f0` | refactor(cg1): single partition-mapping authority for root/part id math |
 
-Push confirmado nos três commits (branches `feature/nplus1-image-and-canonical-scroll` no BOM, `main` no Servidor-BOM).
+Push confirmado em todos os commits (branch `feature/nplus1-image-and-canonical-scroll` no BOM, `main` no Servidor-BOM).
 
-## HEADs após esta fatia
+## HEADs após estas duas fatias
 
-- APP HEAD: `0d3ac0e`
+- APP HEAD: `15a21f0`
 - SERVER CODE HEAD: `ac5405a`
 - SERVER DEPLOYED HEAD (produção): ainda `3630a7d` — **`ac5405a` ainda não foi implantado no droplet de produção.**
-- SERVER USADO NO TESTE FÍSICO: nenhum teste físico foi feito nesta fatia (sem novo APK ainda).
+- SERVER USADO NO TESTE FÍSICO: nenhum teste físico foi feito ainda (sem novo APK gerado nesta missão).
 
-## Pendências explícitas (não resolvidas nesta fatia)
+## Pendências explícitas (não resolvidas até aqui)
 
 Estas fazem parte da missão CG-1 completa e continuam pendentes:
 
-1. **Tabela KEEP/ADJUST/DELETE formal** por arquivo/símbolo (Fase 2) — mapeamento já feito, tabela escrita ainda não formalizada em documento separado.
-2. **Consolidação de autoridade de menu/projeção** (Fase 7): `lab_session_curriculum_menu.dart` ainda contém lógica de inferência de domínio (regex de número de parte, fallback de batch-start) que deveria migrar para `curriculum_utils.dart`. Hoje já produz uma linha por root corretamente — o problema é onde a lógica mora, não um bug funcional confirmado.
-3. **Remoção de código morto/aliases** (Fase 8): cadeia de fallback de 8 fontes para `partNumber` em `student-state-controller.js`, aliases `curriculumId/curriculumStableId/curriculumRevisionId/planId` no app, duas implementações independentes de strip de sufixo `::part-N`.
-4. **Fronteira legada explícita de 20 itens** (Fase 9): nenhuma constante literal de "lote de 20 itens" foi encontrada no código atual (server ou app); só evidência de compatibilidade é o regex de sufixo `-p\d+`/`::part-\d+`. Precisa de investigação adicional para confirmar se o cenário histórico de 20 itens existe em dados reais.
-5. **Matriz de testes adversariais completa** (Fase 10): testes dedicados de fronteira em 85/100/180/300/400 itens, teste de menu com 1 card para root de 4 partes, teste de rename/delete, teste multi-dispositivo, teste de restart — ainda não escritos.
-6. **Novo APK, validação física e relatório integrado final** (missão + adendo): nenhum novo APK foi gerado nesta fatia; nenhuma validação física na tablet (fronteira 80→81, saldo antes/depois, menu, restart) foi feita. Isso requer uma fatia dedicada subsequente.
-7. **Pendências de missões anteriores permanecem em aberto** (não escondidas): RTDN para compras PENDING, política de refund/revoke, guarda de propriedade em `/api/student-state/persist`, storage seguro, R8, staleness incidental de Revisão/Recuperação.
+1. **Matriz de testes adversariais completa** (Fase 10): testes dedicados de fronteira em 85/100/180/300/400 itens (com provedor fake, sem custo real), teste de menu com 1 card para um root de 4 partes, teste de rename/delete, teste multi-dispositivo, teste de restart — ainda não escritos. O que já existe e passa: fronteira 80/81 (via `_moveToBoundary`/`_moveToPosition` nos testes atuais), continuação básica de 1→2 partes, prefetch no limiar de 20 itens.
+2. **Novo APK, validação física e relatório integrado final** (missão + adendo): nenhum novo APK foi gerado; nenhuma validação física na tablet (fronteira 80→81, saldo antes/depois, menu, restart) foi feita. Isso requer uma fatia dedicada subsequente, incluindo instalação via ADB e confirmação de versão instalada.
+3. **Deploy do servidor**: `ac5405a` (cobrança por parte) ainda não está no droplet de produção — a regra de cobrança só existe no código, não em produção, até o deploy ser feito.
+4. **Pendências de missões anteriores permanecem em aberto** (não escondidas): RTDN para compras PENDING, política de refund/revoke, guarda de propriedade em `/api/student-state/persist`, storage seguro, R8, staleness incidental de Revisão/Recuperação.
 
-## Veredito desta fatia
+## Veredito até aqui
 
-O que foi entregue está **verificado automaticamente** (servidor + app, suítes completas verdes, `flutter analyze` limpo) e **commitado/pushado**. Não há validação física nem AAB nesta fatia. A missão CG-1 completa (94 seções + adendo de 25 seções) permanece em andamento; esta fatia cobre as Fases 1, 3, 5 e 6 integralmente e deixa registradas, sem disfarce, as Fases 2, 4 (parcial), 7, 8, 9, 10 e a validação final como pendentes.
+O que foi entregue está **verificado automaticamente** (servidor + app, suítes completas verdes, `flutter analyze` limpo) e **commitado/pushado**. Não há validação física nem AAB ainda. A missão CG-1 completa (94 seções + adendo de 25 seções) permanece em andamento; até aqui foram concluídas as Fases 1 (mapeamento), 3 (contrato normativo), 4 (mapeamento de particionamento consolidado), 5 (prefetch), 6 (cobrança por parte), 7 (projeção de menu consolidada), 8 (investigação de código morto — nada a apagar com segurança) e 9 (fronteira legada confirmada somente-leitura). Restam as Fases 2 (tabela formal — entregue nesta atualização), 10 (matriz de testes completa) e a validação final integrada com novo APK físico.
