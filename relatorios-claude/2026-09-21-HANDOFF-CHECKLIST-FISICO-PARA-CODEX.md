@@ -207,6 +207,17 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
    alternativas; logs do servidor mostraram `complete-lesson` HTTP 200,
    persistência HTTP 200 e nenhuma reincidência do 409. Relatório:
    `2026-09-21-rwr001-clean-install-rehydration-fix.md`.
+0.1. **Achado físico novo após desbloqueio:** no Samsung `SM-X216B`, após
+     responder errado o item 2/20 e tocar `Continue to next item`, a tela foi
+     para `Drawer lesson experience prefix 2/2`, mas os logs de produção
+     registraram uma nova chamada `POST /api/complete-lesson` HTTP 200 com
+     outro `financialKey`, além de novas chamadas `visual-route` HTTP 200. A
+     tela de E2 também exibiu um `Lesson visual board`. Isso precisa ser
+     investigado antes de declarar o fluxo E1→E2 aprovado, porque pode violar a
+     regra SIM109 de zero T02 normal/zero visual próprio entre experiências. Não
+     classificar como FAIL definitivo sem rastrear a identidade: pode ser
+     prefetch/next-package legítimo ou projeção indevida. Status:
+     `IN_PROGRESS/NEEDS_INVESTIGATION`.
 1. **Rename #125: OK_PRODUCTION.** Corrigido e comprovado após reinstalação.
    Commit BOM `792e3ec`. Não repetir. Relatório:
    `2026-09-21-codex-checkpoint-rename-utf16-amparo.md`.
