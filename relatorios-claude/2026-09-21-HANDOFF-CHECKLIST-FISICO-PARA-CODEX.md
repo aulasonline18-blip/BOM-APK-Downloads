@@ -4,6 +4,8 @@
 
 **ATUALIZAÇÃO (mesma sessão, depois da publicação inicial deste handoff)**: o fork que tentava fechar o Amparo com a conta de QA nova terminou. Não fechou o item — achou um **terceiro problema da mesma família** (freeze/stall), ainda não corrigido. Detalhes completos na seção D revisada abaixo e no relatório `2026-09-21-amparo-novo-stall-preparando-proximo-passo.md` (commit `ec35083`). Nenhuma mudança de código foi feita para esse terceiro achado — é diagnóstico puro, aguardando a próxima rodada.
 
+**ATUALIZAÇÃO 2 (mesma sessão)**: investiguei o bug do anexo TXT — **confirmado funcionando em produção** para um TXT UTF-8 padrão (ponta a ponta: upload → extração → onboarding → geração de aula). Risco não confirmado com encoding não-UTF-8 (arquivo de teste `teste-utf16.txt` já preparado em `/sdcard/Download/` no tablet). Durante esse teste achei um **QUARTO bug crítico, ainda mais severo**: o botão "Continuar para a aula" (transição do aquecimento para a aula, em qualquer aula NOVA criada via onboarding) trava permanentemente mesmo minutos depois do servidor já ter terminado `complete-lesson`+`visual-route` (confirmado por log do droplet + `uiautomator dump` idêntico antes/depois do toque). Isso bloqueia a entrada em qualquer aula nova nesta sessão — ainda mais amplo que os stalls anteriores, que aconteciam DEPOIS de já estar na aula. Não root-causado (precisa `flutter run` attached, que não usei nesta rodada). Detalhes completos: `2026-09-21-txt-ok-e-novo-freeze-critico-continuar-aula.md` (commit `087919b`). Nenhum código foi alterado nesta rodada.
+
 ## A. ARQUITETURA / AMBIENTE
 
 - **App (Flutter, "BOM")**: `/root/BOM`, repo `https://github.com/aulasonline18-blip/BOM.git`, branch `main`.
@@ -131,7 +133,9 @@ Relato do usuário: "Estou tentando anexar um arquivo TXT e gerar uma aula anexa
 |---|---|---|---|---|
 | Aula normal | OK_PRODUCTION | 9bf2eea | 5f7e0cf | `2026-09-21-fix-freeze-visual-nao-assentado-nextadvance.md` |
 | Anexos (geral) | RETEST_REQUIRED | — | — | pipeline testado em sessões anteriores na VM; não retestado em produção nesta rodada |
-| TXT | NOT_STARTED | — | — | ver seção E |
+| TXT (UTF-8 padrão) | OK_PRODUCTION | 9bf2eea | 5f7e0cf | ponta a ponta confirmado, ver `2026-09-21-txt-ok-e-novo-freeze-critico-continuar-aula.md` |
+| TXT (encoding não-UTF-8) | RETEST_REQUIRED | — | — | `teste-utf16.txt` já no tablet, não testado ainda |
+| Transição aquecimento→aula ("Continuar para a aula") | **FAIL** | 9bf2eea | 5f7e0cf | trava permanentemente mesmo com servidor pronto — bug novo, mais amplo que os anteriores, ver seção acima |
 | PDF | RETEST_REQUIRED | — | — | testado em sessão anterior (VM), não em produção |
 | DOC/DOCX | RETEST_REQUIRED | — | — | idem |
 | Imagens | RETEST_REQUIRED | — | — | idem |
@@ -163,11 +167,12 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
 
 ## CONTINUE DAQUI
 
-1. `cd /root/BOM-APK-Downloads && git pull` — confira se já existe relatório mais novo que `46ed8e0` (pode já ter avançado depois deste handoff).
-2. Leia `2026-09-21-amparo-stall-trace-estatico-candidatos.md` (commit `46ed8e0`) — já tem os 4 pontos exatos de código (com linha) para instrumentar com `debugPrint` antes de reproduzir.
-3. Instrumente esses 4 pontos, rode `flutter run` attached (`100.124.23.2:5555`, mesma técnica das duas investigações anteriores), logue com `qa-amparo-20260921@sim-internal-test.invalid` / `QaAmparo!20260921xZ` (onboarding já feito, deve cair direto na aula), erre 4 vezes seguidas com "Tenho certeza", e compare o `(itemIdx, marker, layer)` que `_visualSettledForSlot` está esperando com o que o `/api/visual-route` realmente devolveu (payload da requisição, não só status 200).
-4. Corrija a causa raiz confirmada (remova os `debugPrint`s de diagnóstico depois). Teste automatizado de regressão, suíte completa, rebuild, reteste físico em produção com a mesma conta, completando o ciclo até o 5º erro e a sala de Amparo abrindo.
-3. Depois do Amparo fechado: passe para Dúvida/Revisão/Recuperação (task #123) contra produção real, mesmo rigor (causa raiz real para qualquer bug, sem gambiarra, teste automatizado, commit/push, reteste físico em produção antes de marcar OK).
-4. Depois: Finalização (#124), Menu/Drawer/Rename (#125), Restart/Offline (#126), Account isolation/Microcrédito/Billing (#127).
-5. Investigar o bug do anexo TXT (seção E) — ainda não foi tocado.
-6. A cada fix ou avanço: commit + push imediato (app e/ou servidor). Se precisar de deploy no droplet real, seguir o padrão já estabelecido (release em `/opt/sim/releases/<sha>`, symlink `current`, rollback note automática, health check antes de considerar concluído).
+1. `cd /root/BOM-APK-Downloads && git pull` — confira se já existe relatório mais novo que `087919b` (pode já ter avançado depois deste handoff).
+2. **PRIORIDADE MÁXIMA — bug mais amplo já encontrado**: o botão "Continuar para a aula" (transição aquecimento→aula em QUALQUER aula nova) trava permanentemente mesmo com o servidor já pronto — ver `2026-09-21-txt-ok-e-novo-freeze-critico-continuar-aula.md` (commit `087919b`), seção 2. Bloqueia a entrada em aulas novas, o que por sua vez bloqueia testar quase tudo mais nesta lista. Investigue com `flutter run -d 100.124.23.2:5555 --dart-define=FLUTTER_APP_MODE=production --dart-define=SIM_SERVER_URL=https://simaitutor.com` attached antes de qualquer outra coisa.
+3. Teste `teste-utf16.txt` (já em `/sdcard/Download/` no tablet) para fechar a investigação do anexo TXT (variante UTF-8 padrão já confirmada `OK_PRODUCTION`).
+4. Leia `2026-09-21-amparo-stall-trace-estatico-candidatos.md` (commit `46ed8e0`) — já tem os 4 pontos exatos de código (com linha) para instrumentar com `debugPrint` antes de reproduzir o terceiro stall do Amparo.
+5. Instrumente esses 4 pontos, rode `flutter run` attached, logue com `qa-amparo-20260921@sim-internal-test.invalid` / `QaAmparo!20260921xZ` (onboarding já feito, deve cair direto na aula — OU use a aula antiga já em andamento no tablet, "Fracoes para o 6 ano do ensino fundamental", item 2/60, se a conta de QA cair numa aula nova travada pelo bug do item 2), erre 4 vezes seguidas com "Tenho certeza", e compare o `(itemIdx, marker, layer)` que `_visualSettledForSlot` está esperando com o que o `/api/visual-route` realmente devolveu.
+6. Corrija a causa raiz confirmada (remova os `debugPrint`s de diagnóstico depois). Teste automatizado de regressão, suíte completa, rebuild, reteste físico em produção com a mesma conta, completando o ciclo até o 5º erro e a sala de Amparo abrindo.
+7. Depois do Amparo fechado: passe para Dúvida/Revisão/Recuperação (task #123) contra produção real, mesmo rigor (causa raiz real para qualquer bug, sem gambiarra, teste automatizado, commit/push, reteste físico em produção antes de marcar OK).
+8. Depois: Finalização (#124), Menu/Drawer/Rename (#125 — o menu já foi visto abrindo corretamente, com lista de aulas e opção "⋮" de renomear, mas o fluxo de rename não foi testado até o fim), Restart/Offline (#126), Account isolation/Microcrédito/Billing (#127), Placement (#121), CG-1 (#120).
+9. A cada fix ou avanço: commit + push imediato (app e/ou servidor). Se precisar de deploy no droplet real, seguir o padrão já estabelecido (release em `/opt/sim/releases/<sha>`, symlink `current`, rollback note automática, health check antes de considerar concluído).
