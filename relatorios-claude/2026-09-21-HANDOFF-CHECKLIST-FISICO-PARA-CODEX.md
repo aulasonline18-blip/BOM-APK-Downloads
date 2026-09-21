@@ -278,6 +278,26 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      para restart/resume básico neste ponto. Observação: esse cenário não abriu
      a sala de Recuperação; portanto Recuperação continua pendente de teste
      específico.
+0.1.D. **Scroll da aula principal: viewport vazia corrigida e certificada
+     fisicamente.** Durante o acabamento físico, rolagens manuais longas podiam
+     deixar a aula em uma região vazia contendo apenas a barra superior
+     (`Menu`, `Lesson`, áudio, Revisão, progresso). Causa corrigida no APP: o
+     grande espaço reservado para ancoragem pedagógica continua existindo para
+     os movimentos automáticos, mas o scroll manual agora é clampado ao limite
+     útil do conteúdo quando o gesto termina. Commit BOM `1e43b15`
+     (`fix(classroom): clamp manual scroll reserve`) pushed em `main`. Gates:
+     `git diff --check` PASS, `flutter analyze --no-pub` PASS, `flutter test`
+     PASS 1.494/1.494, `./tool/check-sim-reform` OVERALL PASS. APK release
+     reconstruído contra `https://simaitutor.com`, instalado no Samsung
+     `SM-X216B`, SHA-256
+     `15c3dc8aca681ab8b5701ab1e7c8a1b4a5dcd8fce64f637342343c3cdc302c15`.
+     Prova física em produção: após `force-stop` + reabertura, a aula retomou
+     em `Item 2 / 20 · ... 1/2`, progresso `5%`. Foram feitas múltiplas
+     rolagens manuais longas para baixo/cima/baixo. O `uiautomator dump`
+     continuou mostrando conteúdo real (`Visual aid`, pergunta e alternativas
+     A/B/C); a tela vazia com apenas o topo não foi reproduzida. Status:
+     `OK_PRODUCTION` para o corredor de scroll manual da aula principal neste
+     cenário.
 0.2. **Revisão: robô entre questões tratado no APP e certificado fisicamente
      em produção.** O comportamento observado pelo usuário era: entrar na
      Revisão, responder Q1, tocar Continue e ver novamente o robô/tela de
