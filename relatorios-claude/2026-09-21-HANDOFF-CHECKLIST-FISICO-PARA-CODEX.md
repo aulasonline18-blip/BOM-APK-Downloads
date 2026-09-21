@@ -1,6 +1,8 @@
 # HANDOFF — Checklist físico final (produção real) — 2026-09-21
 
-**Antes de fazer qualquer coisa**: rode `git log --oneline -5 origin/main` nos dois repos (`Servidor-BOM` e `BOM`) e em `BOM-APK-Downloads`. Havia um agente (fork) ainda em execução no momento em que este handoff foi escrito, tentando fechar o item Amparo com uma conta de QA nova. Se houver commits mais novos que os SHAs listados abaixo, **leia-os primeiro** — este documento pode já estar um passo atrás.
+**Antes de fazer qualquer coisa**: rode `git log --oneline -5 origin/main` nos dois repos (`Servidor-BOM` e `BOM`) e em `BOM-APK-Downloads`. Se houver commits mais novos que os SHAs listados abaixo, **leia-os primeiro** — este documento pode já estar um passo atrás.
+
+**ATUALIZAÇÃO (mesma sessão, depois da publicação inicial deste handoff)**: o fork que tentava fechar o Amparo com a conta de QA nova terminou. Não fechou o item — achou um **terceiro problema da mesma família** (freeze/stall), ainda não corrigido. Detalhes completos na seção D revisada abaixo e no relatório `2026-09-21-amparo-novo-stall-preparando-proximo-passo.md` (commit `ec35083`). Nenhuma mudança de código foi feita para esse terceiro achado — é diagnóstico puro, aguardando a próxima rodada.
 
 ## A. ARQUITETURA / AMBIENTE
 
@@ -95,17 +97,19 @@ Nenhum dos dois fixes exigiu mudança server-side — servidor de produção nã
 
 ## D. ESTADO DETALHADO DO AMPARO (item mais importante em aberto)
 
-- **O que já está provado**: o limiar 3→5 agravantes (fix da task #24, sessão anterior) se sustenta fisicamente — 4 respostas erradas seguidas não disparam Amparo prematuramente.
-- **Os dois freezes que impediam completar o ciclo de 5 erros → Amparo já foram corrigidos** (seção C acima), ambos confirmados fisicamente em produção real.
-- **O que ainda falta**: completar o ciclo completo (5 erros seguidos → sala de Amparo abre → interação → volta pra aula) usando uma conta limpa, sem o confundidor do split-brain das contas antigas. Um fork estava em execução no momento deste handoff, logado com a conta `qa-amparo-20260921@sim-internal-test.invalid` (ver seção B), tentando exatamente isso — **confira primeiro se `origin/main` de `BOM-APK-Downloads` já tem um relatório mais novo que `a6d0121`** antes de repetir esse trabalho.
+- **O que já está provado**: o limiar 3→5 agravantes (fix da task #24, sessão anterior) se sustenta fisicamente — 4 respostas erradas seguidas, com sinal "Tenho certeza" a cada vez, não disparam Amparo prematuramente. Confirmado de novo nesta rodada, em produção real, com a conta de QA nova.
+- **Os dois freezes anteriores (hydrate race + gate nextAdvanceReady, seção C) seguram bem** sob os 4 erros consecutivos — nenhuma tela em branco, nenhum freeze silencioso.
+- **TERCEIRO PROBLEMA ENCONTRADO, AINDA NÃO CORRIGIDO** (o que efetivamente bloqueia o fechamento do #122 agora): depois do 4º erro, o app entra honestamente no estado "Preparando próximo passo" (botão cinza — esse é o comportamento *correto* do fix da seção C.2, não é regressão) e **fica preso nesse estado por 7+ minutos**, mesmo com o servidor já tendo terminado de gerar o visual (`POST /api/visual-route` → 200, confirmado nos logs do droplet às 05:04:37 na sessão de teste). Rede e servidor descartados como causa (ping 242ms, Tailscale ativo, resposta do servidor já entregue) — o app simplesmente não reavalia o gate depois que o visual fica pronto.
+  - **Hipótese mais provável, não confirmada**: a bomba de retry `ensureNextAulaAdvancePrepared` para de ser reagendada depois de vários ciclos consecutivos de sinal de confiança ("Tenho certeza" repetido 4x) — precisa checar se há algum teto/ceiling de re-agendamento nesse controller que não é resetado corretamente entre agravantes.
+  - **Arquivo/símbolo a investigar primeiro**: `ensureNextAulaAdvancePrepared` (app BOM) e a lógica de `nextAdvanceReady()`/`LessonRuntimeEngine` já tocada pelo fix da seção C.2 — o novo bug provavelmente está adjacente a esse código, na parte que deveria *reagendar* a checagem, não na checagem em si.
+  - **Nenhuma mudança de código foi feita para este achado ainda** — é diagnóstico puro. Relatório completo: `2026-09-21-amparo-novo-stall-preparando-proximo-passo.md` (commit `ec35083`).
+- **O que ainda falta**: (1) achar a causa raiz real deste terceiro stall com `flutter run` attached (mesma técnica das seções anteriores — colocar um breakpoint/log logo antes e depois do ponto em que `visual-route` retorna, para ver se o evento chega ao app e se algo deveria reagendar a checagem e não reagenda); (2) corrigir; (3) testar; (4) só então completar o ciclo (5 erros seguidos → sala de Amparo abre → interação → volta pra aula) usando a conta `qa-amparo-20260921@sim-internal-test.invalid` (ver seção B) — ela já está pronta e funcional para reuso, sem precisar recriar.
 - **Como reproduzir do zero, se precisar**:
-  1. Build+instalar o APK de produção (comandos na seção B).
-  2. Login com `qa-amparo-20260921@sim-internal-test.invalid` / `QaAmparo!20260921xZ`.
-  3. Iniciar uma aula nova.
-  4. Responder errado, de forma consistente (ex.: sempre confirmando "I am sure"/"tenho certeza" quando o app perguntar), 5 vezes seguidas na mesma aula, sem reiniciar o app no meio (um restart no meio zera a contagem parcialmente — foi isso que atrapalhou uma tentativa anterior).
-  5. Na 5ª resposta errada, esperar a transição — deve abrir a sala de Amparo (intervenção pedagógica), não continuar a aula normal.
-  6. Confirmar que a sala de Amparo completa um ciclo (responde à intervenção, volta pra aula) sem travar.
-  7. Só marcar `OK_PRODUCTION` depois disso.
+  1. Build+instalar o APK de produção (comandos na seção B) — ou usar `flutter run` attached direto, para já ter os logs.
+  2. Login com `qa-amparo-20260921@sim-internal-test.invalid` / `QaAmparo!20260921xZ` (conta já passou pelo onboarding de 9 etapas nesta sessão — deve retomar direto na aula).
+  3. Responder errado, de forma consistente ("Tenho certeza"/"I am sure"), repetidamente na mesma aula, sem reiniciar o app no meio.
+  4. Observar o stall no "Preparando próximo passo" depois do 4º erro — é aqui que a investigação da causa raiz deve focar agora.
+  5. Só depois de corrigir esse stall: seguir até o 5º erro e confirmar que a sala de Amparo abre e completa um ciclo sem travar, antes de marcar `OK_PRODUCTION`.
 
 ## E. ANEXO TXT (bug reportado pelo usuário, ainda não investigado)
 
@@ -135,7 +139,7 @@ Relato do usuário: "Estou tentando anexar um arquivo TXT e gerar uma aula anexa
 | Nivelamento | RETEST_REQUIRED | — | — | auditado em sessão anterior, não retestado fisicamente contra produção agora |
 | Placement | NOT_STARTED | — | — | task #121 nunca iniciada fisicamente |
 | CG1 (currículo grande) | NOT_STARTED | — | — | task #120/#87 nunca iniciada fisicamente |
-| **Amparo** | **IN_PROGRESS** | 9bf2eea | 5f7e0cf | dois freezes corrigidos e confirmados; falta fechar o ciclo completo — ver seção D |
+| **Amparo** | **IN_PROGRESS** | 9bf2eea | 5f7e0cf | 2 freezes corrigidos; 3º stall ("Preparando próximo passo" travado) achado e ainda não corrigido — ver seção D |
 | Dúvida | NOT_STARTED | — | — | task #123, nunca retestada fisicamente contra produção |
 | Revisão | NOT_STARTED | — | — | idem |
 | Recuperação | NOT_STARTED | — | — | idem |
@@ -158,8 +162,8 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
 
 ## CONTINUE DAQUI
 
-1. `cd /root/BOM-APK-Downloads && git pull` — confira se já existe relatório mais novo que `a6d0121` (o fork mencionado na seção D pode já ter terminado).
-2. Se o Amparo ainda não estiver `OK_PRODUCTION`: reproduza a seção D do zero (build já configurado, conta de QA já criada).
+1. `cd /root/BOM-APK-Downloads && git pull` — confira se já existe relatório mais novo que `ec35083` (pode já ter avançado depois deste handoff).
+2. Investigue e corrija o terceiro stall descrito na seção D (`ensureNextAulaAdvancePrepared` não reagendando a checagem de `nextAdvanceReady()` depois que o visual fica pronto). Use `flutter run` attached, mesma técnica das duas investigações anteriores desta sessão. Depois de corrigir: teste automatizado de regressão, suíte completa, rebuild, reteste físico em produção com a conta `qa-amparo-20260921@sim-internal-test.invalid` (já pronta, não recriar), completando o ciclo até o 5º erro e a sala de Amparo abrindo.
 3. Depois do Amparo fechado: passe para Dúvida/Revisão/Recuperação (task #123) contra produção real, mesmo rigor (causa raiz real para qualquer bug, sem gambiarra, teste automatizado, commit/push, reteste físico em produção antes de marcar OK).
 4. Depois: Finalização (#124), Menu/Drawer/Rename (#125), Restart/Offline (#126), Account isolation/Microcrédito/Billing (#127).
 5. Investigar o bug do anexo TXT (seção E) — ainda não foi tocado.
