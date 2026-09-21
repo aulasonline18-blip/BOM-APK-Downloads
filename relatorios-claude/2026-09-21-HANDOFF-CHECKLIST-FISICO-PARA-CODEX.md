@@ -223,6 +223,18 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      classificar como FAIL definitivo sem rastrear a identidade: pode ser
      prefetch/next-package legítimo ou projeção indevida. Status:
      `IN_PROGRESS/NEEDS_INVESTIGATION`.
+0.1.A. **Rechecagem parcial do achado E1->E2 com `aulasonline18`:** em aula
+     nova `basic fractions`, depois de E1 respondida e Dúvida testada, tocar
+     `Continue to next item` levou a UI diretamente para `Item 1 / 20 · ... 2/2`,
+     sem tela de preparação e sem visual próprio visível da E2. Logs de produção
+     no mesmo intervalo mostraram `POST /api/complete-lesson` para
+     `marker=M0002`, `kind=lesson`, `layer=null`, `mode=lesson`, além de
+     `visual-route` com uma falha 503 seguida de respostas 200. Interpretação
+     inicial: a T02 parece ser prefetch N+1 legítimo disparado ao entrar na E2,
+     não recompra da E2 do item atual; porém os `visual-route` ainda precisam de
+     rastreio de identidade para provar se são apenas visual N+1 com retry
+     legítimo ou duplicação visual indevida. Status permanece
+     `IN_PROGRESS/NEEDS_INVESTIGATION`, mas a UI E1->E2 está fluida.
 0.2. **Revisão: robô entre questões tratado no APP e certificado fisicamente
      em produção.** O comportamento observado pelo usuário era: entrar na
      Revisão, responder Q1, tocar Continue e ver novamente o robô/tela de
