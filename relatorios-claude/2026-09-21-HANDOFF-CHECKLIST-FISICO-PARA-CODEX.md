@@ -21,6 +21,8 @@
 
 **ATUALIZAÇÃO 7 (Codex, mesma sessão) — Menu/Drawer/Rename retestados fisicamente**: com o mesmo APK `356fa93`, abri o Menu/Drawer em produção real. A aula ativa apareceu com progresso `0/20 · Item 2/20 · experience 1/2`. Abri `More options`, selecionei `Rename lesson`, substituí o título por `basic_fractions_QA`, salvei, e o drawer passou a listar `Open lesson basic_fractions_QA` com o novo nome e o mesmo progresso. Toquei no card renomeado e o app retornou à aula principal no Item 2/E1. Status: `OK_PRODUCTION` para Menu, Drawer, Rename e reabertura da aula pelo card renomeado.
 
+**ATUALIZAÇÃO 8 (Codex, mesma sessão) — Restart/Resume retestado fisicamente**: após a Dúvida, Revisão completa e Rename, executei `am force-stop` e reabri o APK de produção. O app retomou diretamente a aula no Item 2/E1, com progresso `5%`, estado da conversa preservado e a mensagem histórica de Dúvida (`Why_B_correct`) visível. Status: `OK_PRODUCTION` para restart/resume básico da aula ativa neste estado.
+
 ## A. ARQUITETURA / AMBIENTE
 
 - **App (Flutter, "BOM")**: `/root/BOM`, repo `https://github.com/aulasonline18-blip/BOM.git`, branch `main`.
