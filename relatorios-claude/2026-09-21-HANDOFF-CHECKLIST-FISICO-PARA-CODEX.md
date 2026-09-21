@@ -313,6 +313,16 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      help with this question`, sem `Continue to next item`. Ao tocar, abriu
      `Item 3 / 20 · ... 2/2`. Status: `OK_PRODUCTION` para o rótulo e avanço
      E1 -> E2 nesse corredor.
+0.1.F. **E2 com erro forte avança sem travar.** No mesmo APK
+     `3c3c83c`/SHA-256
+     `d040c0257c0d9fc53fbf2a165786f9a109e8b5c64f8814b92ebec974db00868d`,
+     respondi errado no Item 3/E2, marquei sinal forte (`It was a guess`) e o
+     app mostrou apoio inline com `Continue to next item` (rótulo correto para
+     E2). Ao tocar, abriu `Item 4 / 20 · ... 1/2`, progresso `15%`, visual e
+     pergunta visíveis. Status: `OK_PRODUCTION` para avanço E2 -> próximo item
+     após erro+sinal forte nesse cenário. Observação: este teste não abriu a
+     sala de Recuperação; Recuperação explícita ainda precisa de corredor
+     próprio se o checklist exigir a sala dedicada.
 0.2. **Revisão: robô entre questões tratado no APP e certificado fisicamente
      em produção.** O comportamento observado pelo usuário era: entrar na
      Revisão, responder Q1, tocar Continue e ver novamente o robô/tela de
