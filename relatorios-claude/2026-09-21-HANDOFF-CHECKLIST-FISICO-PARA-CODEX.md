@@ -405,8 +405,11 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      inline `No problem. Let us resume step by step.`, manteve `I need help
      with this question` disponível e exibiu `Continue to experience 2`. Ao
      tocar, abriu `Item 5 / 20 · ... experience prefix 2/2` com pergunta nova
-     sobre pizza/4 amigos. Status: `OK_PRODUCTION` para erro forte E1 ->
-     apoio inline -> E2 nesse cenário.
+     sobre pizza/4 amigos. Em E2, respondi `B. 4 pieces`, marquei `I am sure`,
+     recebi `Correct. You mastered this point.`, toquei `Continue to next item`
+     e o app abriu `Item 6 / 20 · ... experience prefix 1/2`, progresso `25%`.
+     Status: `OK_PRODUCTION` para erro forte E1 -> apoio inline -> E2 ->
+     próximo item nesse cenário.
 1. **Rename #125: OK_PRODUCTION.** Corrigido e comprovado após reinstalação.
    Commit BOM `792e3ec`. Não repetir. Relatório:
    `2026-09-21-codex-checkpoint-rename-utf16-amparo.md`.
