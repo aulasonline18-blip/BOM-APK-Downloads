@@ -235,6 +235,28 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      rastreio de identidade para provar se são apenas visual N+1 com retry
      legítimo ou duplicação visual indevida. Status permanece
      `IN_PROGRESS/NEEDS_INVESTIGATION`, mas a UI E1->E2 está fluida.
+0.1.B. **E2 sem visual próprio: bug físico corrigido e retestado.** Depois do
+     commit anterior, o Samsung ainda reabria a E2 (`2/2`) mostrando uma bolha
+     `VISUAL_ROUTE_UNAVAILABLE` entre explicação e pergunta. Causa corrigida no
+     APP: snapshot/runtime não carrega imagem/metadado visual quando a posição
+     ativa é E2, o media controller limpa `imageError` nessa condição e a tela
+     não agenda nem renderiza painel visual para E2. Commit BOM `b435139`
+     (`fix(classroom): suppress visual errors on SIM109 E2`), pushed em
+     `main`. Gates: `git diff --check` PASS, `flutter analyze --no-pub` PASS,
+     testes focados PASS, `flutter test` completo PASS 1.493/1.493,
+     `SIM_APP_ROOT=/root/BOM SIM_SERVER_ROOT=/root/Servidor-BOM
+     SIM_REFORM_BRANCH=main ./tool/check-sim-reform` OVERALL PASS. APK release
+     reconstruído contra `https://simaitutor.com`, instalado no Samsung
+     `SM-X216B`, SHA-256
+     `874b65202a7561d935fae987860381cb7c8f2ab4948b785c47e078600134c3a1`.
+     Prova física: `force-stop` + reabertura do app no tablet retomou o item
+     atual em `Item 1 / 20 · ... 2/2`, com explicação, pergunta e alternativas
+     visíveis; `uiautomator dump` não contém `VISUAL_ROUTE_UNAVAILABLE`, não
+     contém painel visual próprio da E2 e não mostrou tela de preparação
+     intermediária. Status: `OK_PRODUCTION` para o bug visual próprio/erro
+     visual stale na E2 atual. Observação: os logs de prefetch N+1/visual N+1
+     continuam sendo assunto do Corte C/checklist econômico; este item fecha a
+     regressão física de UI na E2 do item atual.
 0.2. **Revisão: robô entre questões tratado no APP e certificado fisicamente
      em produção.** O comportamento observado pelo usuário era: entrar na
      Revisão, responder Q1, tocar Continue e ver novamente o robô/tela de
