@@ -383,6 +383,14 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      Dúvida no feedback E1 com E2 preparado e avanço E2->próximo item após a
      Dúvida. Observação: o campo recebeu um `b` final por teclado físico
      (`requiredb`); isso não afetou a prova funcional.
+0.4. **Restart/resume e Drawer no APK `28eda61`: OK_PRODUCTION.** Após o
+     avanço da Dúvida para Item 5/E1, fiz `force-stop` + reabertura do app no
+     Samsung. O app retomou em `Item 5 / 20 · ... experience prefix 1/2`,
+     progresso `20%`, com visual e pergunta visíveis. Em seguida abri o Drawer:
+     o card `basic_fractions_QA` mostrou `Item 5/20 · ... 1/2`; tocar o card
+     retornou para a mesma aula e cursor, sem regressão para Item 4 e sem perda
+     do histórico da Dúvida. Status: `OK_PRODUCTION` para restart/resume e
+     Drawer básico no APK `28eda61`.
 1. **Rename #125: OK_PRODUCTION.** Corrigido e comprovado após reinstalação.
    Commit BOM `792e3ec`. Não repetir. Relatório:
    `2026-09-21-codex-checkpoint-rename-utf16-amparo.md`.
