@@ -157,7 +157,7 @@ Relato do usuário: "Estou tentando anexar um arquivo TXT e gerar uma aula anexa
 | CG1 (currículo grande) | NOT_STARTED | — | — | task #120/#87 nunca iniciada fisicamente |
 | **Amparo** | **IN_PROGRESS** | 9bf2eea | 5f7e0cf | 2 freezes corrigidos; 3º stall ("Preparando próximo passo" travado) achado e ainda não corrigido — ver seção D |
 | Dúvida | NOT_STARTED | — | — | task #123, nunca retestada fisicamente contra produção |
-| Revisão | NOT_STARTED | — | — | idem |
+| Revisão | OK_PRODUCTION | dad50bf | 42d541d | robô/tela de preparação aparece só na entrada; Q1->Q2->Q3 contínuo em produção com `aulasonline18`, ver Atualização Codex 0.2 |
 | Recuperação | NOT_STARTED | — | — | idem |
 | Finalização sem pending | NOT_STARTED | — | — | task #124 |
 | Finalização com pending | NOT_STARTED | — | — | task #124 |
@@ -223,8 +223,8 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      classificar como FAIL definitivo sem rastrear a identidade: pode ser
      prefetch/next-package legítimo ou projeção indevida. Status:
      `IN_PROGRESS/NEEDS_INVESTIGATION`.
-0.2. **Revisão: robô entre questões tratado no APP e novo bloqueio real
-     identificado.** O comportamento observado pelo usuário era: entrar na
+0.2. **Revisão: robô entre questões tratado no APP e certificado fisicamente
+     em produção.** O comportamento observado pelo usuário era: entrar na
      Revisão, responder Q1, tocar Continue e ver novamente o robô/tela de
      preparação antes da Q2. O app foi corrigido para preparar uma janela de
      Revisão contínua de duas perguntas: entrada prepara Q1+Q2; avanço para Q2
@@ -235,14 +235,14 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      1.486/1.486, `./tool/check-sim-reform` OVERALL PASS. APK release
      reconstruído e instalado no Samsung com SHA-256
      `08794ef655b7630b28e0e00357d6e77ba912120ef8e37ac880968925efa4f7a5`
-     (versionCode 110). Prova física em produção: ao escolher Revisão 5, o app
-     não mascarou mais o problema; exibiu `Your credits have run out. Add
-     credits to continue studying.` A certificação física Q1->Q2->Q3 contínua
-     continua bloqueada por saldo insuficiente legítimo nessa conta. Próxima
-     ação exata para fechar Revisão fisicamente: adicionar créditos por caminho
-     legítimo de Billing/test-credit ou usar conta de QA com saldo, então
-     repetir Revisão com pelo menos 3 questões e confirmar ausência de robô
-     entre Q1->Q2 e Q2->Q3.
+     (versionCode 110). Prova física em produção com a conta `aulasonline18`:
+     aula nova `basic fractions`, entrada na Revisão, seleção de 5 perguntas,
+     robô/tela de preparação apenas na entrada, `Start review`, Q1 respondida,
+     `Continue` levou diretamente para `Review 2/5`, Q2 respondida, `Continue`
+     levou diretamente para `Review 3/5`. Capturas via `uiautomator` mostraram
+     `1/5 -> 2/5 -> 3/5` sem `Preparing your review...`, sem `Start review` e
+     sem tela introdutória reaparecendo entre Q1->Q2 ou Q2->Q3. Status:
+     `OK_PRODUCTION` para o bug do robô entre questões da Revisão.
 1. **Rename #125: OK_PRODUCTION.** Corrigido e comprovado após reinstalação.
    Commit BOM `792e3ec`. Não repetir. Relatório:
    `2026-09-21-codex-checkpoint-rename-utf16-amparo.md`.
