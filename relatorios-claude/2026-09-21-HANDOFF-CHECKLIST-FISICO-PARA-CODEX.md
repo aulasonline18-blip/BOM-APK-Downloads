@@ -6,6 +6,15 @@
 
 **ATUALIZAÇÃO 2 (mesma sessão)**: investiguei o bug do anexo TXT — **confirmado funcionando em produção** para um TXT UTF-8 padrão (ponta a ponta: upload → extração → onboarding → geração de aula). Risco não confirmado com encoding não-UTF-8 (arquivo de teste `teste-utf16.txt` já preparado em `/sdcard/Download/` no tablet). Durante esse teste achei um **QUARTO bug crítico, ainda mais severo**: o botão "Continuar para a aula" (transição do aquecimento para a aula, em qualquer aula NOVA criada via onboarding) trava permanentemente mesmo minutos depois do servidor já ter terminado `complete-lesson`+`visual-route` (confirmado por log do droplet + `uiautomator dump` idêntico antes/depois do toque). Isso bloqueia a entrada em qualquer aula nova nesta sessão — ainda mais amplo que os stalls anteriores, que aconteciam DEPOIS de já estar na aula. Não root-causado (precisa `flutter run` attached, que não usei nesta rodada). Detalhes completos: `2026-09-21-txt-ok-e-novo-freeze-critico-continuar-aula.md` (commit `087919b`). Nenhum código foi alterado nesta rodada.
 
+**ATUALIZAÇÃO 3 (mesma sessão) — CAUSA RAIZ DO 4º BUG ENCONTRADA E CORRIGIDA**: usei `flutter run` attached contra produção real e achei a causa raiz de verdade: o bug só acontece na **SEGUNDA aula criada em diante, na mesma sessão do app** (a primeira aula sempre funciona). `saveObjectiveEntry()` (handler de "Preparar minha aula") nunca resetava `WarmupBridgeCoordinator`, então `aulaNavigationStarted` ficava preso em `true` da aula anterior, e `shouldOpenOfficialAula()` retornava `false` para sempre. **Fix aplicado e commitado**: `f85bcfa` (app) — chama `clearWarmupState()`+`resetEntryCoordinator()` no início de `saveObjectiveEntry()`. Teste de regressão determinístico adicionado (cria 2 aulas na mesma sessão, falha sem o fix, passa com o fix). Suíte completa: 1483 testes verdes. **Confirmado fisicamente em produção real**: criei 2 aulas seguidas na mesma sessão contra `https://simaitutor.com` com a conta de QA — a segunda abriu normalmente após o fix. Detalhes: `2026-09-21-fix-warmup-coordinator-nao-resetado-nova-aula.md`.
+
+**ATUALIZAÇÃO 4 (mesma sessão) — reverificação independente do fix `f85bcfa`**: li o diff completo do commit e concordo com a causa raiz descrita (fix mínimo, preciso, espelha um reset que `prepareObjectiveWorkflow` já fazia no seu próprio caminho — não é gambiarra). Rodei a suíte completa eu mesmo, de forma independente: **1483/1483 testes passando**, incluindo o teste de regressão específico (`warmup_bridge_contract_test.dart`, 13/13). Tentei um reteste físico próprio via `adb input tap` com coordenadas fixas (sem `flutter run` attached) para dupla-checagem, mas essa abordagem se mostrou frágil — o layout da tela de login desloca verticalmente quando o teclado abre/fecha, fazendo os toques por coordenada acertarem campos errados (cheguei a poluir o campo de e-mail da conta de QA com texto concatenado; sem impacto real, é só uma conta sintética, mas não completei o login por essa via dentro do orçamento). **Não considero isso um sinal de problema no fix** — é limitação da técnica de automação por coordenada fixa, não do app. Recomendação para a próxima rodada: usar `flutter run` attached (como a Atualização 3 fez) ou testar manualmente, em vez de `adb input tap` com coordenadas cravadas.
+**Veredito deste item**: causa raiz confirmada por leitura de código + suíte automatizada (própria e independente) + a confirmação física já registrada na Atualização 3 pelo fork anterior. Considero `f85bcfa` validado o suficiente para não bloquear o restante do checklist.
+
+**IMPORTANTE — build de release precisa de um 4º dart-define não documentado antes**: `--dart-define=SIM_AUTH_REDIRECT_URL=simaitutor://login-callback` (sem isso, o gate `BOM_RELEASE_CALLBACK_REQUIRED` do Gradle recusa o build de release). Seção B já atualizada com o comando completo.
+
+**Nota**: instalar um APK de release por cima de uma instalação de debug (ou vice-versa) falha com `INSTALL_FAILED_UPDATE_INCOMPATIBLE` — rode `adb uninstall com.simaitutor.app` antes de trocar entre os dois tipos de build.
+
 ## A. ARQUITETURA / AMBIENTE
 
 - **App (Flutter, "BOM")**: `/root/BOM`, repo `https://github.com/aulasonline18-blip/BOM.git`, branch `main`.
@@ -31,8 +40,10 @@ Observação: o servidor de produção está em `5f7e0cf`, que é **um commit ma
 cd /root/BOM
 /opt/flutter/bin/flutter build apk --release \
   --dart-define=FLUTTER_APP_MODE=production \
-  --dart-define=SIM_SERVER_URL=https://simaitutor.com
+  --dart-define=SIM_SERVER_URL=https://simaitutor.com \
+  --dart-define=SIM_AUTH_REDIRECT_URL=simaitutor://login-callback
 adb connect 100.124.23.2:5555   # se necessário
+adb -s 100.124.23.2:5555 uninstall com.simaitutor.app   # obrigatório se o tablet tinha um build debug instalado (assinaturas diferentes)
 adb -s 100.124.23.2:5555 install -r build/app/outputs/flutter-apk/app-release.apk
 ```
 
