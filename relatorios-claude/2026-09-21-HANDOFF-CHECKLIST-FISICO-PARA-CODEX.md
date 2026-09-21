@@ -19,6 +19,8 @@
 
 **ATUALIZAÇÃO 6 (Codex, mesma sessão) — Revisão retestada fisicamente sem robô entre questões**: com o APK do commit `356fa93` instalado, reabri a Sala de Revisão pela produção real e testei o fluxo completo. O robô/preparação apareceu apenas na entrada da sala, antes de `Start review`. Depois disso, Q1 renderizou direto; Q1 → Continue → Q2 ficou em `Review 2/5` em 1s, sem tela de preparação intermediária; Q2 → Continue → Q3 ficou em `Review 3/5` em 1s, também sem robô/preparação. Continuei Q3→Q4→Q5 sem robô entre questões, a sala chegou em `Review completed / Your progress has been saved`, e `Continue lesson` retornou à aula principal no Item 2/E1. Status: `OK_PRODUCTION` para Revisão textual de 5 questões, conclusão e retorno à aula.
 
+**ATUALIZAÇÃO 7 (Codex, mesma sessão) — Menu/Drawer/Rename retestados fisicamente**: com o mesmo APK `356fa93`, abri o Menu/Drawer em produção real. A aula ativa apareceu com progresso `0/20 · Item 2/20 · experience 1/2`. Abri `More options`, selecionei `Rename lesson`, substituí o título por `basic_fractions_QA`, salvei, e o drawer passou a listar `Open lesson basic_fractions_QA` com o novo nome e o mesmo progresso. Toquei no card renomeado e o app retornou à aula principal no Item 2/E1. Status: `OK_PRODUCTION` para Menu, Drawer, Rename e reabertura da aula pelo card renomeado.
+
 ## A. ARQUITETURA / AMBIENTE
 
 - **App (Flutter, "BOM")**: `/root/BOM`, repo `https://github.com/aulasonline18-blip/BOM.git`, branch `main`.
