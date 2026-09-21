@@ -163,7 +163,7 @@ Relato do usuário: "Estou tentando anexar um arquivo TXT e gerar uma aula anexa
 | DOC/DOCX | RETEST_REQUIRED | — | — | idem |
 | Imagens | RETEST_REQUIRED | — | — | idem |
 | Imagem/segundo professor | NOT_STARTED | — | — | não coberto nesta rodada |
-| Scroll | RETEST_REQUIRED | — | — | fixes de sessões anteriores, não retestado contra produção nesta rodada |
+| Scroll | OK_PRODUCTION (básico) | 1e7b20b | 5f7e0cf | reteste físico no Samsung em aula ativa: 4 swipes para baixo + 4 para cima mantiveram conteúdo textual/visual reconstruído, sem tela branca ou vazio persistente; não cobre ainda timeline extremamente longa |
 | Nivelamento | RETEST_REQUIRED | — | — | auditado em sessão anterior, não retestado fisicamente contra produção agora |
 | Placement | NOT_STARTED | — | — | task #121 nunca iniciada fisicamente |
 | CG1 (currículo grande) | NOT_STARTED | — | — | task #120/#87 nunca iniciada fisicamente |
@@ -175,7 +175,7 @@ Relato do usuário: "Estou tentando anexar um arquivo TXT e gerar uma aula anexa
 | Finalização com pending | NOT_STARTED | — | — | task #124 |
 | Menu | OK_PRODUCTION | f85bcfa | 5f7e0cf | drawer abre, lista de aulas carrega, Dark theme/New lesson/Credits/Sign out/Delete account/Export/Import backup todos visíveis e clicáveis |
 | Drawer (lista de aulas) | OK_PRODUCTION | f85bcfa | 5f7e0cf | 4 aulas da conta QA listadas corretamente, incluindo uma de currículo grande (60 itens) útil para CG-1 |
-| Rename | **FAIL** | f85bcfa | 5f7e0cf | reproduzido 2x em 2 aulas diferentes: nome NUNCA muda ao reabrir o diálogo; ver seção H (nova) para causa raiz parcial |
+| Rename | OK_PRODUCTION | 356fa93 | 5f7e0cf | retestado fisicamente: `Rename lesson` salvou `basic_fractions_QA`, drawer listou o novo nome e reabriu a aula; ver Atualização 7 |
 | Restart/Resume | OK_PRODUCTION (básico) | f85bcfa | 5f7e0cf | force-stop + reabrir: sessão/créditos intactos, dashboard correto. Não testado: restart no MEIO de uma aula ativa |
 | Offline/Reconnect | OK_PRODUCTION (básico) | f85bcfa | 5f7e0cf | airplane mode on/off: sem crash, sessão/créditos intactos ao reconectar. Não testado: interromper uma chamada de rede ativa (ex.: durante geração de aula) |
 | Account isolation | NOT_STARTED | — | — | task #127 |
