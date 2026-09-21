@@ -328,6 +328,16 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      · ... 1/2`, progresso `15%`, com explicação, visual, pergunta e alternativa
      visíveis. Status: `OK_PRODUCTION` para restart/resume básico no APK
      `3c3c83c` nesse ponto da aula.
+0.1.H. **Menu/Drawer no APK `3c3c83c`:** abri o menu lateral, confirmei
+     controles (`New lesson`, `Credits`, `Privacy`, `Terms`, backup) e o card
+     `basic_fractions_QA` com `Item 4/20 · ... 1/2`. O primeiro toque manual
+     caiu em `Terms` e abriu navegador/404; o app recuperou sem perda após
+     reabertura. Com bounds do card confirmados (`[68,1466][1132,1700]`), tocar
+     `basic_fractions_QA` retornou para a aula em `Item 4 / 20 · ... 1/2`,
+     progresso `15%`, com conteúdo preservado. Status: `OK_PRODUCTION` para
+     abrir aula pelo Drawer nesse cenário; observação de UX: cards baixos ficam
+     próximos dos links legais e devem continuar recebendo atenção em testes
+     manuais.
 0.2. **Revisão: robô entre questões tratado no APP e certificado fisicamente
      em produção.** O comportamento observado pelo usuário era: entrar na
      Revisão, responder Q1, tocar Continue e ver novamente o robô/tela de
