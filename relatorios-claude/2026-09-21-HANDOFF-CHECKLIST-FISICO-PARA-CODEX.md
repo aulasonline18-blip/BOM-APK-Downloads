@@ -15,6 +15,8 @@
 
 **Nota**: instalar um APK de release por cima de uma instalação de debug (ou vice-versa) falha com `INSTALL_FAILED_UPDATE_INCOMPATIBLE` — rode `adb uninstall com.simaitutor.app` antes de trocar entre os dois tipos de build.
 
+**ATUALIZAÇÃO 5 (Codex, mesma sessão) — Dúvida silenciosa corrigida e retestada fisicamente**: durante o acabamento físico da sala de Dúvida, foi encontrado um bug em que o aluno enviava a pergunta, a mensagem local ficava na conversa, mas a timeline não reconstruía para mostrar `processando`, resposta ou erro. **Causa raiz**: `LabSession.setDoubt()` e `resetDoubt()` alteravam `lessonUiState.doubt` sem notificar listeners; a UI podia permanecer no feedback antigo e ocultar o estado terminal da Dúvida. **Fix aplicado e pushado**: app commit `356fa93` (`fix(classroom): notify doubt state changes`). Provas automatizadas: `flutter analyze --no-pub` PASS; `flutter test` PASS **1494/1494**; `./tool/check-sim-reform` OVERALL PASS. APK release de produção gerado e instalado, SHA-256 `6f4eb3806051393b4d7e69b11ee5f26bb85b48e5e2a3b95206ae4206effd7c75`. **Reteste físico em produção real**: no Item 2/E1, após resposta+sinal, abriu Dúvida, enviou `Why_B_correct`, e a resposta auxiliar apareceu na timeline explicando por que a alternativa B estava correta. Status da Dúvida: `OK_PRODUCTION` para envio textual e renderização de resposta. Observação separada para o corredor de scroll: durante a navegação por ADB, algumas rolagens deixaram a viewport em uma faixa vazia temporária; o conteúdo reapareceu ao rolar no sentido oposto. Não bloqueou a Dúvida, mas deve ser observado no item Scroll.
+
 ## A. ARQUITETURA / AMBIENTE
 
 - **App (Flutter, "BOM")**: `/root/BOM`, repo `https://github.com/aulasonline18-blip/BOM.git`, branch `main`.
@@ -28,7 +30,7 @@
 
 | | SHA | branch | status |
 |---|---|---|---|
-| **BOM (app) main** | `9bf2eea` | main | pushado, `git status` limpo |
+| **BOM (app) main** | `356fa93` | main | pushado, `git status` limpo |
 | **Servidor-BOM main** | `1f3172b` | main | pushado, `git status` limpo |
 | **Servidor de produção real (droplet)** | `5f7e0cf` | — | rodando, `bom-api.service` active, `/opt/sim/current` → `releases/5f7e0cf...`, health 200 |
 
