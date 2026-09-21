@@ -87,9 +87,43 @@ Logs sanitizados após o deploy:
 - segunda chamada teve `duplicateSuppressed: true`;
 - nenhum novo `CREDIT_OPERATION_REQUIRES_RECONCILIATION` apareceu no recorte pós-deploy.
 
+## Prova física no Samsung SM-X216B
+
+APK instalado:
+
+- package `com.simaitutor.app`
+- versionCode `110`
+- dispositivo `SM-X216B`
+
+Estado inicial observado no tablet:
+
+- tela da aula mostrava `Failed to generate content`;
+- botão visível: `Try again`;
+- esse era o estado deixado pelo bloqueio anterior de reidratação.
+
+Ação física:
+
+- tocar `Try again` no app instalado;
+- aguardar a resposta de produção.
+
+Resultado físico:
+
+- a tela saiu do erro;
+- o item `2 / 20` voltou a aparecer;
+- conteúdo pedagógico, visual board e alternativas ficaram visíveis;
+- não apareceu novo HTTP 409 no app.
+
+Logs de produção da ação física:
+
+- `POST /api/complete-lesson` — HTTP 200;
+- `AI_FINANCIAL_OPERATION` com `duplicateSuppressed: true`;
+- `POST /api/student-state/persist` — HTTP 200;
+- chamadas de `visual-route` — HTTP 200;
+- nenhum `CREDIT_OPERATION_REQUIRES_RECONCILIATION` no recorte da ação física.
+
 ## Veredito
 
-`RWR-001 CLEAN-INSTALL REHYDRATION BLOCKER RESOLVED FOR THE REPRODUCED PRODUCTION CASE`
+`RWR-001 CLEAN-INSTALL REHYDRATION BLOCKER RESOLVED FOR THE REPRODUCED PRODUCTION CASE AND PHYSICALLY RETESTED ON SM-X216B`
 
 Limites:
 

@@ -201,7 +201,11 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
    `cyber-15cy53v`/`M0002`, que antes devolvia HTTP 409
    `CREDIT_OPERATION_REQUIRES_RECONCILIATION`, passou a devolver HTTP 200 com
    `SIM109_ITEM_PACKAGE_V1`; segunda chamada igual também HTTP 200 e log
-   sanitizado com `duplicateSuppressed: true`. Relatório:
+   sanitizado com `duplicateSuppressed: true`. Prova física no Samsung
+   `SM-X216B`: o app v110 saiu da tela `Failed to generate content` após
+   `Try again` e voltou a mostrar o item 2/20 com conteúdo, visual e
+   alternativas; logs do servidor mostraram `complete-lesson` HTTP 200,
+   persistência HTTP 200 e nenhuma reincidência do 409. Relatório:
    `2026-09-21-rwr001-clean-install-rehydration-fix.md`.
 1. **Rename #125: OK_PRODUCTION.** Corrigido e comprovado após reinstalação.
    Commit BOM `792e3ec`. Não repetir. Relatório:
