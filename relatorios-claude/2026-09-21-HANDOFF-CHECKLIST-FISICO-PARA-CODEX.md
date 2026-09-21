@@ -156,7 +156,7 @@ Relato do usuário: "Estou tentando anexar um arquivo TXT e gerar uma aula anexa
 | Placement | NOT_STARTED | — | — | task #121 nunca iniciada fisicamente |
 | CG1 (currículo grande) | NOT_STARTED | — | — | task #120/#87 nunca iniciada fisicamente |
 | **Amparo** | **IN_PROGRESS** | 9bf2eea | 5f7e0cf | 2 freezes corrigidos; 3º stall ("Preparando próximo passo" travado) achado e ainda não corrigido — ver seção D |
-| Dúvida | NOT_STARTED | — | — | task #123, nunca retestada fisicamente contra produção |
+| Dúvida | OK_PRODUCTION | dad50bf | 42d541d | produção real com `aulasonline18`: botão `I need help with this question` abriu formulário, pergunta enviada, resposta pedagógica renderizada na timeline e aula permaneceu navegável |
 | Revisão | OK_PRODUCTION | dad50bf | 42d541d | robô/tela de preparação aparece só na entrada; Q1->Q2->Q3 contínuo em produção com `aulasonline18`, ver Atualização Codex 0.2 |
 | Recuperação | NOT_STARTED | — | — | idem |
 | Finalização sem pending | NOT_STARTED | — | — | task #124 |
