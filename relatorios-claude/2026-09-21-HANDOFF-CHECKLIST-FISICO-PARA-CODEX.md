@@ -193,6 +193,11 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
 
 ### ATUALIZACAO CODEX (mais recente)
 
+0.A. **Adendo de missão incorporado:** este trabalho deve ser tratado como
+     acabamento funcional final do SIM, não como auditoria passiva. Para cada
+     corredor: testar, corrigir causa raiz, validar, commitar/pushar, retestar
+     em produção e avançar. Relatório normativo operacional:
+     `2026-09-21-adendo-missao-acabamento-funcional-final.md`.
 0. **RWR-001 reidratação em instalação limpa: bloqueio reproduzido foi resolvido
    em produção.** Servidor corrigido no commit `42d541d`
    (`fix(cost): recover captured T02 material on clean reinstall`), implantado
