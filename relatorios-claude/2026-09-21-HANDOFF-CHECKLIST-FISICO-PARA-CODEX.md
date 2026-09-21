@@ -399,6 +399,14 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      `Continue` levou a `Review 3/5`, também sem robô/tela intermediária.
      Status: `OK_PRODUCTION` preservado para o bug original da Revisão no APK
      atual `28eda61`.
+0.6. **Apoio inline pós-erro forte em E1 no APK `28eda61`: OK_PRODUCTION.**
+     De volta à aula principal no Item 5/E1, escolhi resposta incorreta
+     (`A. A whole`) e sinal forte (`It was a guess`). O app mostrou apoio
+     inline `No problem. Let us resume step by step.`, manteve `I need help
+     with this question` disponível e exibiu `Continue to experience 2`. Ao
+     tocar, abriu `Item 5 / 20 · ... experience prefix 2/2` com pergunta nova
+     sobre pizza/4 amigos. Status: `OK_PRODUCTION` para erro forte E1 ->
+     apoio inline -> E2 nesse cenário.
 1. **Rename #125: OK_PRODUCTION.** Corrigido e comprovado após reinstalação.
    Commit BOM `792e3ec`. Não repetir. Relatório:
    `2026-09-21-codex-checkpoint-rename-utf16-amparo.md`.
