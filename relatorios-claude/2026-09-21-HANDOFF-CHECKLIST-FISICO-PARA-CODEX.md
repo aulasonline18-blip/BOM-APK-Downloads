@@ -257,6 +257,19 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      visual stale na E2 atual. Observação: os logs de prefetch N+1/visual N+1
      continuam sendo assunto do Corte C/checklist econômico; este item fecha a
      regressão física de UI na E2 do item atual.
+0.1.C. **E2 -> próximo item e restart/resume no APK `b435139`:**
+     usando o mesmo APK SHA-256
+     `874b65202a7561d935fae987860381cb7c8f2ab4948b785c47e078600134c3a1`
+     instalado no Samsung, respondi a E2 do item 1 com alternativa errada e
+     sinal forte. O app mostrou feedback e botão `Continue to next item`, sem
+     erro visual. Ao tocar `Continue to next item`, avançou para `Item 2 / 20 ·
+     ... 1/2`, progresso `5%`, visual de E1 presente e pergunta visível. Em
+     seguida fiz `force-stop` + reabertura: o app retomou no mesmo item 2/E1,
+     com progresso `5%`, visual presente e sem perda de estado. Status:
+     `OK_PRODUCTION` para avanço E2->próximo item sem pending nesse cenário e
+     para restart/resume básico neste ponto. Observação: esse cenário não abriu
+     a sala de Recuperação; portanto Recuperação continua pendente de teste
+     específico.
 0.2. **Revisão: robô entre questões tratado no APP e certificado fisicamente
      em produção.** O comportamento observado pelo usuário era: entrar na
      Revisão, responder Q1, tocar Continue e ver novamente o robô/tela de
