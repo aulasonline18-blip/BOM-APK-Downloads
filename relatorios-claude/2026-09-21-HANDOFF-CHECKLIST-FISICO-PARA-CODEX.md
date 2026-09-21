@@ -164,8 +164,8 @@ Relato do usuário: "Estou tentando anexar um arquivo TXT e gerar uma aula anexa
 | Menu | OK_PRODUCTION | f85bcfa | 5f7e0cf | drawer abre, lista de aulas carrega, Dark theme/New lesson/Credits/Sign out/Delete account/Export/Import backup todos visíveis e clicáveis |
 | Drawer (lista de aulas) | OK_PRODUCTION | f85bcfa | 5f7e0cf | 4 aulas da conta QA listadas corretamente, incluindo uma de currículo grande (60 itens) útil para CG-1 |
 | Rename | **FAIL** | f85bcfa | 5f7e0cf | reproduzido 2x em 2 aulas diferentes: nome NUNCA muda ao reabrir o diálogo; ver seção H (nova) para causa raiz parcial |
-| Restart/Resume | NOT_STARTED | — | — | task #126 |
-| Offline/Reconnect | NOT_STARTED | — | — | task #126 |
+| Restart/Resume | OK_PRODUCTION (básico) | f85bcfa | 5f7e0cf | force-stop + reabrir: sessão/créditos intactos, dashboard correto. Não testado: restart no MEIO de uma aula ativa |
+| Offline/Reconnect | OK_PRODUCTION (básico) | f85bcfa | 5f7e0cf | airplane mode on/off: sem crash, sessão/créditos intactos ao reconectar. Não testado: interromper uma chamada de rede ativa (ex.: durante geração de aula) |
 | Account isolation | NOT_STARTED | — | — | task #127 |
 | Microcrédito | NOT_STARTED | — | — | task #127; observar reserva/captura/release/custo/replay/idempotência quando testado |
 | Billing | NOT_STARTED | — | — | task #127 |
