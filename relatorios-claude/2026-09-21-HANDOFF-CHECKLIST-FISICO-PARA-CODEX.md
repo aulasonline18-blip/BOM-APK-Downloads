@@ -410,6 +410,11 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      e o app abriu `Item 6 / 20 · ... experience prefix 1/2`, progresso `25%`.
      Status: `OK_PRODUCTION` para erro forte E1 -> apoio inline -> E2 ->
      próximo item nesse cenário.
+0.7. **Áudio local da aula no APK `28eda61`: OK_PRODUCTION.** No Item 6/E1,
+     toquei o botão de áudio da aula. A UI mudou de `Play lesson audio` para
+     `Stop audio` e exibiu `Audio playing`, sem perder a aula, sem navegar e sem
+     abrir efeito externo pago. Ao tocar novamente, voltou para `Play lesson
+     audio`. Status: `OK_PRODUCTION` para áudio local básico nesse cenário.
 1. **Rename #125: OK_PRODUCTION.** Corrigido e comprovado após reinstalação.
    Commit BOM `792e3ec`. Não repetir. Relatório:
    `2026-09-21-codex-checkpoint-rename-utf16-amparo.md`.
