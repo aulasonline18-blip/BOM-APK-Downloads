@@ -358,6 +358,27 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      `1/5 -> 2/5 -> 3/5` sem `Preparing your review...`, sem `Start review` e
      sem tela introdutória reaparecendo entre Q1->Q2 ou Q2->Q3. Status:
      `OK_PRODUCTION` para o bug do robô entre questões da Revisão.
+0.3. **Dúvida no feedback E1 após cursor E2 preparado: corrigida e retestada
+     fisicamente.** Bug físico observado no APK `3c3c83c`: no Item 4/E1, após
+     erro+sinal forte e envio de Dúvida (`Why_is_B_wrong`), a pergunta do aluno
+     ficava na timeline sem resposta, sem erro e sem progresso visível. Causa
+     corrigida no app: `LabSessionDoubtController` agora escopa a Dúvida pelo
+     `LessonRuntimeSnapshot` visível (item/layer da tela de feedback), e não
+     pelo cursor canônico que já pode estar preparado em E2. Commit BOM
+     `28eda6143613a7d7e38f7399457d33389959849b`
+     (`fix(classroom): keep doubt scoped to visible feedback`) pushed em
+     `main`. Gates: `git diff --check` PASS, `flutter analyze --no-pub` PASS,
+     `flutter test` PASS 1.496/1.496, `./tool/check-sim-reform` OVERALL PASS.
+     APK release reconstruído e instalado no Samsung com SHA-256
+     `42c3f9c5e8a7a72789e302a9cd2dff9145901f01714d92c0d1cc0254570d6bde`.
+     Prova física em produção: no Item 4/E1, respondi incorretamente, marquei
+     sinal forte, abri `I need help with this question`, enviei
+     `Why_are_equal_fourths_requiredb` e o app recebeu resposta pedagógica real
+     sobre frações/partes iguais. Em seguida `Continue to experience 2` abriu
+     `Item 4 / 20 · ... experience prefix 2/2` sem nova pergunta muda e sem
+     travar o fluxo. Status: `OK_PRODUCTION` para Dúvida no feedback E1 com E2
+     preparado. Observação: o campo recebeu um `b` final por teclado físico
+     (`requiredb`); isso não afetou a prova funcional.
 1. **Rename #125: OK_PRODUCTION.** Corrigido e comprovado após reinstalação.
    Commit BOM `792e3ec`. Não repetir. Relatório:
    `2026-09-21-codex-checkpoint-rename-utf16-amparo.md`.
