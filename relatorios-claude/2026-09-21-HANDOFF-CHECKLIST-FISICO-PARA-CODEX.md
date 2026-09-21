@@ -146,7 +146,7 @@ Relato do usuário: "Estou tentando anexar um arquivo TXT e gerar uma aula anexa
 | Anexos (geral) | RETEST_REQUIRED | — | — | pipeline testado em sessões anteriores na VM; não retestado em produção nesta rodada |
 | TXT (UTF-8 padrão) | OK_PRODUCTION | 9bf2eea | 5f7e0cf | ponta a ponta confirmado, ver `2026-09-21-txt-ok-e-novo-freeze-critico-continuar-aula.md` |
 | TXT (encoding não-UTF-8) | RETEST_REQUIRED | — | — | `teste-utf16.txt` já no tablet, não testado ainda |
-| Transição aquecimento→aula ("Continuar para a aula") | **FAIL** | 9bf2eea | 5f7e0cf | trava permanentemente mesmo com servidor pronto — bug novo, mais amplo que os anteriores, ver seção acima |
+| Transição aquecimento→aula ("Continuar para a aula") | OK_PRODUCTION | f85bcfa | 5f7e0cf | corrigido (`WarmupBridgeCoordinator` não resetava entre aulas), causa raiz + fix + suíte (1483/1483) + confirmação física em produção — ver Atualização 3/4 acima |
 | PDF | RETEST_REQUIRED | — | — | testado em sessão anterior (VM), não em produção |
 | DOC/DOCX | RETEST_REQUIRED | — | — | idem |
 | Imagens | RETEST_REQUIRED | — | — | idem |
@@ -161,9 +161,9 @@ Relato do usuário: "Estou tentando anexar um arquivo TXT e gerar uma aula anexa
 | Recuperação | NOT_STARTED | — | — | idem |
 | Finalização sem pending | NOT_STARTED | — | — | task #124 |
 | Finalização com pending | NOT_STARTED | — | — | task #124 |
-| Menu | NOT_STARTED | — | — | task #125 |
-| Drawer | NOT_STARTED | — | — | task #125 |
-| Rename | NOT_STARTED | — | — | task #125 |
+| Menu | OK_PRODUCTION | f85bcfa | 5f7e0cf | drawer abre, lista de aulas carrega, Dark theme/New lesson/Credits/Sign out/Delete account/Export/Import backup todos visíveis e clicáveis |
+| Drawer (lista de aulas) | OK_PRODUCTION | f85bcfa | 5f7e0cf | 4 aulas da conta QA listadas corretamente, incluindo uma de currículo grande (60 itens) útil para CG-1 |
+| Rename | **FAIL** | f85bcfa | 5f7e0cf | reproduzido 2x em 2 aulas diferentes: nome NUNCA muda ao reabrir o diálogo; ver seção H (nova) para causa raiz parcial |
 | Restart/Resume | NOT_STARTED | — | — | task #126 |
 | Offline/Reconnect | NOT_STARTED | — | — | task #126 |
 | Account isolation | NOT_STARTED | — | — | task #127 |
@@ -172,18 +172,30 @@ Relato do usuário: "Estou tentando anexar um arquivo TXT e gerar uma aula anexa
 
 (Itens marcados `RETEST_REQUIRED` foram validados fisicamente em sessões anteriores contra a VM de dev, não contra produção real — não contam como prova final por decisão explícita do usuário.)
 
+## H. BUG NOVO ENCONTRADO — RENAME DE AULA NÃO PERSISTE (task #125)
+
+**Reproduzido fisicamente 2x, em 2 aulas diferentes**, contra produção real, com a conta `qa-amparo-20260921@sim-internal-test.invalid`: abrir o menu (☰) → tocar no "⋮" de qualquer aula listada → "Rename lesson" → editar o nome → "Save". Resultado: o nome **nunca muda** (reabrir o diálogo mostra sempre o nome original), e aparece um banner "Server unavailable. Try again. Try again" no topo do menu.
+
+**Diagnóstico por leitura de código (não confirmado ao vivo com `flutter run` attached ainda — próxima etapa)**:
+- O banner "Server unavailable..." é **enganoso e não vem do rename**. Ele é renderizado por `session.drawerLessonListError != null` (`lib/shared/widgets/shared_widgets.dart:~289`), cujo texto (`'${t('aula_server_unavailable')} ${t('retry')}'`) explica a duplicação "Try again. Try again". Esse erro é setado em `lib/features/session/lab_session_drawer_controller.dart:258` (`lessonListError = 'remote_lessons_unavailable'`) quando `listCloudLessons()` falha ao chamar `/api/student-state/summaries` — um refresh de LISTA, não do rename. Não vi essa chamada nos logs do droplet nos exatos momentos das minhas tentativas, o que sugere que a exceção acontece client-side antes mesmo de sair a requisição (ou é uma falha de rede intermitente/timeout não capturada no log do servidor).
+- O `onRename` em `shared_widgets.dart:421-427` **descarta o resultado de `session.renameDrawerCloudLesson(...)` sem nenhum feedback de sucesso/erro** — diferente do `onOpen`, que mostra um SnackBar em caso de falha. Ou seja, mesmo que o rename falhe silenciosamente por outro motivo (ex.: mismatch de `expectedRevision` no `RenameLessonCommand`, rejeitado por `dispatchWorkflowCommand` em `lesson_workflow_coordinator.dart:892`), o usuário nunca saberia — o banner que ele vê é de uma falha completamente não relacionada.
+- **Hipótese mais provável para a falha real do rename** (não confirmada): em `lab_session_drawer_controller.dart:renameCloudLesson`, `expectedRevision = local?.stateRevision` — se a aula não estava em cache local no momento do rename (bem provável para aulas antigas listadas só via summaries remotas), `local` é `null`, `cleanLessonId = lessonLocalId.trim()` (usa o id passado, sem hidratar primeiro), e o comando é despachado com `expectedRevision: event.expectedStateRevision ?? state.stateRevision` dentro do coordinator — mas `state` ali vem de `_readOrHydrateLifecycleLesson`, que SIM hidrata do servidor se necessário. Então o mismatch, se houver, estaria entre o `expectedRevision` que o DRAWER controller mandou (baseado em cache local possivelmente ausente/desatualizado) vs. a revisão real que o COORDINATOR acabou de hidratar do servidor.
+
+**Não corrigido nesta rodada** — precisa de `flutter run -d 100.124.23.2:5555 --dart-define=FLUTTER_APP_MODE=production --dart-define=SIM_SERVER_URL=https://simaitutor.com` attached, instrumentando `renameCloudLesson` (drawer controller) e `renameLesson` (coordinator) com `debugPrint` do `expectedRevision` recebido vs. `state.stateRevision` real, e verificando `result.applied`/`result.reason` do `dispatchWorkflowCommand`, para confirmar a causa exata antes de corrigir. Separadamente, **o feedback de erro do rename deveria ser adicionado** (hoje é 100% silencioso) e o banner de "lista indisponível" não deveria aparecer disparado por uma ação não relacionada (ou pelo menos precisa investigar por que `listCloudLessons()` está falhando logo depois de um rename).
+
 ## G. SEGREDOS
 
 Nada de segredo real neste documento ou em nenhum relatório desta sessão — a única credencial presente é a senha de uma conta de QA sintética criada de propósito para teste (`qa-amparo-20260921@sim-internal-test.invalid`), que não dá acesso a nada além de si mesma e pode ser revogada a qualquer momento sem impacto.
 
 ## CONTINUE DAQUI
 
-1. `cd /root/BOM-APK-Downloads && git pull` — confira se já existe relatório mais novo que `087919b` (pode já ter avançado depois deste handoff).
-2. **PRIORIDADE MÁXIMA — bug mais amplo já encontrado**: o botão "Continuar para a aula" (transição aquecimento→aula em QUALQUER aula nova) trava permanentemente mesmo com o servidor já pronto — ver `2026-09-21-txt-ok-e-novo-freeze-critico-continuar-aula.md` (commit `087919b`), seção 2. Bloqueia a entrada em aulas novas, o que por sua vez bloqueia testar quase tudo mais nesta lista. Investigue com `flutter run -d 100.124.23.2:5555 --dart-define=FLUTTER_APP_MODE=production --dart-define=SIM_SERVER_URL=https://simaitutor.com` attached antes de qualquer outra coisa.
+**Já resolvidos e confirmados fisicamente em produção, não repetir**: hydrate race (Amparo), gate `nextAdvanceReady` (freeze pós-item-3), `WarmupBridgeCoordinator` não resetado (freeze aquecimento→aula), TXT UTF-8 padrão, Menu/Drawer básico.
+
+1. `cd /root/BOM-APK-Downloads && git pull` e `cd /root/BOM && git pull` — confira se há commits mais novos que `f85bcfa`/`da63e22` (pode já ter avançado depois deste handoff).
+2. **Rename de aula (task #125, seção H acima)**: instrumente `renameCloudLesson` (`lib/features/session/lab_session_drawer_controller.dart:354`) e `renameLesson` (`lib/sim/workflow/lesson_workflow_coordinator.dart:863`) com `debugPrint` do `expectedRevision` vs. `state.stateRevision` e do `result.applied`/`result.reason`, via `flutter run -d 100.124.23.2:5555 --dart-define=FLUTTER_APP_MODE=production --dart-define=SIM_SERVER_URL=https://simaitutor.com`. Reproduza com a conta `qa-amparo-20260921@sim-internal-test.invalid`/`QaAmparo!20260921xZ`, menu → "⋮" em qualquer aula → Rename. Corrija a causa raiz confirmada e adicione feedback de erro visível ao usuário (hoje é 100% silencioso).
 3. Teste `teste-utf16.txt` (já em `/sdcard/Download/` no tablet) para fechar a investigação do anexo TXT (variante UTF-8 padrão já confirmada `OK_PRODUCTION`).
-4. Leia `2026-09-21-amparo-stall-trace-estatico-candidatos.md` (commit `46ed8e0`) — já tem os 4 pontos exatos de código (com linha) para instrumentar com `debugPrint` antes de reproduzir o terceiro stall do Amparo.
-5. Instrumente esses 4 pontos, rode `flutter run` attached, logue com `qa-amparo-20260921@sim-internal-test.invalid` / `QaAmparo!20260921xZ` (onboarding já feito, deve cair direto na aula — OU use a aula antiga já em andamento no tablet, "Fracoes para o 6 ano do ensino fundamental", item 2/60, se a conta de QA cair numa aula nova travada pelo bug do item 2), erre 4 vezes seguidas com "Tenho certeza", e compare o `(itemIdx, marker, layer)` que `_visualSettledForSlot` está esperando com o que o `/api/visual-route` realmente devolveu.
-6. Corrija a causa raiz confirmada (remova os `debugPrint`s de diagnóstico depois). Teste automatizado de regressão, suíte completa, rebuild, reteste físico em produção com a mesma conta, completando o ciclo até o 5º erro e a sala de Amparo abrindo.
-7. Depois do Amparo fechado: passe para Dúvida/Revisão/Recuperação (task #123) contra produção real, mesmo rigor (causa raiz real para qualquer bug, sem gambiarra, teste automatizado, commit/push, reteste físico em produção antes de marcar OK).
-8. Depois: Finalização (#124), Menu/Drawer/Rename (#125 — o menu já foi visto abrindo corretamente, com lista de aulas e opção "⋮" de renomear, mas o fluxo de rename não foi testado até o fim), Restart/Offline (#126), Account isolation/Microcrédito/Billing (#127), Placement (#121), CG-1 (#120).
-9. A cada fix ou avanço: commit + push imediato (app e/ou servidor). Se precisar de deploy no droplet real, seguir o padrão já estabelecido (release em `/opt/sim/releases/<sha>`, symlink `current`, rollback note automática, health check antes de considerar concluído).
+4. Leia `2026-09-21-amparo-stall-trace-estatico-candidatos.md` (commit `46ed8e0`) — já tem os 4 pontos exatos de código (com linha) para instrumentar com `debugPrint` antes de reproduzir o terceiro stall do Amparo (item 122, ainda em aberto).
+5. Instrumente esses 4 pontos, rode `flutter run` attached, logue com a mesma conta QA, erre 4 vezes seguidas com "Tenho certeza", e compare o `(itemIdx, marker, layer)` que `_visualSettledForSlot` está esperando com o que o `/api/visual-route` realmente devolveu.
+6. Corrija a causa raiz confirmada. Teste automatizado de regressão, suíte completa, rebuild, reteste físico em produção com a mesma conta, completando o ciclo até o 5º erro e a sala de Amparo abrindo.
+7. Depois: Dúvida/Revisão/Recuperação (task #123), Finalização (#124), Restart/Offline (#126), Account isolation/Microcrédito/Billing (#127), Placement (#121), CG-1 (#120 — já há uma aula de 60 itens pronta na conta QA, "Fracoes para o 6 ano do ensino fundamental", item 2/60, útil para essa validação).
+8. A cada fix ou avanço: commit + push imediato (app e/ou servidor). Se precisar de deploy no droplet real, seguir o padrão já estabelecido (release em `/opt/sim/releases/<sha>`, symlink `current`, rollback note automática, health check antes de considerar concluído).
