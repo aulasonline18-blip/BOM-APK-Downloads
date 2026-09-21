@@ -23,6 +23,8 @@
 
 **ATUALIZAÇÃO 8 (Codex, mesma sessão) — Restart/Resume retestado fisicamente**: após a Dúvida, Revisão completa e Rename, executei `am force-stop` e reabri o APK de produção. O app retomou diretamente a aula no Item 2/E1, com progresso `5%`, estado da conversa preservado e a mensagem histórica de Dúvida (`Why_B_correct`) visível. Status: `OK_PRODUCTION` para restart/resume básico da aula ativa neste estado.
 
+**ATUALIZAÇÃO 9 (Codex, mesma sessão) — Dúvida reordenada e vazamento para E2/próximo item corrigido**: durante o reteste físico da Dúvida no tablet, o usuário observou que o fluxo ficava causalmente confuso: a pergunta/resposta da Dúvida podia aparecer fora do ponto correto da timeline, e depois uma pergunta de Dúvida podia vazar para a experiência seguinte. Foram aplicados e pushados os commits app `c1130a0` (`fix(classroom): keep active doubt flow before actions`) e `efc84d6` (`fix(classroom): drop stale doubt question after advance`). O primeiro transforma o bloco ativo da Dúvida em sequência contínua antes dos botões: feedback → pergunta do aluno → processamento/resposta → ações. O segundo remove pergunta de Dúvida quando não há mais bloco ativo de Dúvida nem ação de feedback, impedindo vazamento para E2/próximo item. Provas automatizadas: `flutter analyze --no-pub` PASS; `flutter test` completo PASS **1500/1500** antes do segundo micro-ajuste; foco final `classroom_main_screen_health_test.dart` PASS **11/11**; suíte focada `classroom_main_screen_health_test.dart` + `doubt_room_contract_test.dart` + `chat_aula_timeline_builder_test.dart` PASS **66/66**; `./tool/check-sim-reform` OVERALL PASS. APK release produção instalado no Samsung, SHA-256 `326343e10d7a033c631a03981a08d899994729a3f606f256d22b42b46fcd214f`. Reteste físico em produção real: Item 9/E1 enviou `whythisanswer`; apareceu abaixo do feedback, depois resposta longa da Dúvida, depois botões; ao avançar para E2, `whythisanswer` não vazou. Em E2, enviou `e2doubt`; apareceu abaixo do feedback, depois resposta longa, depois `Continue to next item`; ao avançar para Item 10, `e2doubt` não vazou. Status: `Dúvida = OK_PRODUCTION` para envio textual, posição na timeline, resposta, retomada E1→E2, retomada E2→próximo item e limpeza de stale.
+
 ## A. ARQUITETURA / AMBIENTE
 
 - **App (Flutter, "BOM")**: `/root/BOM`, repo `https://github.com/aulasonline18-blip/BOM.git`, branch `main`.
@@ -36,7 +38,7 @@
 
 | | SHA | branch | status |
 |---|---|---|---|
-| **BOM (app) main** | `356fa93` | main | pushado, `git status` limpo |
+| **BOM (app) main** | `efc84d6` | main | pushado; último APK release instalado no tablet, SHA-256 `326343e10d7a033c631a03981a08d899994729a3f606f256d22b42b46fcd214f` |
 | **Servidor-BOM main** | `1f3172b` | main | pushado, `git status` limpo |
 | **Servidor de produção real (droplet)** | `5f7e0cf` | — | rodando, `bom-api.service` active, `/opt/sim/current` → `releases/5f7e0cf...`, health 200 |
 
@@ -164,7 +166,7 @@ Relato do usuário: "Estou tentando anexar um arquivo TXT e gerar uma aula anexa
 | Placement | NOT_STARTED | — | — | task #121 nunca iniciada fisicamente |
 | CG1 (currículo grande) | NOT_STARTED | — | — | task #120/#87 nunca iniciada fisicamente |
 | **Amparo** | **IN_PROGRESS** | 9bf2eea | 5f7e0cf | 2 freezes corrigidos; 3º stall ("Preparando próximo passo" travado) achado e ainda não corrigido — ver seção D |
-| Dúvida | OK_PRODUCTION | dad50bf | 42d541d | produção real com `aulasonline18`: botão `I need help with this question` abriu formulário, pergunta enviada, resposta pedagógica renderizada na timeline e aula permaneceu navegável |
+| Dúvida | OK_PRODUCTION | efc84d6 | 5f7e0cf | produção real no Samsung: pergunta da Dúvida fica abaixo do feedback, resposta renderiza antes dos botões, Continue retoma E1→E2/E2→próximo item, e perguntas `whythisanswer`/`e2doubt` não vazam para a experiência/item seguinte; APK SHA `326343e10d7a033c631a03981a08d899994729a3f606f256d22b42b46fcd214f` |
 | Revisão | OK_PRODUCTION | dad50bf | 42d541d | robô/tela de preparação aparece só na entrada; Q1->Q2->Q3 contínuo em produção com `aulasonline18`, ver Atualização Codex 0.2 |
 | Recuperação | NOT_STARTED | — | — | idem |
 | Finalização sem pending | NOT_STARTED | — | — | task #124 |
