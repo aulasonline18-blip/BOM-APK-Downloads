@@ -298,6 +298,21 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      A/B/C); a tela vazia com apenas o topo não foi reproduzida. Status:
      `OK_PRODUCTION` para o corredor de scroll manual da aula principal neste
      cenário.
+0.1.E. **Rótulo de avanço E1 -> E2 corrigido e certificado fisicamente.**
+     Durante o teste corretivo do item 2/E1, o botão pós-feedback avançava
+     corretamente para E2, mas dizia `Continue to next item`, rótulo enganoso
+     porque E1 ainda não conclui o item. Commit BOM `3c3c83c`
+     (`fix(classroom): label E1 advance as next experience`) pushed em `main`.
+     Gates: `git diff --check` PASS, `flutter analyze --no-pub` PASS,
+     `flutter test` PASS 1.495/1.495, `./tool/check-sim-reform` OVERALL PASS.
+     APK release reconstruído contra `https://simaitutor.com`, instalado no
+     Samsung `SM-X216B`, SHA-256
+     `d040c0257c0d9fc53fbf2a165786f9a109e8b5c64f8814b92ebec974db00868d`.
+     Prova física em produção: no Item 3/E1, respondi errado, escolhi sinal
+     forte e o pós-feedback mostrou `Continue to experience 2` junto de `I need
+     help with this question`, sem `Continue to next item`. Ao tocar, abriu
+     `Item 3 / 20 · ... 2/2`. Status: `OK_PRODUCTION` para o rótulo e avanço
+     E1 -> E2 nesse corredor.
 0.2. **Revisão: robô entre questões tratado no APP e certificado fisicamente
      em produção.** O comportamento observado pelo usuário era: entrar na
      Revisão, responder Q1, tocar Continue e ver novamente o robô/tela de
