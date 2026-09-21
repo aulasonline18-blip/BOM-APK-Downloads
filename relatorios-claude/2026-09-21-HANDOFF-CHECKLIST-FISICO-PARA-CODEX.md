@@ -191,6 +191,27 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
 
 ## CONTINUE DAQUI
 
+### ATUALIZACAO CODEX (mais recente)
+
+1. **Rename #125: OK_PRODUCTION.** Corrigido e comprovado após reinstalação.
+   Commit BOM `792e3ec`. Não repetir. Relatório:
+   `2026-09-21-codex-checkpoint-rename-utf16-amparo.md`.
+2. **TXT UTF-16: ingestão OK_PRODUCTION.** O arquivo foi aceito como conteúdo
+   utilizável e chegou ao onboarding/warmup. A falha T00 posterior é distinta
+   (`T00_CURRICULUM_MISSING`) e foi honesta, sem repetição paga.
+3. **Terceiro stall visual do Amparo: causa corrigida no app.** O artefato real
+   já existia, mas o callback não promovia `imageStatus` para `ready`. Commit
+   BOM `0d422ad`, testes focados verdes e APK release reconstruído.
+4. **Reteste do quinto agravante ainda bloqueado por produção:** instalação
+   limpa pede material durável e o servidor devolve HTTP 409
+   `CREDIT_OPERATION_REQUIRES_RECONCILIATION`. Esse bloqueio pertence à saga
+   econômica RWR-001 em andamento. Não criar bypass no app.
+5. **Próxima ação causal:** concluir/deployar a reconciliação RWR-001; depois
+   retestar no APK `SIM-v110-0d422ad-production.apk` o ciclo até o quinto erro,
+   Amparo, Dúvida/Revisão/Recuperação, Finalização, Placement e CG-1.
+6. Itens independentes do material remoto podem continuar enquanto RWR-001
+   avança. Não marcar os fluxos acima como OK apenas por teste automatizado.
+
 **Já resolvidos e confirmados fisicamente em produção, não repetir**: hydrate race (Amparo), gate `nextAdvanceReady` (freeze pós-item-3), `WarmupBridgeCoordinator` não resetado (freeze aquecimento→aula), TXT UTF-8 padrão, Menu/Drawer básico.
 
 1. `cd /root/BOM-APK-Downloads && git pull` e `cd /root/BOM && git pull` — confira se há commits mais novos que `f85bcfa`/`da63e22` (pode já ter avançado depois deste handoff).

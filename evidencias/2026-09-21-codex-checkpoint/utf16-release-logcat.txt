@@ -1,0 +1,1102 @@
+--------- beginning of main
+09-21 21:26:18.615  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:18.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858064338678, event=0.000000
+09-21 21:26:18.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858065778730, event=0.000000
+09-21 21:26:18.696  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:18.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858164357532, event=0.000000
+09-21 21:26:18.727  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858165770137, event=0.000000
+09-21 21:26:18.783  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:18.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858264341960, event=0.000000
+09-21 21:26:18.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858265711126, event=0.000000
+09-21 21:26:18.864  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:18.915 10274 10274 I adbd    : adbd service requested 'shell,v2,TERM=dumb,raw:input tap 600 1580'
+09-21 21:26:18.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858364358210, event=0.000000
+09-21 21:26:18.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858365705814, event=0.000000
+09-21 21:26:18.949  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:19.006  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:19.008  2595  2661 D InputDispatcher: Inject motion (20282/2000): action=0x0, time=775703049000000, f=0x0, d=0 dsdx=1.000000 dtdx=0.000000
+09-21 21:26:19.008  2595  2951 I InputDispatcher: Delivering touch to (26579): action: 0x4, f=0x0, d=0, '5f350a4', t=1 
+09-21 21:26:19.009  2595  2951 I InputDispatcher: Delivering touch to (10772): action: 0x0, f=0x0, d=0, '9999bc1', t=1 
+--------- beginning of system
+09-21 21:26:19.009  2595  2951 D PowerManagerService: [api] userActivityFromNative : touch displayId=0 eventTime=775703049
+09-21 21:26:19.009  2595  2690 I GestureDetector: obtain mCurrentDownEvent. id: -83916294 caller: com.android.server.wm.SystemGesturesPointerEventListener.onPointerEvent:17 com.android.server.wm.PointerEventDispatcher.onInputEvent:51 android.view.InputEventReceiver.dispatchInputEvent:392 
+09-21 21:26:19.009  2595  2690 I GestureDetector: obtain mCurrentDownEvent. id: -83916294 caller: com.android.server.wm.SystemPerformancePointerEventListener.onPointerEvent:13 com.android.server.wm.PointerEventDispatcher.onInputEvent:51 android.view.InputEventReceiver.dispatchInputEvent:392 
+09-21 21:26:19.009 10772 10772 I VRI[MainActivity]@d56ce50: ViewPostIme pointer 0
+09-21 21:26:19.009  2595  2951 D PowerManagerService: UserActivityStateListenerState: 1
+09-21 21:26:19.010  1671  2257 D DisplayModeController: setDesiredMode 4630946944264142721 {mode={fps=90.00 Hz, modePtr={id=0, vsyncRate=90.00 Hz, peakRefreshRate=90.00 Hz}}, emitEvent=true, force=false}
+09-21 21:26:19.010 10772 10772 I VRI[MainActivity]@d56ce50: call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[MainActivity]@d56ce50
+09-21 21:26:19.011  2595  2661 D InputDispatcher: Inject motion (20282/2000): action=0x1, time=775703049000000, f=0x0, d=0 dsdx=1.000000 dtdx=0.000000
+09-21 21:26:19.012  2595  2951 I InputDispatcher: Delivering touch to (10772): action: 0x1, f=0x0, d=0, '9999bc1', t=1 
+09-21 21:26:19.013  2595  2690 I GestureDetector: obtain mCurrentMotionEventRaw. action: 1 id: -822653888
+09-21 21:26:19.013  2595  2690 I GestureDetector: obtain mCurrentMotionEventRaw. action: 1 id: -822653888
+09-21 21:26:19.014 10772 10772 I VRI[MainActivity]@d56ce50: ViewPostIme pointer 1
+09-21 21:26:19.023  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858464344460, event=0.000000
+09-21 21:26:19.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858465600553, event=0.000000
+09-21 21:26:19.027  1640  2090 W SDM     : HWDeviceDRM::GetSupportedBitClkRate: Requested rate not supported: 0
+09-21 21:26:19.028 10772 10772 I flutter : [SIM_PERF] event=sync_start
+09-21 21:26:19.028  1640  2090 I SDM     : HWDeviceDRM::UpdateMixerAttributes: Mixer WxH 1200x1920-0 for Peripheral
+09-21 21:26:19.028  1640  2090 I SDM     : HWCDisplay::SubmitDisplayConfig: Active configuration changed from config 1 to 0
+09-21 21:26:19.029  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:26:19.029  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:26:19.029 10772 10772 I flutter : [SIM_PERF] event=sync_end elapsedMs=1
+09-21 21:26:19.029 10772 10772 I flutter : [SIM] LESSON_WORKFLOW_OPEN trace=lesson-entry-submit:261f7461-0cff-4222-afac-9002d6b0e400:1:cyber-1sh7602:1 workflow=entry-submit:261f7461-0cff-4222-afac-9002d6b0e400:1:cyber-1sh7602:1 source=newlyCreated decision=submitLessonEntry
+09-21 21:26:19.030  1640  1766 I SDM     : HWDeviceDRM::SetDisplaySwitchMode: Mode 0 already set
+09-21 21:26:19.031 10772 10772 I flutter : [SIM] LESSON_WORKFLOW_OPEN trace=lesson-entry:entry-op:261f7461-0cff-4222-afac-9002d6b0e400:1:cyber-1sh7602:r1 workflow=entry-op:261f7461-0cff-4222-afac-9002d6b0e400:1:cyber-1sh7602:r1 source=newlyCreated decision=startCurriculumT00AndWarmupT02
+09-21 21:26:19.039 10772 10772 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:26:19.044  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), SUCCESS, 2ms
+09-21 21:26:19.066  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), 7(NODATA), isBlocked=false, 7ms
+09-21 21:26:19.074  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), 7(NODATA), isBlocked=false, 5ms
+09-21 21:26:19.107 10772 10772 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:26:19.111  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), SUCCESS, 2ms
+09-21 21:26:19.116  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), SUCCESS, 75ms
+09-21 21:26:19.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858564267480, event=0.000000
+09-21 21:26:19.127  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858565415918, event=0.000000
+09-21 21:26:19.128  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), 7(NODATA), isBlocked=false, 6ms
+09-21 21:26:19.136  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), 7(NODATA), isBlocked=false, 6ms
+09-21 21:26:19.140  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), 7(NODATA), isBlocked=false, 84ms
+09-21 21:26:19.144  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), 7(NODATA), isBlocked=false, 5ms
+09-21 21:26:19.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858664348001, event=0.000000
+09-21 21:26:19.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858665419460, event=0.000000
+09-21 21:26:19.309  2595  2690 I GestureDetector: handleMessage TAP
+09-21 21:26:19.310  2595  2595 I GestureDetector: handleMessage TAP
+09-21 21:26:19.323  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858764365553, event=0.000000
+09-21 21:26:19.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858765533678, event=0.000000
+09-21 21:26:19.423  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858864351022, event=0.000000
+09-21 21:26:19.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858865511491, event=0.000000
+09-21 21:26:19.523  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858964262376, event=0.000000
+09-21 21:26:19.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251858965337012, event=0.000000
+09-21 21:26:19.584  2595  5418 D SemWifiUsabilityStatsMonitor: onWifiUsabilityStats - seqNum 120124, isSameBssidAndFreq true
+09-21 21:26:19.587  2595  3123 I SemWifiLinkQualityMonitor: Link stat: 2948 / 26 / 1.21 (264) / 263 / -59.0 || 100.0 : 263.00 / 0.5 : 0.83 / 0.55 : 0.01 / G (G) || 0f443f1c5805: 0.103 / 77.626 / N || N N / 0 0 / Y 2.0 / Y X 0 / 775703627 0 || Invalid
+09-21 21:26:19.599  2595  2657 I system_server: Background young concurrent mark compact GC freed 17MB AllocSpace bytes, 150(4508KB) LOS objects, 16% free, 110MB/132MB, paused 1.405ms,9.458ms total 119.765ms
+09-21 21:26:19.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859064353522, event=0.000000
+09-21 21:26:19.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859065444303, event=0.000000
+09-21 21:26:19.723  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859164340814, event=0.000000
+09-21 21:26:19.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859165596387, event=0.000000
+09-21 21:26:19.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859264356803, event=0.000000
+09-21 21:26:19.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859265614564, event=0.000000
+09-21 21:26:19.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859364263835, event=0.000000
+09-21 21:26:19.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859365529824, event=0.000000
+09-21 21:26:20.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859464359564, event=0.000000
+09-21 21:26:20.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859465607637, event=0.000000
+09-21 21:26:20.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859564346335, event=0.000000
+09-21 21:26:20.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859565426178, event=0.000000
+09-21 21:26:20.188   973   973 D io_stats: !@   8,0 r 99524991 1544035600 w 47174197 720889764 d 3439832 535851484 f 7444483 25507052 iot 35962728 0 th 0 0 0 pt 0 inp 0 0 775704.230
+09-21 21:26:20.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859664362845, event=0.000000
+09-21 21:26:20.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859665435189, event=0.000000
+09-21 21:26:20.268 10772 10772 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:26:20.323  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859764605710, event=0.000000
+09-21 21:26:20.358  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+09-21 21:26:20.358  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+09-21 21:26:20.358  1584 31315 D vendor.qti.bluetooth@1.0-wake_lock: Acquire wakelock is acquired 
+09-21 21:26:20.358  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+09-21 21:26:20.361 31250 31323 I ScanController: onScanResult to scannerId: 2- eventType=0x10, addressType=1, address=XX:XX:XX:XX:F0:8E, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-92, periodicAdvInt=0x0
+09-21 21:26:20.399  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+09-21 21:26:20.399  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF
+09-21 21:26:20.423  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859864366647, event=1.000000
+09-21 21:26:20.423  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859865515345, event=0.000000
+09-21 21:26:20.483  1957  1957 I CNSS    : cnss_open_log_file: directory /data/vendor/log/wifi/ created
+09-21 21:26:20.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859964352376, event=0.000000
+09-21 21:26:20.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251859965517428, event=1.000000
+09-21 21:26:20.550  1584 31294 D vendor.qti.bluetooth@1.0-wake_lock: Release wakelock is released 
+09-21 21:26:20.623  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860064339407, event=1.000000
+09-21 21:26:20.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860065584928, event=0.000000
+09-21 21:26:20.712 10772 10772 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:26:20.718  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), SUCCESS, 2ms
+09-21 21:26:20.722  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860164286074, event=0.000000
+09-21 21:26:20.722  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860164575397, event=0.000000
+09-21 21:26:20.736  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), 7(NODATA), isBlocked=false, 10ms
+09-21 21:26:20.745  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), 7(NODATA), isBlocked=false, 7ms
+09-21 21:26:20.774  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:20.775  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:20.776  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:20.777  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:20.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860264341126, event=0.000000
+09-21 21:26:20.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860265476699, event=0.000000
+09-21 21:26:20.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860364358418, event=0.000000
+09-21 21:26:20.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860365433418, event=0.000000
+09-21 21:26:21.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860464344407, event=0.000000
+09-21 21:26:21.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860465433314, event=1.000000
+09-21 21:26:21.028  1957  1957 I CNSS    : /sys/wifi/dump_in_progress file read permission doesn't exist
+09-21 21:26:21.028  1957  1957 I CNSS    : /sys/wifi/max_chipset_log_size doesn't exist
+09-21 21:26:21.122  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860564287376, event=1.000000
+09-21 21:26:21.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860564576178, event=0.000000
+09-21 21:26:21.213 10772 10772 I flutter : [SIM] ENTRY_T00_EFFECT_STARTED
+09-21 21:26:21.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860664347428, event=0.000000
+09-21 21:26:21.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860665426074, event=0.000000
+09-21 21:26:21.230 10772 10772 I flutter : [SIM] T00_STARTED
+09-21 21:26:21.232 10772 10772 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:26:21.238  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), SUCCESS, 2ms
+09-21 21:26:21.250  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), 7(NODATA), isBlocked=false, 4ms
+09-21 21:26:21.257  2595  3179 D NetdEventListenerService: DNS Requested by 139, 10352(com.simaitutor.app), 7(NODATA), isBlocked=false, 5ms
+09-21 21:26:21.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860764364980, event=0.000000
+09-21 21:26:21.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860765614720, event=0.000000
+09-21 21:26:21.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860864351230, event=0.000000
+09-21 21:26:21.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860865599147, event=0.000000
+09-21 21:26:21.523  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860964292324, event=0.000000
+09-21 21:26:21.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251860964574876, event=0.000000
+09-21 21:26:21.623  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861064353470, event=0.000000
+09-21 21:26:21.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861065612428, event=0.000000
+09-21 21:26:21.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861164339720, event=0.000000
+09-21 21:26:21.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861165593574, event=0.000000
+09-21 21:26:21.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861264356491, event=0.000000
+09-21 21:26:21.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861265608730, event=0.000000
+09-21 21:26:21.858 10772 10772 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:26:21.923  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861364284512, event=0.000000
+09-21 21:26:21.923  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861364575657, event=1.000000
+09-21 21:26:22.010  2595  2762 D PowerManagerService: UserActivityStateListenerState: 0
+09-21 21:26:22.013 10772 10772 I VRI[MainActivity]@d56ce50: call setFrameRateCategory for touch hint category=no preference, reason=boost timeout, vri=VRI[MainActivity]@d56ce50
+09-21 21:26:22.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861464359512, event=1.000000
+09-21 21:26:22.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861465439199, event=0.000000
+09-21 21:26:22.076  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:22.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861564345501, event=0.000000
+09-21 21:26:22.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861565432897, event=0.000000
+09-21 21:26:22.189   973   973 D io_stats: !@   8,0 r 99525023 1544035748 w 47174235 720890072 d 3439832 535851484 f 7444488 25507082 iot 35962788 0 th 0 0 0 pt 0 inp 0 0 775706.230
+09-21 21:26:22.190   973   973 D io_stats: !@ Read_top(KB): .simaitutor.app(10772) 1144 gle.android.gms(21821) 72 cnss_diag(1957) 44
+09-21 21:26:22.190   973   973 D io_stats: !@ Write_top(KB): kworker/u16:5(10607) 648 .simaitutor.app(10772) 508
+09-21 21:26:22.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861664363574, event=0.000000
+09-21 21:26:22.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861665481022, event=0.000000
+09-21 21:26:22.322  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861764285553, event=0.000000
+09-21 21:26:22.323  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861764575397, event=0.000000
+09-21 21:26:22.423  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861864366074, event=0.000000
+09-21 21:26:22.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861865626907, event=0.000000
+09-21 21:26:22.523  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861964352064, event=0.000000
+09-21 21:26:22.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251861965614512, event=0.000000
+09-21 21:26:22.601  2595  5418 D SemWifiUsabilityStatsMonitor: onWifiUsabilityStats - seqNum 120125, isSameBssidAndFreq true
+09-21 21:26:22.601  2595  3123 I SemWifiLinkQualityMonitor: Link stat: 2951 / 29 / 1.10 (264) / 325 / -59.0 || 100.0 : 325.00 / 0.5 : 0.91 / 0.55 : 0.01 / G (G) || 0f443f1c5805: 0.097 / 82.195 / N || N N / 0 0 / Y 2.0 / Y X 0 / 775706641 0 || Invalid
+09-21 21:26:22.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862064368574, event=0.000000
+09-21 21:26:22.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862065607845, event=0.000000
+09-21 21:26:22.686  2595  2711 D BatteryExternalStatsWorker: update stats : update-network-download (6)
+09-21 21:26:22.686  2595  2711 D BatteryExternalStatsWorker: Fetch WiFi data
+09-21 21:26:22.686  2595  2711 D BatteryExternalStatsWorker: Update Rail Energy data
+09-21 21:26:22.693  2595  2711 D BatteryExternalStatsWorker: mStats lock released
+09-21 21:26:22.707  2595  2711 D BatteryExternalStatsWorker: Update wifi state
+09-21 21:26:22.708  2595  2711 D BatteryExternalStatsWorker: done updateExternalStatsLocked
+09-21 21:26:22.722  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862164286335, event=0.000000
+09-21 21:26:22.723  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862164575657, event=0.000000
+09-21 21:26:22.823  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862264340553, event=0.000000
+09-21 21:26:22.823  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862265423887, event=0.000000
+09-21 21:26:22.840 10772 10772 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:26:22.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862364357585, event=0.000000
+09-21 21:26:22.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862365446126, event=0.000000
+09-21 21:26:23.023  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862464343835, event=0.000000
+09-21 21:26:23.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862465405189, event=0.000000
+09-21 21:26:23.036  2595  4205 I NSLocationMonitor: getGPSUsingApps() called
+09-21 21:26:23.037 27167 27194 I NSLocationManager_FLP: getGPSUsingApps, No change
+09-21 21:26:23.040  2595  4205 W Binder  : Outgoing transactions from this process must be FLAG_ONEWAY
+09-21 21:26:23.040  2595  4205 W Binder  : java.lang.Throwable
+09-21 21:26:23.040  2595  4205 W Binder  : 	at android.os.BinderProxy.transact(BinderProxy.java:566)
+09-21 21:26:23.040  2595  4205 W Binder  : 	at android.bluetooth.IBluetoothGatt$Stub$Proxy.getAdvertisingSetUids(IBluetoothGatt.java:1678)
+09-21 21:26:23.040  2595  4205 W Binder  : 	at android.bluetooth.BluetoothAdapter.getAdvertisingSetUids(BluetoothAdapter.java:8476)
+09-21 21:26:23.040  2595  4205 W Binder  : 	at android.bluetooth.BluetoothAdapter.getHWUsingApps(BluetoothAdapter.java:1342)
+09-21 21:26:23.040  2595  4205 W Binder  : 	at com.android.server.am.mars.filter.filter.BlueToothConnectedFilter.updateBTUsingPackages(qb/111936648 3e6a591cd6e3589330b3be4f4b98bfdd2944d7e2f5564ced54b7111d1461114f:22)
+09-21 21:26:23.040  2595  4205 W Binder  : 	at com.android.server.am.FreecessController.freeze(qb/111936648 3e6a591cd6e3589330b3be4f4b98bfdd2944d7e2f5564ced54b7111d1461114f:117)
+09-21 21:26:23.040  2595  4205 W Binder  : 	at com.android.server.am.FreecessHandler$MainHandler.handleLcdOnFreeze(qb/111936648 3e6a591cd6e3589330b3be4f4b98bfdd2944d7e2f5564ced54b7111d1461114f:55)
+09-21 21:26:23.040  2595  4205 W Binder  : 	at com.android.server.am.FreecessHandler$MainHandler.handleMessage(qb/111936648 3e6a591cd6e3589330b3be4f4b98bfdd2944d7e2f5564ced54b7111d1461114f:793)
+09-21 21:26:23.040  2595  4205 W Binder  : 	at android.os.Handler.dispatchMessage(Handler.java:110)
+09-21 21:26:23.040  2595  4205 W Binder  : 	at android.os.Looper.loopOnce(Looper.java:273)
+09-21 21:26:23.040  2595  4205 W Binder  : 	at android.os.Looper.loop(Looper.java:363)
+09-21 21:26:23.040  2595  4205 W Binder  : 	at android.os.HandlerThread.run(HandlerThread.java:85)
+09-21 21:26:23.044  2595  4205 W Binder  : Outgoing transactions from this process must be FLAG_ONEWAY
+09-21 21:26:23.044  2595  4205 W Binder  : java.lang.Throwable
+09-21 21:26:23.044  2595  4205 W Binder  : 	at android.os.BinderProxy.transact(BinderProxy.java:566)
+09-21 21:26:23.044  2595  4205 W Binder  : 	at android.bluetooth.IBluetoothScan$Stub$Proxy.getScannerUids(IBluetoothScan.java:666)
+09-21 21:26:23.044  2595  4205 W Binder  : 	at android.bluetooth.BluetoothAdapter.getScannerUids(BluetoothAdapter.java:8522)
+09-21 21:26:23.044  2595  4205 W Binder  : 	at android.bluetooth.BluetoothAdapter.getHWUsingApps(BluetoothAdapter.java:1349)
+09-21 21:26:23.044  2595  4205 W Binder  : 	at com.android.server.am.mars.filter.filter.BlueToothConnectedFilter.updateBTUsingPackages(qb/111936648 3e6a591cd6e3589330b3be4f4b98bfdd2944d7e2f5564ced54b7111d1461114f:22)
+09-21 21:26:23.044  2595  4205 W Binder  : 	at com.android.server.am.FreecessController.freeze(qb/111936648 3e6a591cd6e3589330b3be4f4b98bfdd2944d7e2f5564ced54b7111d1461114f:117)
+09-21 21:26:23.044  2595  4205 W Binder  : 	at com.android.server.am.FreecessHandler$MainHandler.handleLcdOnFreeze(qb/111936648 3e6a591cd6e3589330b3be4f4b98bfdd2944d7e2f5564ced54b7111d1461114f:55)
+09-21 21:26:23.044  2595  4205 W Binder  : 	at com.android.server.am.FreecessHandler$MainHandler.handleMessage(qb/111936648 3e6a591cd6e3589330b3be4f4b98bfdd2944d7e2f5564ced54b7111d1461114f:793)
+09-21 21:26:23.044  2595  4205 W Binder  : 	at android.os.Handler.dispatchMessage(Handler.java:110)
+09-21 21:26:23.044  2595  4205 W Binder  : 	at android.os.Looper.loopOnce(Looper.java:273)
+09-21 21:26:23.044  2595  4205 W Binder  : 	at android.os.Looper.loop(Looper.java:363)
+09-21 21:26:23.044  2595  4205 W Binder  : 	at android.os.HandlerThread.run(HandlerThread.java:85)
+09-21 21:26:23.050  2595  4205 D FreecessHandler: freeze com.google.android.documentsui(10055) result : 2
+09-21 21:26:23.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862564360605, event=0.000000
+09-21 21:26:23.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862565445189, event=0.000000
+09-21 21:26:23.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862664348939, event=0.000000
+09-21 21:26:23.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862665436074, event=0.000000
+09-21 21:26:23.323  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862764363887, event=0.000000
+09-21 21:26:23.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862765614928, event=0.000000
+09-21 21:26:23.423  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862864350137, event=0.000000
+09-21 21:26:23.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862865606543, event=0.000000
+09-21 21:26:23.442 14052 14052 I wpa_supplicant: Heartbeat 26702
+09-21 21:26:23.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862964367168, event=0.000000
+09-21 21:26:23.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251862965622220, event=0.000000
+09-21 21:26:23.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863064352897, event=0.000000
+09-21 21:26:23.626  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863065607064, event=0.000000
+09-21 21:26:23.723  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863164338887, event=0.000000
+09-21 21:26:23.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863165598626, event=0.000000
+09-21 21:26:23.823  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863264356699, event=0.000000
+09-21 21:26:23.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863265439720, event=0.000000
+09-21 21:26:23.923  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863364342428, event=0.000000
+09-21 21:26:23.923  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863365430866, event=0.000000
+09-21 21:26:23.988  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+09-21 21:26:23.988  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+09-21 21:26:23.990  1584 31315 D vendor.qti.bluetooth@1.0-wake_lock: Acquire wakelock is acquired 
+09-21 21:26:23.990  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+09-21 21:26:23.994 31250 31323 I ScanController: onScanResult to scannerId: 2- eventType=0x10, addressType=1, address=XX:XX:XX:XX:C7:39, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-82, periodicAdvInt=0x0
+09-21 21:26:23.999 21821 20165 I NearbyConnections: Found BleAdvertisement [ 0x23 0x41 0x55 0x55 0x44 0x11 0x32 0x81 0xfd 0xc0 0xab 0x29 0x7f 0x17 0x17 0x27 0x76 0x9b 0x88 0x01 0x84 0xba 0x9d ] (with EndpointId AUUD and EndpointInfo [ 0x32 0x81 0xfd 0xc0 0xab 0x29 0x7f 0x17 0x17 0x27 0x76 0x9b 0x88 0x01 0x84 0xba 0x9d ])
+09-21 21:26:24.000 21821 20165 I NearbyConnections: ClientProxy(265884028 0p:com.google.android.gms.nearby.sharing) reporting onEndpointFound(AUUD)
+09-21 21:26:24.000 21821 20165 I NearbyConnections: ClientProxy(265884028) reporting onEndpointDistanceChanged(AUUD, UNKNOWN)
+09-21 21:26:24.003 21821 20168 I NearbySharing: NearbySharing Internal event EndpointDiscovered(endpointId=AUUD)
+09-21 21:26:24.023  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863464359199, event=0.000000
+09-21 21:26:24.023  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863465450710, event=0.000000
+09-21 21:26:24.026  2595  4205 I NSLocationMonitor: getGPSUsingApps() called
+09-21 21:26:24.026 27167 27194 I NSLocationManager_FLP: getGPSUsingApps, No change
+09-21 21:26:24.031  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+09-21 21:26:24.031  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF
+09-21 21:26:24.036  2595  4205 D FreecessHandler: freeze com.simaitutor.app(10352) result : 12
+09-21 21:26:24.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863564345449, event=0.000000
+09-21 21:26:24.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863565434616, event=0.000000
+09-21 21:26:24.181  1584 31294 D vendor.qti.bluetooth@1.0-wake_lock: Release wakelock is released 
+09-21 21:26:24.186 21821 19775 I NearbyMediums: Found Fast Ble Advertisements :
+09-21 21:26:24.186 21821 19775 I NearbyMediums: BleAdvertisement { version=2, socketVersion=2, isFast=true, serviceIdHash=null, data=[ 0x23 0x57 0x4f 0x58 0x50 0x11 0x32 0x58 0x79 0xf2 0x47 0xa2 0x7f 0x56 0x8e 0x2c 0x11 0x1f 0x10 0x23 0xe6 0x5e 0x28 ], deviceToken=[ 0xcf 0x3d ], rxAdvertisement=null } : 2 times.
+09-21 21:26:24.186 21821 19775 I NearbyMediums: BleAdvertisement { version=2, socketVersion=2, isFast=true, serviceIdHash=null, data=[ 0x23 0x41 0x55 0x55 0x44 0x11 0x32 0x81 0xfd 0xc0 0xab 0x29 0x7f 0x17 0x17 0x27 0x76 0x9b 0x88 0x01 0x84 0xba 0x9d ], deviceToken=[ 0xcc 0x81 ], rxAdvertisement=null } : 1 times.
+09-21 21:26:24.186 21821 19775 I NearbyMediums: Total 3 fast advertisements from 2 unique advertisers.
+09-21 21:26:24.187 21821 19775 I NearbyMediums: Current Tracked Scanning Clients are : {NearbyConnections.EnvironmentMonitor, NearbySharing}
+09-21 21:26:24.191   973   973 D io_stats: !@   8,0 r 99525023 1544035748 w 47174259 720890892 d 3439832 535851484 f 7444490 25507094 iot 35962824 0 th 0 0 0 pt 0 inp 0 0 775708.232
+09-21 21:26:24.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863664362220, event=0.000000
+09-21 21:26:24.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863665525189, event=0.000000
+09-21 21:26:24.288  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:24.303  1640  1766 W SDM     : HWDeviceDRM::GetSupportedBitClkRate: Requested rate not supported: 0
+09-21 21:26:24.304  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:26:24.304  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:26:24.323  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863764348991, event=0.000000
+09-21 21:26:24.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863765547585, event=0.000000
+09-21 21:26:24.351  1640  1766 W SDM     : HWDeviceDRM::GetSupportedBitClkRate: Requested rate not supported: 0
+09-21 21:26:24.352  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:26:24.352  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:26:24.425  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863864366543, event=0.000000
+09-21 21:26:24.425  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863865524512, event=1.000000
+09-21 21:26:24.523  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863964351491, event=1.000000
+09-21 21:26:24.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251863965505762, event=0.000000
+09-21 21:26:24.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864064368522, event=0.000000
+09-21 21:26:24.627  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864065632845, event=0.000000
+09-21 21:26:24.723  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864164354512, event=0.000000
+09-21 21:26:24.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864165601491, event=0.000000
+09-21 21:26:24.823  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864264340762, event=0.000000
+09-21 21:26:24.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864265432064, event=0.000000
+09-21 21:26:24.842 10772 10772 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:26:24.923  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864364357012, event=0.000000
+09-21 21:26:24.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864365434772, event=1.000000
+09-21 21:26:25.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864464346960, event=1.000000
+09-21 21:26:25.026  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864465480345, event=0.000000
+09-21 21:26:25.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864564360032, event=0.000000
+09-21 21:26:25.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864565427689, event=0.000000
+09-21 21:26:25.152  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:25.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864664347324, event=0.000000
+09-21 21:26:25.225  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864665431855, event=0.000000
+09-21 21:26:25.323  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864764363574, event=0.000000
+09-21 21:26:25.325  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864765616543, event=0.000000
+09-21 21:26:25.423  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864864263001, event=0.000000
+09-21 21:26:25.427  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864865546699, event=0.000000
+09-21 21:26:25.523  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864964367376, event=0.000000
+09-21 21:26:25.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251864965616335, event=0.000000
+09-21 21:26:25.614  2595  5418 D SemWifiUsabilityStatsMonitor: onWifiUsabilityStats - seqNum 120126, isSameBssidAndFreq true
+09-21 21:26:25.617  2595  3123 I SemWifiLinkQualityMonitor: Link stat: 2944 / 22 / 1.21 (220) / 263 / -60.0 || 100.0 : 263.00 / 0.5 : 0.83 / 0.55 : 0.01 / G (G) || 0f443f1c5805: 0.103 / 77.700 / N || N N / 0 0 / Y 2.0 / Y X 0 / 775709656 0 || Invalid
+09-21 21:26:25.623  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865064352585, event=0.000000
+09-21 21:26:25.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865065608574, event=0.000000
+09-21 21:26:25.627  3405 14083 D IpClient/wlan0: interfaceLinkStateChanged: ifindex 46 up
+09-21 21:26:25.723  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865164339355, event=0.000000
+09-21 21:26:25.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865165595501, event=1.000000
+09-21 21:26:25.823  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865264262845, event=1.000000
+09-21 21:26:25.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865265372064, event=0.000000
+09-21 21:26:25.923  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865364342116, event=0.000000
+09-21 21:26:26.023  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865464358887, event=0.000000
+09-21 21:26:26.023  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865465451439, event=0.000000
+09-21 21:26:26.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865564344876, event=0.000000
+09-21 21:26:26.192   973   973 D io_stats: !@   8,0 r 99525195 1544037860 w 47174280 720891072 d 3439832 535851484 f 7444494 25507109 iot 35962900 0 th 0 0 0 pt 0 inp 0 0 775710.233
+09-21 21:26:26.192   973   973 D io_stats: !@ Read_top(KB): .simaitutor.app(10772) 1992 kworker/6:19H(12724) 68 kworker/7:9H(12721) 52
+09-21 21:26:26.192   973   973 D io_stats: !@ Write_top(KB): kworker/u16:5(10607) 676 .simaitutor.app(10772) 288
+09-21 21:26:26.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865664262637, event=0.000000
+09-21 21:26:26.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865665379199, event=0.000000
+09-21 21:26:26.323  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865764348939, event=0.000000
+09-21 21:26:26.423  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865864364928, event=0.000000
+09-21 21:26:26.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865865611751, event=0.000000
+09-21 21:26:26.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251865964351439, event=0.000000
+09-21 21:26:26.623  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866064267637, event=0.000000
+09-21 21:26:26.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866065489251, event=0.000000
+09-21 21:26:26.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866164353678, event=0.000000
+09-21 21:26:26.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866165563991, event=0.000000
+09-21 21:26:26.823  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866264340189, event=0.000000
+09-21 21:26:26.823  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866265424928, event=0.000000
+09-21 21:26:26.923  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866364358001, event=0.000000
+09-21 21:26:26.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866365415449, event=0.000000
+09-21 21:26:27.022  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866464278522, event=0.000000
+09-21 21:26:27.022  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866464576178, event=0.000000
+09-21 21:26:27.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866564359980, event=0.000000
+09-21 21:26:27.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866565441387, event=0.000000
+09-21 21:26:27.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866664347272, event=0.000000
+09-21 21:26:27.225  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866665595918, event=0.000000
+09-21 21:26:27.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866764363001, event=0.000000
+09-21 21:26:27.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866765612949, event=0.000000
+09-21 21:26:27.422  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866864289460, event=0.000000
+09-21 21:26:27.423  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866864575397, event=0.000000
+09-21 21:26:27.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866964366282, event=0.000000
+09-21 21:26:27.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251866965625293, event=0.000000
+09-21 21:26:27.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867064352532, event=0.000000
+09-21 21:26:27.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867065607168, event=0.000000
+09-21 21:26:27.723  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867164338522, event=0.000000
+09-21 21:26:27.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867165417324, event=0.000000
+09-21 21:26:27.822  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867264285553, event=0.000000
+09-21 21:26:27.823  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867264575918, event=0.000000
+09-21 21:26:27.923  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867364342585, event=0.000000
+09-21 21:26:27.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867365438574, event=1.000000
+09-21 21:26:28.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867464358835, event=1.000000
+09-21 21:26:28.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867465444668, event=1.000000
+09-21 21:26:28.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867564345085, event=1.000000
+09-21 21:26:28.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867565429095, event=0.000000
+09-21 21:26:28.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867664291282, event=0.000000
+09-21 21:26:28.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867664574616, event=0.000000
+09-21 21:26:28.230  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:28.323  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867764347845, event=0.000000
+09-21 21:26:28.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867765598887, event=0.000000
+09-21 21:26:28.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867864364355, event=0.000000
+09-21 21:26:28.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867865585293, event=1.000000
+09-21 21:26:28.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867964350605, event=1.000000
+09-21 21:26:28.525  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251867965601751, event=0.000000
+09-21 21:26:28.623  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868064283730, event=0.000000
+09-21 21:26:28.623  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868064575137, event=0.000000
+09-21 21:26:28.631  2595  5418 D SemWifiUsabilityStatsMonitor: onWifiUsabilityStats - seqNum 120127, isSameBssidAndFreq true
+09-21 21:26:28.632  2595  3123 I SemWifiLinkQualityMonitor: Link stat: 2942 / 24 / 1.15 (188) / 325 / -59.0 || 100.0 : 325.00 / 0.5 : 0.87 / 0.55 : 0.01 / G (G) || 0f443f1c5805: 0.097 / 82.298 / N || N N / 0 0 / Y 2.0 / Y X 0 / 775712673 0 || Invalid
+09-21 21:26:28.723  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868164354668, event=0.000000
+09-21 21:26:28.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868165416387, event=0.000000
+09-21 21:26:28.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868264339876, event=0.000000
+09-21 21:26:28.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868265422116, event=0.000000
+09-21 21:26:28.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868364356907, event=0.000000
+09-21 21:26:28.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868365430241, event=0.000000
+09-21 21:26:29.022  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868464284512, event=0.000000
+09-21 21:26:29.023  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868464575397, event=0.000000
+09-21 21:26:29.053  2595  4205 I NSLocationMonitor: getGPSUsingApps() called
+09-21 21:26:29.054 27167 27194 I NSLocationManager_FLP: getGPSUsingApps, No change
+09-21 21:26:29.066  2595  4205 D FreecessHandler: freeze com.google.android.documentsui(10055) result : 2
+09-21 21:26:29.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868564359928, event=0.000000
+09-21 21:26:29.126  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868565444460, event=0.000000
+09-21 21:26:29.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868664346178, event=0.000000
+09-21 21:26:29.225  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868665623418, event=0.000000
+09-21 21:26:29.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868764362689, event=0.000000
+09-21 21:26:29.327  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868765610553, event=0.000000
+09-21 21:26:29.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868864349460, event=0.000000
+09-21 21:26:29.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868865607897, event=0.000000
+09-21 21:26:29.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868964365970, event=0.000000
+09-21 21:26:29.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251868965619772, event=0.000000
+09-21 21:26:29.538  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+09-21 21:26:29.538  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+09-21 21:26:29.539  1584 31315 D vendor.qti.bluetooth@1.0-wake_lock: Acquire wakelock is acquired 
+09-21 21:26:29.539  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+09-21 21:26:29.543 31250 31323 I ScanController: onScanResult to scannerId: 2- eventType=0x10, addressType=1, address=XX:XX:XX:XX:F0:8E, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-92, periodicAdvInt=0x0
+09-21 21:26:29.580  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+09-21 21:26:29.580  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF
+09-21 21:26:29.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869064352220, event=0.000000
+09-21 21:26:29.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869065505605, event=0.000000
+09-21 21:26:29.723  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869164339512, event=0.000000
+09-21 21:26:29.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869165416230, event=0.000000
+09-21 21:26:29.731  1584 31294 D vendor.qti.bluetooth@1.0-wake_lock: Release wakelock is released 
+09-21 21:26:29.823  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869264354980, event=0.000000
+09-21 21:26:29.823  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869265443001, event=0.000000
+09-21 21:26:29.923  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869364341491, event=0.000000
+09-21 21:26:29.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869365418939, event=0.000000
+09-21 21:26:30.023  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869464358522, event=0.000000
+09-21 21:26:30.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869465427168, event=1.000000
+09-21 21:26:30.037  2595  4205 I NSLocationMonitor: getGPSUsingApps() called
+09-21 21:26:30.038 27167 27194 I NSLocationManager_FLP: getGPSUsingApps, No change
+09-21 21:26:30.045  2595  4205 D FreecessHandler: freeze com.simaitutor.app(10352) result : 12
+09-21 21:26:30.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869564344512, event=1.000000
+09-21 21:26:30.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869565422793, event=1.000000
+09-21 21:26:30.195   973   973 D io_stats: !@   8,0 r 99525195 1544037860 w 47174284 720891744 d 3439832 535851484 f 7444494 25507109 iot 35962916 0 th 0 0 0 pt 0 inp 0 0 775714.236
+09-21 21:26:30.196   973   973 D io_stats: !@ Write_top(KB): kworker/u16:2(13970) 668 .apps.messaging(9577) 4
+09-21 21:26:30.219 10772 10772 I flutter : [SIM] BLOCKED reason=generic
+09-21 21:26:30.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869664361022, event=1.000000
+09-21 21:26:30.225  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869665607741, event=0.000000
+09-21 21:26:30.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869764347532, event=0.000000
+09-21 21:26:30.325  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869765617324, event=0.000000
+09-21 21:26:30.343  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:30.357  1640  1766 W SDM     : HWDeviceDRM::GetSupportedBitClkRate: Requested rate not supported: 0
+09-21 21:26:30.359  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:26:30.359  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:26:30.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869864364303, event=0.000000
+09-21 21:26:30.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869865722012, event=0.000000
+09-21 21:26:30.525  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869964350553, event=0.000000
+09-21 21:26:30.525  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251869965742637, event=0.000000
+09-21 21:26:30.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870064367064, event=0.000000
+09-21 21:26:30.625  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870065731387, event=1.000000
+09-21 21:26:30.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870164353574, event=1.000000
+09-21 21:26:30.725  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870166048053, event=0.000000
+09-21 21:26:30.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870264339564, event=0.000000
+09-21 21:26:30.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870265732585, event=1.000000
+09-21 21:26:30.858  1671  2258 D DisplayModeController: setDesiredMode 4630946944264142721 {mode={fps=60.00 Hz, modePtr={id=1, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=false, force=false}
+09-21 21:26:30.859 10772 10772 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:26:30.869  1640  2090 I SDM     : HWCDisplay::SubmitDisplayConfig: Active configuration changed from config 1 to 1
+09-21 21:26:30.927  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870364356595, event=1.000000
+09-21 21:26:30.927  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870365729772, event=0.000000
+09-21 21:26:30.952  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:31.018  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:31.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870464342845, event=0.000000
+09-21 21:26:31.025  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870465699251, event=0.000000
+09-21 21:26:31.029  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:31.032  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:31.038  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:31.043  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:31.047  1957  1957 I CNSS    : /sys/wifi/dump_in_progress file read permission doesn't exist
+09-21 21:26:31.048  1957  1957 I CNSS    : /sys/wifi/max_chipset_log_size doesn't exist
+09-21 21:26:31.115  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:31.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870564359355, event=0.000000
+09-21 21:26:31.125  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870565726699, event=0.000000
+09-21 21:26:31.201  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:31.214  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+09-21 21:26:31.215  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+09-21 21:26:31.215  1584 31315 D vendor.qti.bluetooth@1.0-wake_lock: Acquire wakelock is acquired 
+09-21 21:26:31.215  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+09-21 21:26:31.219 31250 31323 I ScanController: onScanResult to scannerId: 2- eventType=0x10, addressType=1, address=XX:XX:XX:XX:23:3F, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-92, periodicAdvInt=0x0
+09-21 21:26:31.220 10274 10274 I adbd    : adbd service requested 'shell,v2,TERM=dumb,raw:uiautomator dump /sdcard/window.xml'
+09-21 21:26:31.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870664345605, event=0.000000
+09-21 21:26:31.225  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870665601230, event=0.000000
+09-21 21:26:31.228 31250 31323 I ScanController: onScanResult to scannerId: 2- eventType=0x10, addressType=1, address=XX:XX:XX:XX:C7:39, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-84, periodicAdvInt=0x0
+09-21 21:26:31.229 21821 19775 I NearbyMediums: This GATT advertisement BleAdvertisement { version=2, socketVersion=2, isFast=true, serviceIdHash=null, data=[ 0x23 0x57 0x4f 0x58 0x50 0x11 0x32 0x58 0x79 0xf2 0x47 0xa2 0x7f 0x56 0x8e 0x2c 0x11 0x1f 0x10 0x23 0xe6 0x5e 0x28 ], deviceToken=[ 0x4c 0x6c ], rxAdvertisement=null } is a Fast Advertisement and matched UUID 0000fef3-0000-1000-8000-00805f9b34fb in fastAdvertisementServiceUuids map with serviceID NearbySharing
+09-21 21:26:31.232 21821 20168 I NearbyConnections: Found BleAdvertisement [ 0x23 0x57 0x4f 0x58 0x50 0x11 0x32 0x58 0x79 0xf2 0x47 0xa2 0x7f 0x56 0x8e 0x2c 0x11 0x1f 0x10 0x23 0xe6 0x5e 0x28 ] (with EndpointId WOXP and EndpointInfo [ 0x32 0x58 0x79 0xf2 0x47 0xa2 0x7f 0x56 0x8e 0x2c 0x11 0x1f 0x10 0x23 0xe6 0x5e 0x28 ])
+09-21 21:26:31.233 21821 20168 I NearbyConnections: ClientProxy(265884028) ignoring onEndpointDistanceChanged(WOXP, UNKNOWN), because this distance has already been reported
+09-21 21:26:31.264  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+09-21 21:26:31.265  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF
+09-21 21:26:31.277  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+09-21 21:26:31.278  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+09-21 21:26:31.278  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+09-21 21:26:31.280 31250 31323 I ScanController: onScanResult to scannerId: 2- eventType=0x10, addressType=1, address=XX:XX:XX:XX:DC:83, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-85, periodicAdvInt=0x0
+09-21 21:26:31.284  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:31.289  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:31.304 21821 20168 I NearbyMediums: Triggered instant on lost for service id : NearbySharing with hash [ 0x75 0xcd 0xe0 0x68 ]
+09-21 21:26:31.304 21821 19775 I NearbyConnections: Processing instant lost on BlePeripheral BlePeripheral{advertisement=BleAdvertisement { version=2, socketVersion=2, isFast=true, serviceIdHash=null, data=[ 0x23 0x57 0x4f 0x58 0x50 0x11 0x32 0x58 0x79 0xf2 0x47 0xa2 0x7f 0x56 0x8e 0x2c 0x11 0x1f 0x10 0x23 0xe6 0x5e 0x28 ], deviceToken=[ 0xcf 0x3d ], rxAdvertisement=null }, dctAdvertisement=null, address=null, psm=0, deviceToken=<ByteString@afcc854 size=2 contents="\317=">, isSecondProfile=false, rxInstantConnectionAdv=null}.
+09-21 21:26:31.304 21821 19775 I NearbyConnections: Remove entry from BleAdvertisementProcessor bleEndpoints.
+09-21 21:26:31.304 21821 19775 I NearbyConnections: Remove entry from BleAdvertisementProcessor bleEndpoints.
+09-21 21:26:31.305 21821 19775 I NearbyConnections: ClientProxy(265884028) reporting onEndpointLost(WOXP)
+09-21 21:26:31.306 21821 20165 I NearbySharing: NearbySharing Internal event EndpointLost(endpointId=WOXP)
+09-21 21:26:31.306 21821 19775 I NearbySharing: [NS_DISCOVERY] DiscoveryController reported Lost(endpointId=WOXP)
+09-21 21:26:31.318  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+09-21 21:26:31.318  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF
+09-21 21:26:31.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870764362637, event=0.000000
+09-21 21:26:31.326  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870765434355, event=0.000000
+09-21 21:26:31.364  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:31.401 20367 20367 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+09-21 21:26:31.407 20367 20367 I AndroidRuntime: Using default boot image
+09-21 21:26:31.407 20367 20367 I AndroidRuntime: Leaving lock profiling enabled
+09-21 21:26:31.408 20367 20367 D SecNativeFeatureCppIf: encoded
+09-21 21:26:31.408 20367 20367 D SecNativeFeatureCppIf: decoding and unzip finish
+09-21 21:26:31.408 20367 20367 D SecNativeFeatureCppIf: use unCompDataBuff. encoded
+09-21 21:26:31.408 20367 20367 D SecNativeFeatureCppIf: Free unCompDataBuff
+09-21 21:26:31.408 20367 20367 D AndroidRuntime: addProductProperty not brand or 7
+09-21 21:26:31.411 20367 20367 I app_process: Using generational CollectorTypeCMC GC.
+09-21 21:26:31.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870864348887, event=0.000000
+09-21 21:26:31.425  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870865420918, event=0.000000
+09-21 21:26:31.449  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:31.469  1584 31294 D vendor.qti.bluetooth@1.0-wake_lock: Release wakelock is released 
+09-21 21:26:31.482 20367 20367 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+09-21 21:26:31.496 20367 20367 D nativeloader: Load libicu_jni.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+09-21 21:26:31.496 20367 20367 D app_process: u_setTimeZoneFilesDirectory("/apex/com.android.tzdata/etc/tz/versioned/9/icu") succeeded. 
+09-21 21:26:31.496 20367 20367 D app_process: I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt76l.dat
+09-21 21:26:31.497 20367 20367 D nativeloader: Load libjavacore.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+09-21 21:26:31.498 20367 20367 D nativeloader: Load libopenjdk.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+09-21 21:26:31.499 20367 20367 I app_process: Priority-to-niceness mapping: 19, 16, 13, 10, 0, -2, -4, -5, -6, -8
+09-21 21:26:31.522 20367 20367 E SemDvfsManager_JNI: SemDvfsManager: registerfunction enter
+09-21 21:26:31.522 20367 20367 E SemAffinityControl: SemAffinityControl: registerfunction enter
+09-21 21:26:31.523  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870964365657, event=0.000000
+09-21 21:26:31.523  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251870965435866, event=0.000000
+09-21 21:26:31.532  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:31.533 20367 20367 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+09-21 21:26:31.534 20367 20367 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+09-21 21:26:31.539 20367 20367 W PlatformAconfigPackage: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+09-21 21:26:31.540 20367 20367 I AconfigPackage: com.android.adservices.ondevicepersonalization.flags is mapped to com.android.ondevicepersonalization
+09-21 21:26:31.540 20367 20367 I AconfigPackage: android.provider.flags is mapped to com.android.configinfrastructure
+09-21 21:26:31.540 20367 20367 I AconfigPackage: com.android.server.deviceconfig is mapped to com.android.configinfrastructure
+09-21 21:26:31.540 20367 20367 I AconfigPackage: com.android.uwb.flags is mapped to com.android.uwb
+09-21 21:26:31.540 20367 20367 I AconfigPackage: com.android.ranging.flags is mapped to com.android.uwb
+09-21 21:26:31.541 20367 20367 I AconfigPackage: com.android.adservices.flags is mapped to com.android.adservices
+09-21 21:26:31.541 20367 20367 I AconfigPackage: com.android.sdksandbox.flags is mapped to com.android.adservices
+09-21 21:26:31.541 20367 20367 I AconfigPackage: android.app.sdksandbox.flags is mapped to com.android.adservices
+09-21 21:26:31.541 20367 20367 I AconfigPackage: com.android.system.virtualmachine.flags is mapped to com.android.virt
+09-21 21:26:31.541 20367 20367 I AconfigPackage: com.android.healthfitness.flags is mapped to com.android.healthfitness
+09-21 21:26:31.541 20367 20367 I AconfigPackage: com.android.org.conscrypt.flags is mapped to com.android.conscrypt
+09-21 21:26:31.541 20367 20367 I AconfigPackage: com.android.org.conscrypt.net.flags is mapped to com.android.conscrypt
+09-21 21:26:31.541 20367 20367 I AconfigPackage: com.android.appsearch.flags is mapped to com.android.appsearch
+09-21 21:26:31.541 20367 20367 I AconfigPackage: com.android.permission.flags is mapped to com.android.permission
+09-21 21:26:31.542 20367 20367 I AconfigPackage: com.android.permissioncontroller.flags is mapped to com.android.permission
+09-21 21:26:31.542 20367 20367 I AconfigPackage: com.android.cellbroadcastreceiver.flags is mapped to com.android.cellbroadcast
+09-21 21:26:31.542 20367 20367 I AconfigPackage: android.media.swcodec.flags is mapped to com.android.media.swcodec
+09-21 21:26:31.542 20367 20367 I AconfigPackage: com.android.bluetooth.flags is mapped to com.android.bt
+09-21 21:26:31.542 20367 20367 I AconfigPackage: android.os.profiling is mapped to com.android.profiling
+09-21 21:26:31.542 20367 20367 I AconfigPackage: com.android.rkpd.flags is mapped to com.android.rkpd
+09-21 21:26:31.543 20367 20367 I AconfigPackage: android.uprobestats.mainline.flags is mapped to com.android.uprobestats
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.media.extractor.flags is mapped to com.android.media
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.media.metrics.flags is mapped to com.android.media
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.media.mainline.flags is mapped to com.android.media
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.tethering.mainline.beta is mapped to com.android.tethering
+09-21 21:26:31.543 20367 20367 I AconfigPackage: android.net.http is mapped to com.android.tethering
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.tethering.readonly.flags is mapped to com.android.tethering
+09-21 21:26:31.543 20367 20367 I AconfigPackage: android.net.vcn is mapped to com.android.tethering
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.net.flags is mapped to com.android.tethering
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.tethering.flags is mapped to com.android.tethering
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.tethering.beta.test is mapped to com.android.tethering
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.nearby.flags is mapped to com.android.tethering
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.net.thread.flags is mapped to com.android.tethering
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.net.ct.flags is mapped to com.android.tethering
+09-21 21:26:31.543 20367 20367 I AconfigPackage: android.net.http.flags is mapped to com.android.tethering
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.os.statsd.flags is mapped to com.android.os.statsd
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.art.flags is mapped to com.android.art
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.art.rw.flags is mapped to com.android.art
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.libcore is mapped to com.android.art
+09-21 21:26:31.543 20367 20367 I AconfigPackage: com.android.wifi.flags is mapped to com.android.wifi
+09-21 21:26:31.544 20367 20367 I AconfigPackage: com.android.signature.flags is mapped to com.android.mediaprovider
+09-21 21:26:31.544 20367 20367 I AconfigPackage: com.android.providers.media.flags is mapped to com.android.mediaprovider
+09-21 21:26:31.544 20367 20367 I AconfigPackage: android.graphics.pdf.flags is mapped to com.android.mediaprovider
+09-21 21:26:31.544 20367 20367 I AconfigPackage: android.graphics.pdf.flags.readonly is mapped to com.android.mediaprovider
+09-21 21:26:31.544 20367 20367 I AconfigPackage: com.android.ipsec.flags is mapped to com.android.ipsec
+09-21 21:26:31.544 20367 20367 I AconfigPackage: com.android.devicelock.flags is mapped to com.android.devicelock
+09-21 21:26:31.544 20367 20367 I AconfigPackage: com.android.icu is mapped to com.android.i18n
+09-21 21:26:31.544 20367 20367 I AconfigPackage: com.android.adbd.flags is mapped to com.android.adbd
+09-21 21:26:31.544 20367 20367 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+09-21 21:26:31.546 20367 20367 D UiAutomationConnection: Created on user UserHandle{0}
+09-21 21:26:31.546 20367 20367 I UiAutomation: Initialized for user 0 on display 0
+09-21 21:26:31.546 20367 20367 W UiAutomation: Created with deprecatead constructor, assumes DEFAULT_DISPLAY
+09-21 21:26:31.548  2595  4549 D AccessibilityManagerService: changeCurrentUserForTestAutomationIfNeededLocked(0): ignoring because device doesn't support visible background users
+09-21 21:26:31.548  2595  4549 I UiAutomationManager: Registering UiTestAutomationService (id=com.android.server.accessibility/UiAutomation, flags=0x0) when called by user 0
+09-21 21:26:31.548  2595  4549 V AccessibilityManagerService: onUserStateChangedLocked for userId: 0, forceUpdate: false
+09-21 21:26:31.549  2595  4549 D KNOX_MDM_SettingsProvider: isChangeAllowed() : name = accessibility_enabled
+09-21 21:26:31.549  2595  4549 D SettingsProvider: PUT_ret(/secure/accessibility_enabled), callingPackage:android
+09-21 21:26:31.549  2595  4549 D MagnificationConnectionManager: requestConnection :false mConnectionState : 3
+09-21 21:26:31.549  2595  4549 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+09-21 21:26:31.551  1671  2258 D DisplayModeController: setDesiredMode 4630946944264142721 {mode={fps=90.00 Hz, modePtr={id=0, vsyncRate=90.00 Hz, peakRefreshRate=90.00 Hz}}, emitEvent=true, force=false}
+09-21 21:26:31.556 26579 16104 I HoneySpace.GlobalSettingDataSourceImpl: Setting accessibility_enabled changed to 1
+09-21 21:26:31.556 26579 26579 I HoneySpace.TaskbarView@113895264: updateTaskbarViewTalkback enabled = false
+09-21 21:26:31.559  2595  4549 V AccessibilityManagerService: onUserStateChangedLocked for userId: 0, forceUpdate: false
+09-21 21:26:31.560  2595  4549 D KNOX_MDM_SettingsProvider: isChangeAllowed() : name = accessibility_enabled
+09-21 21:26:31.560  2595  4549 D SettingsProvider: PUT_ret(/secure/accessibility_enabled), callingPackage:android
+09-21 21:26:31.560  2595  4549 D MagnificationConnectionManager: requestConnection :false mConnectionState : 3
+09-21 21:26:31.560  2595  4549 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+09-21 21:26:31.561  2595  4553 W WindowManager: Cannot find window which accessibility connection is added to
+09-21 21:26:31.562  1640  2090 W SDM     : HWDeviceDRM::GetSupportedBitClkRate: Requested rate not supported: 0
+09-21 21:26:31.563  1640  2090 I SDM     : HWDeviceDRM::UpdateMixerAttributes: Mixer WxH 1200x1920-0 for Peripheral
+09-21 21:26:31.563  1640  2090 I SDM     : HWCDisplay::SubmitDisplayConfig: Active configuration changed from config 1 to 0
+09-21 21:26:31.565  1640  1766 I SDM     : HWDeviceDRM::SetDisplaySwitchMode: Mode 0 already set
+09-21 21:26:31.566  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:26:31.566  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:26:31.567  2595  2595 D BatterySaverPolicy: accessibility changed to true, updating policy.
+09-21 21:26:31.567  2595  2595 I AccessibilityManagerService: semIsAccessibilityServiceEnabled()
+09-21 21:26:31.567  2595  2595 I AccessibilityManagerService: accessibilityService is null
+09-21 21:26:31.567  2595  2595 I AccessibilityManagerService: semIsAccessibilityServiceEnabled()
+09-21 21:26:31.567  2595  2595 I AccessibilityManagerService: accessibilityService is null
+09-21 21:26:31.567  2595  2595 D AS.AudioService: Accessibility volume enabled = false
+09-21 21:26:31.569  2595  4549 W WindowManager: Cannot find window which accessibility connection is added to
+09-21 21:26:31.570 28804 28804 I SafetyCenterAccessibilityListener: accessibility event occurred, safety center feature not enabled.
+09-21 21:26:31.572  2595  3062 W WindowManager: Cannot find window which accessibility connection is added to
+09-21 21:26:31.574  2595  4553 W WindowManager: Cannot find window which accessibility connection is added to
+09-21 21:26:31.576  1671  1671 I SurfaceFlinger: [WindowToken{42192e1 type=2032 android.os.Binder@a100eeb}#56990] attach to parent LayerHierarchy{RequestedLayerState{Leaf:26:31#38 parentId=37} 2 children}
+09-21 21:26:31.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871064351907, event=0.000000
+09-21 21:26:31.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871065615501, event=0.000000
+09-21 21:26:31.648  2595  5418 D SemWifiUsabilityStatsMonitor: onWifiUsabilityStats - seqNum 120128, isSameBssidAndFreq true
+09-21 21:26:31.651  2595  3123 I SemWifiLinkQualityMonitor: Link stat: 2947 / 27 / 1.14 (224) / 263 / -60.0 || 100.0 : 263.00 / 0.5 : 0.88 / 0.55 : 0.01 / G (G) || 0f443f1c5805: 0.103 / 77.607 / N || N N / 0 0 / Y 2.0 / Y X 0 / 775715689 0 || Invalid
+09-21 21:26:31.675  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:31.693  1640  1766 W SDM     : HWDeviceDRM::GetSupportedBitClkRate: Requested rate not supported: 0
+09-21 21:26:31.695  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:26:31.695  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:26:31.725  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871164340762, event=0.000000
+09-21 21:26:31.727  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871165702428, event=0.000000
+09-21 21:26:31.747 18315 18369 E msys    : E[N WA]WAJMNSStreamImplForceDisconnectSync(586)=>[LogLevel:W] WAJMNSStream/impl/disconnect/force/p=0xb400007322d73500 (bytesSent=0)(bytesRecv=0)
+09-21 21:26:31.749 18315 18390 E msys    : E[N WA]_WAJMNSStreamImplOnMNSFailure(298)=>[LogLevel:I] WAJMNSStream/impl/callback/onMNSFailure/p=0xb400007322d73500 (error=TCP connection was closed before it was established)
+09-21 21:26:31.750 18315 18390 E msys    : E[N WA]_WAJMNSStreamImplCreateConnectionReport(202)=>[LogLevel:I] WAJMNSStream/impl/report port=80, connectedIPVersion=0, resolvedIPAddressCount=2, dnsResolutionStartTimeMS=775685786, dnsResolutionEndTimeMS=775685786, dnsCacheHit=Yes, connectStartTimeMS=775685786, connectEndTimeMS=0, proxyConnectStartTimeMS=0, proxyConnectEndTimeMS=0
+09-21 21:26:31.750 18315 18390 E msys    : E[N WA]_WAJMNSStreamImplUpdateStreamState(238)=>[LogLevel:I] WAJMNSStream/impl/state-changed/p=0xb400007322d73500 (connecting=>disconnected)
+09-21 21:26:31.769 18315 18369 E msys    : E[N WA]_WAJMNSStreamImplMNSTCPStreamCreate(410)=>[LogLevel:I] WAJMNSStream/impl/tcpStreamCreate/MNSStreamRaw/p=0xb400007322d73580
+09-21 21:26:31.769 18315 18369 E msys    : E[N WA]WAJMNSStreamImplCreate(485)=>[LogLevel:I] WAJMNSStream/impl/create/p=0xb400007322d73580 (mnsConn=0xb40000740327fac0)
+09-21 21:26:31.770 18315 18369 E msys    : E[N WA]WAJMNSStreamImplConnect(513)=>[LogLevel:I] WAJMNSStream/impl/connect/p=0xb400007322d73580 (endpoint=g.whatsapp.net:443)(ipAddressCount=54)
+09-21 21:26:31.771 18315 18369 E msys    : E[N WA]_WAJMNSStreamImplUpdateStreamState(238)=>[LogLevel:I] WAJMNSStream/impl/state-changed/p=0xb400007322d73580 (initial=>connecting)
+09-21 21:26:31.809 21821 19775 I NearbySharing: [NS_CONTROL] DiscoveryStateManager emitted ReportLost(id=14).
+09-21 21:26:31.811 21821 19775 I NearbySharing: NearbySharing Internal event ReceiverLost(receiverId=14)
+09-21 21:26:31.811 21821 20165 I NearbySharing: SendProvider: SendManager event Lost(receiverId=14)
+09-21 21:26:31.812 21821 19775 I NearbySharing: ShareTargetDiscoveredCallback: onShareTargetLost()
+09-21 21:26:31.816 21821 21821 I NearbySharing: ShortcutInfoManager removed shortcut A15 de Aulas
+09-21 21:26:31.816  2595  2698 W NotificationHistory: Attempted to remove conversation for locked/gone/disabled user 0
+09-21 21:26:31.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871264355189, event=0.000000
+09-21 21:26:31.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871265738470, event=0.000000
+09-21 21:26:31.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871364341178, event=0.000000
+09-21 21:26:31.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871365689616, event=0.000000
+09-21 21:26:31.936 26579 26579 I HoneySpace.PackageOperationTracker: onShortcutsChanged com.google.android.gms - 0 UserHandle{0}
+09-21 21:26:31.939 26579 26579 I HoneySpace.HoneySpaceManagerContainer: packageUpdateEvent - com.honeyspace.sdk.source.entity.PackageOperation$ShortcutChanged@6cdef4b
+09-21 21:26:31.939 26579 16104 I HoneySpace.HistoryViewModel@164631945@OneUI: handlePackageEvent
+09-21 21:26:31.940 26579  8423 I HoneySpace.HistoryViewModel@209325207@OneUI: handlePackageEvent
+09-21 21:26:31.941 26579 26579 I HoneySpace.EventListenerRegistry: pendingPackageOperation : pending = false, com.honeyspace.sdk.source.entity.PackageOperation$ShortcutChanged@6cdef4b
+09-21 21:26:32.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871464357949, event=0.000000
+09-21 21:26:32.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871465709824, event=0.000000
+09-21 21:26:32.082  2595  2691 D KNOX_MDM_SettingsProvider: isChangeAllowed() : name = enabled_notification_listeners
+09-21 21:26:32.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871564268678, event=0.000000
+09-21 21:26:32.125  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871565664720, event=0.000000
+09-21 21:26:32.185  1671  2258 D DisplayModeController: setDesiredMode 4630946944264142721 {mode={fps=60.00 Hz, modePtr={id=1, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=false, force=false}
+09-21 21:26:32.196  1640  2090 I SDM     : HWCDisplay::SubmitDisplayConfig: Active configuration changed from config 1 to 1
+09-21 21:26:32.197   973   973 D io_stats: !@   8,0 r 99525285 1544038436 w 47174331 720892340 d 3439832 535851484 f 7444501 25507138 iot 35963000 0 th 0 0 0 pt 0 inp 0 0 775716.238
+09-21 21:26:32.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871664361491, event=0.000000
+09-21 21:26:32.225  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871665745501, event=0.000000
+09-21 21:26:32.280  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:32.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871764346960, event=0.000000
+09-21 21:26:32.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871765708626, event=0.000000
+09-21 21:26:32.370  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:32.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871864363730, event=0.000000
+09-21 21:26:32.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871865718053, event=0.000000
+09-21 21:26:32.456  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:32.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871964262637, event=0.000000
+09-21 21:26:32.525  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251871965679616, event=0.000000
+09-21 21:26:32.536  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:32.599 20367 20367 D SemCscFeature: Encoded
+09-21 21:26:32.601  1671  2258 D DisplayModeController: setDesiredMode 4630946944264142721 {mode={fps=90.00 Hz, modePtr={id=0, vsyncRate=90.00 Hz, peakRefreshRate=90.00 Hz}}, emitEvent=true, force=false}
+09-21 21:26:32.608 20367 20367 W AccessibilityNodeInfoDumper: Fetch time: 4ms
+09-21 21:26:32.609  2595  2661 V AccessibilityManagerService: onUserStateChangedLocked for userId: 0, forceUpdate: false
+09-21 21:26:32.609  2595  2661 D KNOX_MDM_SettingsProvider: isChangeAllowed() : name = accessibility_enabled
+09-21 21:26:32.610  2595  2661 D SettingsProvider: PUT_ret(/secure/accessibility_enabled), callingPackage:android
+09-21 21:26:32.612  2595  2661 D MagnificationConnectionManager: requestConnection :false mConnectionState : 3
+09-21 21:26:32.612  2595  2661 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+09-21 21:26:32.612  2595  2661 D AccessibilityManagerService: restoreCurrentUserForTestAutomationIfNeededLocked(): ignoring because device doesn't support visible background users
+09-21 21:26:32.613  2595  4849 D KNOX_MDM_SettingsProvider: isChangeAllowed() : name = accelerometer_rotation
+09-21 21:26:32.613  2595  4849 D KNOX_MDM_SettingsProvider: isChangeAllowed() : name = user_rotation
+09-21 21:26:32.613  2595  4849 V WindowManager: Computed rotation=ROTATION_0 (0) for display id=0 based on lastOrientation=SCREEN_ORIENTATION_UNSPECIFIED (-1) and oldRotation=ROTATION_0 (0), caller=com.android.server.wm.WindowManagerService.updateRotationUnchecked:72 com.android.server.wm.WindowManagerService.thawDisplayRotation:113 com.android.server.wm.WindowManagerService.thawRotation:2 android.view.IWindowManager$Stub.onTransact:3013 com.android.server.wm.WindowManagerService.onTransact:1 android.os.Binder.execTransactInternal:1457 
+09-21 21:26:32.613  1640  2090 W SDM     : HWDeviceDRM::GetSupportedBitClkRate: Requested rate not supported: 0
+09-21 21:26:32.613  1640  2090 I SDM     : HWDeviceDRM::UpdateMixerAttributes: Mixer WxH 1200x1920-0 for Peripheral
+09-21 21:26:32.614  1640  2090 I SDM     : HWCDisplay::SubmitDisplayConfig: Active configuration changed from config 1 to 0
+09-21 21:26:32.614 20367 20367 D AndroidRuntime: Shutting down VM
+09-21 21:26:32.614 20367 20401 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:26:32.615 20367 20383 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:26:32.616  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:26:32.616  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:26:32.617 20367 20386 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:26:32.620  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:32.621  1640  1766 I SDM     : HWDeviceDRM::SetDisplaySwitchMode: Mode 0 already set
+09-21 21:26:32.621 26579 12533 I HoneySpace.GlobalSettingDataSourceImpl: Setting accessibility_enabled changed to 0
+09-21 21:26:32.623  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872064366751, event=0.000000
+09-21 21:26:32.623  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872065614407, event=0.000000
+09-21 21:26:32.626  2595  2595 D BatterySaverPolicy: accessibility changed to false, updating policy.
+09-21 21:26:32.627  2595  4553 W WindowManager: Cannot find window which accessibility connection is added to
+09-21 21:26:32.629  1671  1671 I SurfaceFlinger: [LayerHierarchy{RequestedLayerState{WindowToken{42192e1 type=2032 android.os.Binder@a100eeb}#56990 z=1} no children}] reparent to OffscreenRoot
+09-21 21:26:32.629  1671  1671 I SurfaceFlinger: [LayerHierarchy{RequestedLayerState{WindowToken{42192e1 type=2032 android.os.Binder@a100eeb}#56990 z=1} no children}] RelativeParent to null
+09-21 21:26:32.629  2595  4553 W WindowManager: Cannot find window which accessibility connection is added to
+09-21 21:26:32.630  2595  4849 W WindowManager: Cannot find window which accessibility connection is added to
+09-21 21:26:32.631  1671  1671 I SurfaceFlinger: id=56990 Removed WindowToken{42192e1 type=2032 android.os.Binder@a100eeb}#56990 (213)
+09-21 21:26:32.631  2595  2661 W WindowManager: Cannot find window which accessibility connection is added to
+09-21 21:26:32.632 26579 26579 I HoneySpace.TaskbarView@113895264: updateTaskbarViewTalkback enabled = false
+09-21 21:26:32.645  1671  1671 I SurfaceFlinger: destroyed WindowToken{42192e1 type=2032 android.os.Binder@a100eeb}#56990 form LifecycleManager
+09-21 21:26:32.646  1671  1671 I SurfaceFlinger: id=56990 onLayerDestroyed from LayerHierarchyBuilder(RequestedLayerState{WindowToken{42192e1 type=2032 android.os.Binder@a100eeb}#56990 !handle z=1})
+09-21 21:26:32.648  1671  1671 I Layer   : id=56990 Destroyed WindowToken{42192e1 type=2032 android.os.Binder@a100eeb}#56990
+09-21 21:26:32.723  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872164353782, event=0.000000
+09-21 21:26:32.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872165621126, event=0.000000
+09-21 21:26:32.728  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:32.746  1640  1766 W SDM     : HWDeviceDRM::GetSupportedBitClkRate: Requested rate not supported: 0
+09-21 21:26:32.748  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:26:32.748  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:26:32.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872264340293, event=0.000000
+09-21 21:26:32.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872265719303, event=0.000000
+09-21 21:26:32.927  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872364266282, event=0.000000
+09-21 21:26:32.928  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872365745918, event=0.000000
+09-21 21:26:33.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872464343626, event=0.000000
+09-21 21:26:33.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872465699251, event=0.000000
+09-21 21:26:33.086  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+09-21 21:26:33.086  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+09-21 21:26:33.087  1584 31315 D vendor.qti.bluetooth@1.0-wake_lock: Acquire wakelock is acquired 
+09-21 21:26:33.087  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+09-21 21:26:33.092 31250 31323 I ScanController: onScanResult to scannerId: 2- eventType=0x10, addressType=1, address=XX:XX:XX:XX:DC:83, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-88, periodicAdvInt=0x0
+09-21 21:26:33.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872564359824, event=0.000000
+09-21 21:26:33.125  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872565645814, event=0.000000
+09-21 21:26:33.128  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+09-21 21:26:33.128  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF
+09-21 21:26:33.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872664346595, event=0.000000
+09-21 21:26:33.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872665607116, event=0.000000
+09-21 21:26:33.236  1671  2258 D DisplayModeController: setDesiredMode 4630946944264142721 {mode={fps=60.00 Hz, modePtr={id=1, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=false, force=false}
+09-21 21:26:33.248  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+09-21 21:26:33.249  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+09-21 21:26:33.249  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+09-21 21:26:33.249  1640  2090 I SDM     : HWCDisplay::SubmitDisplayConfig: Active configuration changed from config 1 to 1
+09-21 21:26:33.256 31250 31323 I ScanController: onScanResult to scannerId: 2- eventType=0x10, addressType=1, address=XX:XX:XX:XX:23:3F, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-96, periodicAdvInt=0x0
+09-21 21:26:33.290  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+09-21 21:26:33.291  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF
+09-21 21:26:33.323  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872764487532, event=0.000000
+09-21 21:26:33.332  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:33.423  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:33.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872864348314, event=0.000000
+09-21 21:26:33.426  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872865618782, event=0.000000
+09-21 21:26:33.441  1584 31294 D vendor.qti.bluetooth@1.0-wake_lock: Release wakelock is released 
+09-21 21:26:33.443 14052 14052 I wpa_supplicant: Heartbeat 26703
+09-21 21:26:33.507  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:33.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872964365085, event=0.000000
+09-21 21:26:33.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251872965719407, event=0.000000
+09-21 21:26:33.589  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:33.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873064351595, event=0.000000
+09-21 21:26:33.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873065697376, event=0.000000
+09-21 21:26:33.674  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:33.687 10274 10274 I adbd    : adbd service requested 'sync:'
+09-21 21:26:33.723  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873164285553, event=0.000000
+09-21 21:26:33.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873164575137, event=0.000000
+09-21 21:26:33.757  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:33.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873264354616, event=0.000000
+09-21 21:26:33.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873265701387, event=0.000000
+09-21 21:26:33.841  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:33.924  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:33.925  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873364340605, event=0.000000
+09-21 21:26:33.929  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873365686126, event=0.000000
+09-21 21:26:34.007  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:34.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873464357376, event=0.000000
+09-21 21:26:34.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873465706387, event=0.000000
+09-21 21:26:34.091  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:34.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873564290970, event=0.000000
+09-21 21:26:34.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873564575137, event=0.000000
+09-21 21:26:34.177  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:34.190 21821 20165 I NearbyMediums: Found Fast Ble Advertisements :
+09-21 21:26:34.190 21821 20165 I NearbyMediums: BleAdvertisement { version=2, socketVersion=2, isFast=true, serviceIdHash=null, data=[ 0x23 0x57 0x4f 0x58 0x50 0x11 0x32 0x58 0x79 0xf2 0x47 0xa2 0x7f 0x56 0x8e 0x2c 0x11 0x1f 0x10 0x23 0xe6 0x5e 0x28 ], deviceToken=[ 0xcf 0x3d ], rxAdvertisement=null } : 1 times.
+09-21 21:26:34.190 21821 20165 I NearbyMediums: BleAdvertisement { version=2, socketVersion=2, isFast=true, serviceIdHash=null, data=[ 0x23 0x57 0x4f 0x58 0x50 0x11 0x32 0x58 0x79 0xf2 0x47 0xa2 0x7f 0x56 0x8e 0x2c 0x11 0x1f 0x10 0x23 0xe6 0x5e 0x28 ], deviceToken=[ 0x4c 0x6c ], rxAdvertisement=null } : 1 times.
+09-21 21:26:34.190 21821 20165 I NearbyMediums: BleAdvertisement { version=2, socketVersion=2, isFast=true, serviceIdHash=null, data=[ 0x23 0x41 0x55 0x55 0x44 0x11 0x32 0x81 0xfd 0xc0 0xab 0x29 0x7f 0x17 0x17 0x27 0x76 0x9b 0x88 0x01 0x84 0xba 0x9d ], deviceToken=[ 0xcc 0x81 ], rxAdvertisement=null } : 1 times.
+09-21 21:26:34.190 21821 20165 I NearbyMediums: Total 3 fast advertisements from 3 unique advertisers.
+09-21 21:26:34.191 21821 20165 I NearbyMediums: Current Tracked Scanning Clients are : {NearbyConnections.EnvironmentMonitor, NearbySharing}
+09-21 21:26:34.198   973   973 D io_stats: !@   8,0 r 99525286 1544038440 w 47174343 720893104 d 3439832 535851484 f 7444502 25507141 iot 35963024 0 th 0 0 0 pt 0 inp 0 0 775718.240
+09-21 21:26:34.199   973   973 D io_stats: !@ Read_top(KB): app_process(20367) 332 gle.android.gms(21821) 144 com.whatsapp(18315) 64
+09-21 21:26:34.199   973   973 D io_stats: !@ Write_top(KB): kworker/u16:15(8072) 636 system_server(2595) 444 .simaitutor.app(10772) 248
+09-21 21:26:34.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873664360657, event=0.000000
+09-21 21:26:34.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873665717376, event=0.000000
+09-21 21:26:34.259  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:34.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873764346907, event=0.000000
+09-21 21:26:34.325  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873765708053, event=0.000000
+09-21 21:26:34.342  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:34.372  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:34.424  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:34.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873864363418, event=0.000000
+09-21 21:26:34.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873865711491, event=0.000000
+09-21 21:26:34.452 31250 31290 I bluetooth: system/gd/hci/le_advertising_manager.cc:903 set_advertising_set_random_address_on_timer: Scheduling address rotation for advertiser_id=0
+09-21 21:26:34.453 31250 31290 I bluetooth: system/gd/hci/le_address_manager.cc:581 GetNextPrivateAddressIntervalRange: client=advertising_set_0, nonwake=8m53s, wake=13m50s
+09-21 21:26:34.454  1584  1584 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+09-21 21:26:34.461  1584  1584 D vendor.qti.bluetooth@1.0-uart_transport: SocRxDWakeup: Flow off->Change UART baudrate to 38.4kbs->send 0x00->Change UART baudrate to max->Flow on
+09-21 21:26:34.461  1584  1584 I vendor.qti.bluetooth@1.0-uart_transport: ## userial_vendor_ioctl: UART Flow Off 
+09-21 21:26:34.463  1584  1584 I vendor.qti.bluetooth@1.0-uart_transport: ## userial_vendor_set_baud: 17
+09-21 21:26:34.474  1584  1584 I vendor.qti.bluetooth@1.0-uart_transport: SetBaudRate: in BOTHER
+09-21 21:26:34.474  1584  1584 I vendor.qti.bluetooth@1.0-uart_transport: ## userial_vendor_ioctl: UART Flow On 
+09-21 21:26:34.474  1584  1584 D vendor.qti.bluetooth@1.0-wake_lock: Acquire wakelock is acquired 
+09-21 21:26:34.474  1584  1584 I vendor.qti.bluetooth@1.0-ibs_handler: DeviceWakeUp: Writing IBS_WAKE_IND
+09-21 21:26:34.474  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_ACK: 0xFC
+09-21 21:26:34.474  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Signal wack_cond_
+09-21 21:26:34.475  1584  1584 D vendor.qti.bluetooth@1.0-ibs_handler: DeviceWakeUp: Unblocked from waiting for FC, pthread_cond_timedwait ret = 0
+09-21 21:26:34.475  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: TX SM is awake already, stop wack timer if running
+09-21 21:26:34.477  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+09-21 21:26:34.477  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+09-21 21:26:34.482 31250 31290 I bluetooth: system/gd/hci/le_advertising_manager.cc:1868 on_set_advertising_set_random_address_complete: update random address for advertising set 0 : xx:xx:xx:xx:c8:19
+09-21 21:26:34.509  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:34.523  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873964290762, event=0.000000
+09-21 21:26:34.523  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+09-21 21:26:34.523  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251873964574876, event=0.000000
+09-21 21:26:34.592  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:34.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874064366699, event=0.000000
+09-21 21:26:34.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874065628001, event=0.000000
+09-21 21:26:34.667  2595  5418 D SemWifiUsabilityStatsMonitor: onWifiUsabilityStats - seqNum 120129, isSameBssidAndFreq true
+09-21 21:26:34.669  2595  3123 I SemWifiLinkQualityMonitor: Link stat: 2947 / 28 / 1.15 (303) / 325 / -59.0 || 100.0 : 325.00 / 0.5 : 0.87 / 0.55 : 0.01 / G (G) || 0f443f1c5805: 0.097 / 82.215 / N || N N / 0 0 / Y 2.0 / Y X 0 / 775718709 0 || Invalid
+09-21 21:26:34.676  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:34.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874164352689, event=0.000000
+09-21 21:26:34.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874165623626, event=0.000000
+09-21 21:26:34.759  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:34.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874264339199, event=0.000000
+09-21 21:26:34.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874265602168, event=0.000000
+09-21 21:26:34.843  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69998 us
+09-21 21:26:34.923  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874364292845, event=0.000000
+09-21 21:26:34.923  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874364575397, event=0.000000
+09-21 21:26:34.927  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:35.010  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:35.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874464342220, event=0.000000
+09-21 21:26:35.026  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874465603314, event=0.000000
+09-21 21:26:35.071  2595  4205 I NSLocationMonitor: getGPSUsingApps() called
+09-21 21:26:35.072 27167 27194 I NSLocationManager_FLP: getGPSUsingApps, No change
+09-21 21:26:35.083  2595  4205 D FreecessHandler: freeze com.google.android.documentsui(10055) result : 2
+09-21 21:26:35.094  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:35.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874564358730, event=0.000000
+09-21 21:26:35.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874565622116, event=0.000000
+09-21 21:26:35.177  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:35.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874664346022, event=0.000000
+09-21 21:26:35.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874665593574, event=0.000000
+09-21 21:26:35.260  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:35.325  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874764287376, event=0.000000
+09-21 21:26:35.326  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874764577220, event=0.000000
+09-21 21:26:35.344  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:35.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874864348001, event=0.000000
+09-21 21:26:35.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874865592480, event=0.000000
+09-21 21:26:35.428  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:35.483  1584 31319 I vendor.qti.bluetooth@1.0-ibs_handler: DeviceSleep: TX Awake, Sending SLEEP_IND
+09-21 21:26:35.483  1584 31319 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF
+09-21 21:26:35.511  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:35.525  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874964365866, event=0.000000
+09-21 21:26:35.526  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251874965632637, event=0.000000
+09-21 21:26:35.595  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:35.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875064351022, event=0.000000
+09-21 21:26:35.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875065630085, event=0.000000
+09-21 21:26:35.635  1584 31294 D vendor.qti.bluetooth@1.0-wake_lock: Release wakelock is released 
+09-21 21:26:35.678  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:35.723  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875164287585, event=0.000000
+09-21 21:26:35.723  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875164575553, event=0.000000
+09-21 21:26:35.762  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:35.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875264354824, event=0.000000
+09-21 21:26:35.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875265702949, event=0.000000
+09-21 21:26:35.846  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:35.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875364340553, event=0.000000
+09-21 21:26:35.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875365750918, event=0.000000
+09-21 21:26:35.929  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:36.012  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:36.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875464357324, event=0.000000
+09-21 21:26:36.027  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875465715345, event=0.000000
+09-21 21:26:36.046  2595  4205 I NSLocationMonitor: getGPSUsingApps() called
+09-21 21:26:36.047 27167 27194 I NSLocationManager_FLP: getGPSUsingApps, No change
+09-21 21:26:36.056  2595  4205 D FreecessHandler: freeze com.simaitutor.app(10352) result : 12
+09-21 21:26:36.096  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:36.123  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875564343314, event=0.000000
+09-21 21:26:36.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875565562741, event=0.000000
+09-21 21:26:36.178  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:36.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875664360345, event=0.000000
+09-21 21:26:36.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875665716803, event=0.000000
+09-21 21:26:36.263  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:36.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875764346595, event=0.000000
+09-21 21:26:36.325  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875765711907, event=0.000000
+09-21 21:26:36.349  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:36.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875864363105, event=0.000000
+09-21 21:26:36.425  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875865723470, event=0.000000
+09-21 21:26:36.430  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:36.514  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:36.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875964349616, event=0.000000
+09-21 21:26:36.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251875965698314, event=0.000000
+09-21 21:26:36.598  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:36.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876064366387, event=0.000000
+09-21 21:26:36.625  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876065719564, event=0.000000
+09-21 21:26:36.680  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:36.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876164352637, event=0.000000
+09-21 21:26:36.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876165708574, event=0.000000
+09-21 21:26:36.764  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:36.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876264338887, event=0.000000
+09-21 21:26:36.825  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876265698730, event=0.000000
+09-21 21:26:36.845  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+09-21 21:26:36.845  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+09-21 21:26:36.846  1584 31315 D vendor.qti.bluetooth@1.0-wake_lock: Acquire wakelock is acquired 
+09-21 21:26:36.846  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+09-21 21:26:36.848  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:36.850 31250 31323 I ScanController: onScanResult to scannerId: 2- eventType=0x10, addressType=1, address=XX:XX:XX:XX:D7:DC, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-85, periodicAdvInt=0x0
+09-21 21:26:36.853 21821 20165 I NearbyMediums: Triggered instant on lost for service id : NearbySharing with hash [ 0xc0 0xcb 0x22 0x32 ]
+09-21 21:26:36.854 21821 19775 I NearbyConnections: Processing instant lost on BlePeripheral BlePeripheral{advertisement=BleAdvertisement { version=2, socketVersion=2, isFast=true, serviceIdHash=null, data=[ 0x23 0x57 0x4f 0x58 0x50 0x11 0x32 0x58 0x79 0xf2 0x47 0xa2 0x7f 0x56 0x8e 0x2c 0x11 0x1f 0x10 0x23 0xe6 0x5e 0x28 ], deviceToken=[ 0x4c 0x6c ], rxAdvertisement=null }, dctAdvertisement=null, address=null, psm=0, deviceToken=<ByteString@28815c0 size=2 contents="Ll">, isSecondProfile=false, rxInstantConnectionAdv=null}.
+09-21 21:26:36.854 21821 19775 I NearbyConnections: No associated endpoint found to lost.
+09-21 21:26:36.887  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+09-21 21:26:36.888  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF
+09-21 21:26:36.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876364355657, event=0.000000
+09-21 21:26:36.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876365620345, event=0.000000
+09-21 21:26:36.931  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:36.959  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+09-21 21:26:36.960  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+09-21 21:26:36.960  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+09-21 21:26:36.964 31250 31323 I ScanController: onScanResult to scannerId: 2- eventType=0x10, addressType=1, address=XX:XX:XX:XX:D7:DC, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-84, periodicAdvInt=0x0
+09-21 21:26:37.001  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+09-21 21:26:37.001  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF
+09-21 21:26:37.015  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:37.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876464341647, event=0.000000
+09-21 21:26:37.025  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876465607428, event=0.000000
+09-21 21:26:37.098  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:37.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876564358418, event=0.000000
+09-21 21:26:37.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876565657793, event=0.000000
+09-21 21:26:37.152  1584 31294 D vendor.qti.bluetooth@1.0-wake_lock: Release wakelock is released 
+09-21 21:26:37.182  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:37.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876664344668, event=0.000000
+09-21 21:26:37.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876665741543, event=0.000000
+09-21 21:26:37.266  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:37.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876764361439, event=0.000000
+09-21 21:26:37.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876765730085, event=0.000000
+09-21 21:26:37.349  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:37.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876864347689, event=0.000000
+09-21 21:26:37.426  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876865736439, event=0.000000
+09-21 21:26:37.433  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:37.438  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:37.514  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:37.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876964366022, event=0.000000
+09-21 21:26:37.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251876965732897, event=0.000000
+09-21 21:26:37.599  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:37.625  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877064350970, event=0.000000
+09-21 21:26:37.627  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877065738418, event=0.000000
+09-21 21:26:37.681  2595  5418 D SemWifiUsabilityStatsMonitor: onWifiUsabilityStats - seqNum 120130, isSameBssidAndFreq true
+09-21 21:26:37.682  2595  3123 I SemWifiLinkQualityMonitor: Link stat: 2849 / 23 / 1.28 (175) / 325 / -59.0 || 100.0 : 325.00 / 0.5 : 0.78 / 0.55 : 0.01 / G (G) || 0f443f1c5805: 0.097 / 82.303 / N || N N / 0 0 / Y 2.0 / Y X 0 / 775721723 0 || Invalid
+09-21 21:26:37.683  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:37.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877164367741, event=0.000000
+09-21 21:26:37.725  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877165744824, event=0.000000
+09-21 21:26:37.765  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:37.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877264355085, event=0.000000
+09-21 21:26:37.825  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877265716282, event=0.000000
+09-21 21:26:37.850  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:37.925  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877364339980, event=0.000000
+09-21 21:26:37.925  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877365720137, event=0.000000
+09-21 21:26:37.934  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:38.016  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:38.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877464359355, event=0.000000
+09-21 21:26:38.027  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877465771126, event=0.000000
+09-21 21:26:38.101  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:38.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877564343522, event=0.000000
+09-21 21:26:38.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877565701803, event=0.000000
+09-21 21:26:38.185  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:38.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877664360032, event=0.000000
+09-21 21:26:38.226  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877665722220, event=0.000000
+09-21 21:26:38.268  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:38.327  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877764346022, event=0.000000
+09-21 21:26:38.327  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877765712168, event=0.000000
+09-21 21:26:38.352  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:38.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877864263835, event=0.000000
+09-21 21:26:38.426  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877865699251, event=0.000000
+09-21 21:26:38.434  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:38.518  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:38.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877964349303, event=0.000000
+09-21 21:26:38.525  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251877965701335, event=0.000000
+09-21 21:26:38.602  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:38.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878064366074, event=0.000000
+09-21 21:26:38.625  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878065721751, event=0.000000
+09-21 21:26:38.685  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:38.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878164352064, event=0.000000
+09-21 21:26:38.725  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878165743730, event=0.000000
+09-21 21:26:38.769  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:38.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878264262532, event=0.000000
+09-21 21:26:38.826  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878265704668, event=0.000000
+09-21 21:26:38.852  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:38.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878364355085, event=0.000000
+09-21 21:26:38.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878365740710, event=0.000000
+09-21 21:26:38.934  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:39.019  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:39.024  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878464341335, event=0.000000
+09-21 21:26:39.026  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878465683991, event=0.000000
+09-21 21:26:39.029  3222  3545 D SatelliteController: isInCarrierRoamingNbIotNtn: satellite is disabled
+09-21 21:26:39.103  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:39.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878564359147, event=0.000000
+09-21 21:26:39.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878565741647, event=0.000000
+09-21 21:26:39.187  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:39.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878664268887, event=0.000000
+09-21 21:26:39.227  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878665668887, event=0.000000
+09-21 21:26:39.270  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:39.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878764361387, event=0.000000
+09-21 21:26:39.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878765748053, event=0.000000
+09-21 21:26:39.353  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:39.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878864347376, event=0.000000
+09-21 21:26:39.425  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878865735553, event=0.000000
+09-21 21:26:39.437  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:39.521  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:39.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878964364407, event=0.000000
+09-21 21:26:39.525  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251878965742480, event=0.000000
+09-21 21:26:39.605  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:39.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879064273522, event=0.000000
+09-21 21:26:39.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879065474512, event=0.000000
+09-21 21:26:39.688  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:39.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879164367168, event=0.000000
+09-21 21:26:39.725  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879165726960, event=0.000000
+09-21 21:26:39.771  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:39.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879264353678, event=0.000000
+09-21 21:26:39.826  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879265742168, event=0.000000
+09-21 21:26:39.855  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:39.928  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879364339668, event=0.000000
+09-21 21:26:39.928  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879365717116, event=0.000000
+09-21 21:26:39.938  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:40.022  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:40.023  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879464280449, event=0.000000
+09-21 21:26:40.023  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879464576803, event=0.000000
+09-21 21:26:40.106  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:40.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879564343210, event=0.000000
+09-21 21:26:40.126  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879565707949, event=0.000000
+09-21 21:26:40.190  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:40.202   973   973 D io_stats: !@   8,0 r 99525289 1544038464 w 47174346 720893904 d 3439832 535851484 f 7444502 25507141 iot 35963040 0 th 0 0 0 pt 0 inp 0 0 775724.243
+09-21 21:26:40.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879664359460, event=0.000000
+09-21 21:26:40.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879665716387, event=0.000000
+09-21 21:26:40.273  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:40.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879764347272, event=0.000000
+09-21 21:26:40.327  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879765716699, event=0.000000
+09-21 21:26:40.356  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:40.423  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879864288887, event=0.000000
+09-21 21:26:40.423  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879864578782, event=1.000000
+09-21 21:26:40.440  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:40.509  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:40.523  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:40.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879964348730, event=1.000000
+09-21 21:26:40.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251879965701543, event=0.000000
+09-21 21:26:40.563  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+09-21 21:26:40.564  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+09-21 21:26:40.564  1584 31315 D vendor.qti.bluetooth@1.0-wake_lock: Acquire wakelock is acquired 
+09-21 21:26:40.564  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+09-21 21:26:40.570 31250 31323 I ScanController: onScanResult to scannerId: 2- eventType=0x10, addressType=1, address=XX:XX:XX:XX:C7:39, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-82, periodicAdvInt=0x0
+09-21 21:26:40.605  1584 31315 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+09-21 21:26:40.605  1584 31315 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF
+09-21 21:26:40.607  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:40.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880064365762, event=0.000000
+09-21 21:26:40.624  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880065621699, event=0.000000
+09-21 21:26:40.690  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:40.700  2595  5418 D SemWifiUsabilityStatsMonitor: onWifiUsabilityStats - seqNum 120131, isSameBssidAndFreq true
+09-21 21:26:40.701  2595  3123 I SemWifiLinkQualityMonitor: Link stat: 2849 / 22 / 1.16 (186) / 325 / -59.0 || 100.0 : 325.00 / 0.5 : 0.87 / 0.55 : 0.01 / G (G) || 0f443f1c5805: 0.097 / 82.325 / N || N N / 0 0 / Y 2.0 / Y X 0 / 775724741 0 || Invalid
+09-21 21:26:40.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880164351751, event=0.000000
+09-21 21:26:40.725  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880165617532, event=0.000000
+09-21 21:26:40.756  1584 31294 D vendor.qti.bluetooth@1.0-wake_lock: Release wakelock is released 
+09-21 21:26:40.772  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:40.822  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880264287637, event=0.000000
+09-21 21:26:40.823  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880264574876, event=0.000000
+09-21 21:26:40.857  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:40.927  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880364354772, event=0.000000
+09-21 21:26:40.929  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880365696855, event=0.000000
+09-21 21:26:40.941  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:41.001  1957  1957 I CNSS    : /sys/wifi/dump_in_progress file read permission doesn't exist
+09-21 21:26:41.001  1957  1957 I CNSS    : /sys/wifi/max_chipset_log_size doesn't exist
+09-21 21:26:41.025  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880464341282, event=0.000000
+09-21 21:26:41.025  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:41.026  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880465698470, event=0.000000
+09-21 21:26:41.084  2595  4205 I NSLocationMonitor: getGPSUsingApps() called
+09-21 21:26:41.085 27167 27194 I NSLocationManager_FLP: getGPSUsingApps, No change
+09-21 21:26:41.094  2595  4205 D FreecessHandler: freeze com.google.android.documentsui(10055) result : 2
+09-21 21:26:41.108  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:41.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880564357718, event=0.000000
+09-21 21:26:41.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880565724228, event=0.000000
+09-21 21:26:41.191  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:41.222  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880664287822, event=0.000000
+09-21 21:26:41.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880664575062, event=0.000000
+09-21 21:26:41.235  2595  2695 E Watchdog: !@Sync: 25830 heap(MB): 116 / 132 FD: 1136 [2026-09-21 21:26:41.234]
+09-21 21:26:41.246  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:41.255  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:41.260  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:41.262  1650  1650 E sehhealth-service: sehtBinder.get() is null
+09-21 21:26:41.276  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:41.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880764361260, event=0.000000
+09-21 21:26:41.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880765711937, event=0.000000
+09-21 21:26:41.359  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:41.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880864346989, event=0.000000
+09-21 21:26:41.425  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880865699853, event=0.000000
+09-21 21:26:41.442  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:41.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880964364020, event=0.000000
+09-21 21:26:41.524  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251880965739593, event=1.000000
+09-21 21:26:41.526  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:41.609  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:41.623  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881064285218, event=1.000000
+09-21 21:26:41.623  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881064574228, event=0.000000
+09-21 21:26:41.693  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:41.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881164366780, event=0.000000
+09-21 21:26:41.724  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881165734905, event=0.000000
+09-21 21:26:41.776  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:41.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881264353030, event=0.000000
+09-21 21:26:41.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881265703707, event=0.000000
+09-21 21:26:41.860  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:41.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881364339801, event=0.000000
+09-21 21:26:41.927  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881365690739, event=0.000000
+09-21 21:26:41.943  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:42.023  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881464287822, event=0.000000
+09-21 21:26:42.023  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881464576624, event=0.000000
+09-21 21:26:42.027  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:42.058  2595  4205 I NSLocationMonitor: getGPSUsingApps() called
+09-21 21:26:42.060 27167 27194 I NSLocationManager_FLP: getGPSUsingApps, No change
+09-21 21:26:42.068  2595  4205 D FreecessHandler: freeze com.simaitutor.app(10352) result : 12
+09-21 21:26:42.110  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:42.124  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881564342562, event=0.000000
+09-21 21:26:42.125  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881565697978, event=0.000000
+09-21 21:26:42.195  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:42.204   973   973 D io_stats: !@ Read_top(KB): m.android.phone(3222) 20 kworker/0:7H(18729) 4
+09-21 21:26:42.204   973   973 D io_stats: !@ Write_top(KB): kworker/u16:2(13970) 800
+09-21 21:26:42.226  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881664359072, event=0.000000
+09-21 21:26:42.226  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881665711103, event=0.000000
+09-21 21:26:42.278  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us
+09-21 21:26:42.304  8846 17668 D App     : bindSocketToActiveNetwork: binding fd=151 to net=139 iface=wlan0
+09-21 21:26:42.304  8846 17646 D App     : bindSocketToActiveNetwork: binding fd=153 to net=139 iface=wlan0
+09-21 21:26:42.305  8846 17662 D gojni   : App: bindSocketToActiveNetwork: binding fd=153 to net=139 iface=wlan0
+09-21 21:26:42.306  8846 17662 D gojni   : App: bindSocketToActiveNetwork: binding fd=151 to net=139 iface=wlan0
+09-21 21:26:42.312  8846 17662 D App     : bindSocketToActiveNetwork: binding fd=153 to net=139 iface=wlan0
+09-21 21:26:42.313  8846 17648 D gojni   : App: bindSocketToActiveNetwork: binding fd=153 to net=139 iface=wlan0
+09-21 21:26:42.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881764345843, event=0.000000
+09-21 21:26:42.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881765707978, event=0.000000
+09-21 21:26:42.361  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
+09-21 21:26:42.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881864362874, event=0.000000
+09-21 21:26:42.424  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251881865704176, event=0.000000
+09-21 21:26:42.426 10274 10274 I adbd    : adbd service requested 'shell,v2,TERM=dumb:export ANDROID_LOG_TAGS=''; exec logcat '-d''
+09-21 21:26:42.443  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us

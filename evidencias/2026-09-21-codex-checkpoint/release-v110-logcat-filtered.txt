@@ -1,0 +1,891 @@
+09-21 21:52:20.936 16946 16946 W PlatformAconfigPackage: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+09-21 21:52:20.964 16946 16946 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+09-21 21:52:21.128  2595  3747 W libprocessgroup: Failed to find DoSomethingOlaf task profile
+09-21 21:52:21.137  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:21.137  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:21.608  2595  2689 V WindowManager:     startWCT=WindowContainerTransaction { changes= {} hops= [] errorCallbackToken=null taskFragmentOrganizer=null }
+09-21 21:52:22.151  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:22.151  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:22.293  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:22.293  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:22.320 16964 16964 I flutter : [SIM_STARTUP] RUN_APP_SUBMITTED
+09-21 21:52:22.398 16964 16964 I flutter : [SIM_STARTUP] FIRST_LOCAL_FRAME
+09-21 21:52:22.400  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:22.400  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:22.442  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:22.443  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:22.444 16964 16964 E .simaitutor.app: Unable to open libpenguin.so: dlopen failed: library "libpenguin.so" not found.
+09-21 21:52:22.509 17020 17020 W gle.android.tts: Failed to find entry 'classes.dex': Entry not found
+09-21 21:52:22.512 17020 17020 W gle.android.tts: Failed to find entry 'classes.dex': Entry not found
+09-21 21:52:22.514 17020 17020 W gle.android.tts: Failed to find entry 'classes.dex': Entry not found
+09-21 21:52:22.516 17020 17020 W gle.android.tts: Failed to find entry 'classes.dex': Entry not found
+09-21 21:52:22.518 17020 17020 W gle.android.tts: Failed to find entry 'classes.dex': Entry not found
+09-21 21:52:22.550  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:22.551  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:22.949  4642  4642 W ContentResolver: Failed to get type for: content://media/external/file/32734 (No item at content://media/external/file/32734)
+09-21 21:52:23.301  4642  4642 W ContentResolver: Failed to get type for: content://media/external/file/32737 (No item at content://media/external/file/32737)
+09-21 21:52:23.552  4642  4642 W ContentResolver: Failed to get type for: content://media/external/file/32739 (No item at content://media/external/file/32739)
+09-21 21:52:23.791  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:23.791  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:23.875  2595  3747 W libprocessgroup: Failed to find DoNothingOlaf task profile
+09-21 21:52:23.915  2595  2963 D SemInputMethodManagerServiceUtil: restorePreviousUsedInputMethod : failed to return the previous ime becuase the stored info is null or do not need restore
+09-21 21:52:24.067  4642  4642 W ContentResolver: Failed to get type for: content://media/external/file/32742 (No item at content://media/external/file/32742)
+09-21 21:52:24.166   843   864 E lowmemorykiller: process_mrelease 14746 failed: No such process
+09-21 21:52:24.256  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:24.256  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:24.525  1000 18177 E keystore2: system/security/keystore2/src/error.rs:185 - Rc(r#KEY_NOT_FOUND), "system/security/keystore2/src/service.rs:178: In get_key_entry, while trying to load key info. 10354, Some(\"_androidx_security_master_key_\")"
+09-21 21:52:24.595  4642  4642 W ContentResolver: Failed to get type for: content://media/external/file/32744 (No item at content://media/external/file/32744)
+09-21 21:52:24.620  2595  3747 W libprocessgroup: Failed to find DoNothingOlaf task profile
+09-21 21:52:24.772  2595  2659 W System  : A resource failed to call release. 
+09-21 21:52:24.779  1000 18177 E keystore2: system/security/keystore2/src/error.rs:185 - Rc(r#KEY_NOT_FOUND), "system/security/keystore2/src/service.rs:178: In get_key_entry, while trying to load key info. 10354, Some(\"com.simaitutor.app.FlutterSecureStoragePluginKeyOAEP\")"
+09-21 21:52:24.779  1000 18177 E keystore2: system/security/keystore2/src/error.rs:185 - Rc(r#KEY_NOT_FOUND), "system/security/keystore2/src/service.rs:178: In get_key_entry, while trying to load key info. 10354, Some(\"com.simaitutor.app.FlutterSecureStoragePluginKeyOAEP\")"
+09-21 21:52:25.260 17020 17063 E native  : E0000 00:00:1789984345.260495   17063 re2.cc:275] Error parsing '^|[^\p{Letter}\\]': invalid character class range: \p{Letter}
+09-21 21:52:25.260 17020 17063 E native  : E0000 00:00:1789984345.260612   17063 replacement_rule.cc:151] Error creating replacement rule.
+09-21 21:52:25.260 17020 17063 E native  : E0000 00:00:1789984345.260625   17063 regexp_rewriter.cc:35] Error creating rule MessageLite at 0xb400007368ce1790.
+09-21 21:52:25.305  2595  2659 W System  : A resource failed to call close. 
+09-21 21:52:25.363 16964 16964 I flutter : [SIM_STARTUP] LOCAL_STORE_READY
+09-21 21:52:25.409  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:25.409  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:25.705  4642  4642 W ContentResolver: Failed to get type for: content://media/external/file/32747 (No item at content://media/external/file/32747)
+09-21 21:52:26.294  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:26.294  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:26.483  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:26.483  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:26.746  1583 18343 E ACDB    : AcdbCmdGetGraphAlias:4153 Error[19]: Graph Alias chunk data does not exist. Is it enabled?.
+09-21 21:52:26.747  1583 18343 E gsl     : gsl_get_graph_alias:2210 acdb get graph alias failed 19, len 255
+09-21 21:52:26.747  1583 18343 D AGM: graph: print_graph_alias: 2379 gsl_get_graph_alias failed: ret = 19
+09-21 21:52:26.750  1583 17228 E ACDB    : AcdbCmdGetGraphAlias:4153 Error[19]: Graph Alias chunk data does not exist. Is it enabled?.
+09-21 21:52:26.750  1583 17228 E gsl     : gsl_get_graph_alias:2210 acdb get graph alias failed 19, len 255
+09-21 21:52:26.750  1583 17228 D AGM: graph: print_graph_alias: 2379 gsl_get_graph_alias failed: ret = 19
+09-21 21:52:26.775  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:52:26.775  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:52:26.775  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:52:26.775  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:52:26.778  1583 17228 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:52:26.779  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:52:26.779  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:52:26.779  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:52:26.779  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:52:27.312  1997  9730 W AMessage: failed to post message as target looper for handler 0 is gone.
+09-21 21:52:27.412  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:27.413  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:27.603  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:27.603  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:27.692  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:27.692  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:29.531 17247 17247 W PlatformAconfigPackage: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+09-21 21:52:29.537 17247 17247 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+09-21 21:52:29.581  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:29.581  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:29.702  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:29.702  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:30.634  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:30.634  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:30.663 17247 17289 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:52:30.664 17247 17282 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:52:30.664 17247 17283 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:52:30.783  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:30.783  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:33.192  2595  2698 W ActivityManager: pid 2595 system sent binder code 2 with flags 1 to frozen apps and got error -32
+09-21 21:52:37.768  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:37.768  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:38.368  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:38.368  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:41.778  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:41.778  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:41.937  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:41.937  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:42.028  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:42.028  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:42.128  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:42.128  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:44.349 17550 17550 W PlatformAconfigPackage: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+09-21 21:52:44.355 17550 17550 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+09-21 21:52:44.393  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:44.393  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:44.494  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:44.494  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:45.426  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:45.426  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:45.434 17550 17567 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:52:45.434 17550 17568 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:52:46.071  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:46.071  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:54.227  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:54.227  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:54.271  2595  2963 D SemInputMethodManagerServiceUtil: restorePreviousUsedInputMethod : failed to return the previous ime becuase the stored info is null or do not need restore
+09-21 21:52:54.517  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:54.517  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:54.718  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:54.718  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:55.542  4676  6032 W DMASA[D][773-399-565755]: [DiagmonProvider]DeviceId failed : user binary or info null
+09-21 21:52:55.547  4676  6032 I DMASA[D]: [b][773-399-565755] Failed : invalid service id (retired service)
+09-21 21:52:55.549 17699 17735 I DIAGMON_SDK[605079][773-399-565755] : Results : Failed, Cause : invalid service id (retired service)
+09-21 21:52:56.005  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:56.006  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:56.168 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.wifi' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:56.177 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.widevine.nonupdatable' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:56.180 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.samsung.android.camera.unihal' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:56.244 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.samsung.android.shell' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:56.317  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:56.317  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:56.489 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.apex.cts.shim' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:56.677 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.appsearch' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:56.711 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.art' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:56.756 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.bt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:56.872 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.mediaprovider' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:56.913 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.virt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:56.945 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.resolv' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:56.982 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.configinfrastructure' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:56.983 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.media' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:57.029 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.vndk.v34' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:57.096  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:57.096  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:57.176  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:57.176  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:57.185 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.sdkext' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:57.227 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.adservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:57.227 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.tethering' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:57.294 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.runtime' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:57.400 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.cellbroadcast' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:57.434 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.rkpd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:57.674  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:57.674  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:57.695 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.samsung.android.vital' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:57.720 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.samsung.android.media.swcodec.vendor' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:57.757 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.tzdata6' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:57.813 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.permission' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:57.877  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:57.877  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:57.966  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:57.966  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:57.989  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:57.989  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:58.025 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.media.swcodec' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.026 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.uprobestats' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.051 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.profiling' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.075  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:58.076  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:58.084 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.samsung.android.media.extractor' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.140 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.samsung.android.media.imagecodec.system' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.156 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.adbd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.179 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.i18n' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.199 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.samsung.android.spqr' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.201 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.conscrypt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.290 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.neuralnetworks' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.307 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.ipsec' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.328 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.devicelock' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.384 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.ondevicepersonalization' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.392 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.healthfitness' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.401  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:58.401  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:58.475 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.uwb' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.476 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.extservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.546 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.os.statsd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.624 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.scheduling' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.630 12205 12205 W Finsky  : [2] STU: Failed to get storage stats for package 'com.samsung.android.lifeguard' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-21 21:52:58.722  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:58.722  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:59.004  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:59.004  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:59.091  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:59.091  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:59.493  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:59.493  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:59.582  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:59.582  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:59.861  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:59.861  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:52:59.949  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:52:59.949  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:06.633 17888 17888 W PlatformAconfigPackage: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+09-21 21:53:06.638 17888 17888 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+09-21 21:53:06.683  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:06.683  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:07.077  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:07.077  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:07.501  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:07.501  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:07.588  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:07.588  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:07.694 17888 17910 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:53:07.694 17888 17904 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:53:07.694 17888 17905 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:53:07.709  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:07.709  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:07.839  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:07.839  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:07.997  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:07.997  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:08.084  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:08.085  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:08.492  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:08.492  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:08.580  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:08.580  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:23.537  4642  4642 W ContentResolver: Failed to get type for: content://media/external/file/32749 (No item at content://media/external/file/32749)
+09-21 21:53:25.468  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:25.468  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:25.740  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:25.740  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:25.804  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:25.804  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:26.032  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:26.032  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:26.078  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:26.078  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:26.267  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:26.267  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:26.312  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:26.312  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:26.500  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:26.500  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:26.555  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:26.555  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:26.762  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:26.762  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:26.853  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:26.853  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:27.058  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:27.058  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:27.091  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:27.091  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:27.290  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:27.290  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:27.335  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:27.335  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:27.537  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:27.537  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:27.581  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:27.581  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:27.771  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:27.771  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:27.837  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:27.837  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:28.026  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:28.026  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:28.081  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:28.081  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:28.288  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:28.288  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:28.343  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:28.343  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:28.550  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:28.550  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:28.594  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:28.594  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:28.794  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:28.794  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:28.852  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:28.852  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:29.056  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:29.056  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:29.091  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:29.091  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:29.290  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:29.290  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:29.324  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:29.324  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:29.520  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:29.520  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:29.565  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:29.565  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:29.753  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:29.753  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:29.797  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:29.797  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:29.999  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:29.999  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:30.044  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:30.044  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:30.244  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:30.244  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:30.275  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:30.275  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:30.472  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:30.472  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:30.517  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:30.517  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:30.721  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:30.721  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:30.766  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:30.766  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:30.967  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:30.967  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:31.010  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:31.010  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:31.213  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:31.213  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:31.244  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:31.244  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:31.438  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:31.438  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:31.495  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:31.495  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:31.696  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:31.696  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:31.740  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:31.740  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:31.942  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:31.942  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:31.974  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:31.974  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:32.169  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:32.169  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:32.236  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:32.236  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:32.427  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:32.427  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:32.459  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:32.459  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:32.654  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:32.654  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:32.698  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:32.698  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:32.894  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:32.894  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:32.938  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:32.938  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:33.134  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:33.134  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:33.188  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:33.188  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:33.382  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:33.382  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:33.427  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:33.428  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:33.635  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:33.635  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:33.680  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:33.680  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:33.867  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:33.867  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:33.912  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:33.912  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:34.113  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:34.113  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:34.158  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:34.158  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:34.348  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:34.348  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:34.402  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:34.402  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:34.591  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:34.591  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:34.648  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:34.648  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:34.838  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:34.838  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:34.892  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:34.892  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:35.099  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:35.099  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:35.131  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:35.131  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:35.326  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:35.326  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:35.371  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:35.371  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:35.565  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:35.565  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:35.635  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:35.635  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:35.839  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:35.839  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:35.873  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:35.873  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:36.074  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:36.074  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:36.107  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:36.108  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:36.302  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:36.303  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:36.347  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:36.347  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:36.553  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:36.553  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:36.597  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:36.597  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:36.687  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:36.688  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:36.855  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:36.855  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:36.944  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:36.944  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:37.100  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:37.100  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:37.188  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:37.188  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:39.092 15853 18062 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=a33358c5-fe36-4dd2-81d8-59ba75c5b02d, class=com.google.android.apps.messaging.shared.datamodel.workqueue.WorkQueueWorkerShim, tags={ com.google.android.apps.messaging.shared.datamodel.workqueue.WorkQueueWorkerShim,sim_state_update_queue-WORK_TYPE_VERIFY_SIM_REMOVAL } ]
+09-21 21:53:39.258 15853 15875 I BugleSimStateTracker: default call SIM: redacted-pii:sim_id[chars:0,last3:], default sms SIM redacted-pii:sim_id[chars:0,last3:]. default data SIM redacted-pii:sim_id[chars:0,last3:].
+09-21 21:53:39.280 15853 15875 I BugleSimStateTracker: default call SIM: redacted-pii:sim_id[chars:0,last3:], default sms SIM redacted-pii:sim_id[chars:0,last3:]. default data SIM redacted-pii:sim_id[chars:0,last3:].
+09-21 21:53:47.066  4642  4642 W ContentResolver: Failed to get type for: content://media/external/file/32751 (No item at content://media/external/file/32751)
+09-21 21:53:47.594  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:47.594  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:48.375  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:48.375  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:48.397  2595  2963 D SemInputMethodManagerServiceUtil: restorePreviousUsedInputMethod : failed to return the previous ime becuase the stored info is null or do not need restore
+09-21 21:53:48.421  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:48.421  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:48.677  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:48.677  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:48.789  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:48.789  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:49.088  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:49.088  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:49.513  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:49.513  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:49.877  2595  2963 D SemInputMethodManagerServiceUtil: restorePreviousUsedInputMethod : failed to return the previous ime becuase the stored info is null or do not need restore
+09-21 21:53:50.168  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:50.168  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:50.344  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:50.344  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:50.444  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:50.444  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:51.028  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:51.028  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:51.111  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:51.111  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:51.265  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:51.265  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:51.983  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:51.983  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:52.030  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:52.030  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:52.351  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:52.351  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:52.530  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:52.530  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:52.618  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:52.618  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:53.031  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:53.031  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:53.121  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:53.121  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:57.211  2595  2963 D SemInputMethodManagerServiceUtil: restorePreviousUsedInputMethod : failed to return the previous ime becuase the stored info is null or do not need restore
+09-21 21:53:57.214  2595  2963 D SemInputMethodManagerServiceUtil: restorePreviousUsedInputMethod : failed to return the previous ime becuase the stored info is null or do not need restore
+09-21 21:53:57.216  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:57.216  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:59.425  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:59.425  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:53:59.446  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:53:59.446  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:00.100 19178 19178 W PlatformAconfigPackage: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+09-21 21:54:00.106 19178 19178 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+09-21 21:54:01.163 19178 19214 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:54:01.163 19178 19213 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:54:01.692  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:01.692  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:01.736  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:01.736  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:01.931  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:01.931  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:01.942  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:01.943  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:02.292  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:02.293  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:02.337  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:02.337  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:02.944  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:02.944  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:03.112  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:03.113  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:03.891  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:03.891  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:04.204  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:04.204  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:04.292  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:04.292  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:04.705  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:04.705  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:04.794  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:04.794  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:06.273 19432 19432 W PlatformAconfigPackage: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+09-21 21:54:06.278 19432 19432 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+09-21 21:54:07.337 19432 19443 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:54:07.337 19432 19447 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:54:07.337 19432 19449 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:54:18.777  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:18.777  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:20.487  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:20.487  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:20.551  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:20.551  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:22.080  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:22.080  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:22.112  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:22.112  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:22.246  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:22.246  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:22.278  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:22.278  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:23.907  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:23.907  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:23.950  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:23.951  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:24.146  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:24.146  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:24.189  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:24.189  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:25.621  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:25.621  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:25.666  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:25.666  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:25.861  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:25.861  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:25.905  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:25.906  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:25.983  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:25.983  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:25.997  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:25.997  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:26.283  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:26.283  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:26.551  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:26.551  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:27.286  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:27.286  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:27.374  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:27.374  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:27.663  2595  2963 D SemInputMethodManagerServiceUtil: restorePreviousUsedInputMethod : failed to return the previous ime becuase the stored info is null or do not need restore
+09-21 21:54:27.948  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:27.948  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:28.079  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:28.079  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:28.187  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:28.187  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:28.601  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:28.601  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:28.688  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:28.689  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:28.727  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:28.727  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:29.451  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:29.451  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:29.484  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:29.485  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:29.768  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:29.768  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:30.104  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:30.104  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:30.192  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:30.192  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:30.605  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:30.605  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:30.694  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:30.694  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:31.747  4642  4642 W ContentResolver: Failed to get type for: content://media/external/file/32756 (No item at content://media/external/file/32756)
+09-21 21:54:39.238 20233 20233 W PlatformAconfigPackage: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+09-21 21:54:39.243 20233 20233 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+09-21 21:54:39.318  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:39.318  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:39.689  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:39.689  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:40.101  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:40.101  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:40.188  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:40.188  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:40.309 20233 20249 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:54:40.309 20233 20251 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:54:40.310 20233 20246 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:54:40.330  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:40.330  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:40.439  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:40.439  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:40.608  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:40.608  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:40.696  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:40.696  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:41.108  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:41.108  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:41.196  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:41.197  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:55.300  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:55.300  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:55.838  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:55.838  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:56.072  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:56.072  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:56.160  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:56.160  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:54:56.302  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:54:56.302  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:00.344  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:00.344  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:00.386  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:00.386  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:02.633  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:02.633  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:02.677  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:02.677  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:03.473  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:03.473  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:03.518  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:03.518  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:03.714  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:03.714  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:03.744  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:03.744  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:05.874  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:05.874  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:05.916  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:05.916  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:06.178  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:06.178  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:06.258  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:06.258  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:06.345  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:06.346  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:06.360  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:06.360  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:07.059  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:07.059  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:07.185  2595  2963 D SemInputMethodManagerServiceUtil: restorePreviousUsedInputMethod : failed to return the previous ime becuase the stored info is null or do not need restore
+09-21 21:55:07.205  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:07.205  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:07.460  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:07.460  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:07.561  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:07.561  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:07.817  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:07.817  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:07.994  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:07.994  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:11.776  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:11.776  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:11.819  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:11.819  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:12.138  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:12.138  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:12.183  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:12.184  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:12.379  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:12.379  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:12.422  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:12.422  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:12.795  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:12.795  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:12.984  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:12.984  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:13.217  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:13.217  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:13.642  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:13.642  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:13.731  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:13.731  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:14.139  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:14.139  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:14.227  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:14.227  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:15.937 21510 21510 W PlatformAconfigPackage: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+09-21 21:55:15.943 21510 21510 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+09-21 21:55:15.992  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:15.992  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:16.230  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:16.230  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:16.644  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:16.644  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:16.732  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:16.732  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:17.002 21510 21523 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:55:17.002 21510 21524 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:55:17.023  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:17.023  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:17.133  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:17.133  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:17.256  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:17.256  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:17.346  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:17.346  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:17.646  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:17.646  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:17.735  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:17.735  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:18.147  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:18.147  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:18.236  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:18.236  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:24.603  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:24.603  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:24.848  2595  2963 D SemInputMethodManagerServiceUtil: restorePreviousUsedInputMethod : failed to return the previous ime becuase the stored info is null or do not need restore
+09-21 21:55:25.139  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:25.139  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:25.175  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:25.175  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:25.732  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:25.732  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:25.797  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:25.797  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:26.403 16573 16777 E msys    : E[N mns]_LogError(356)=>Failed to resolve using system DNS resolver, getaddrinfo(): No address associated with hostname
+09-21 21:55:26.443 16573 16777 E msys    : E[N mns]_LogError(356)=>Failed to resolve using secondary DNS resolver, ares error: Could not contact DNS servers, timeouts: 0
+09-21 21:55:26.499  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:26.499  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:26.646  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:26.646  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:26.735  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:26.735  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:27.002 16964 16964 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:55:27.036  2595  2963 D SemInputMethodManagerServiceUtil: restorePreviousUsedInputMethod : failed to return the previous ime becuase the stored info is null or do not need restore
+09-21 21:55:27.056  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:27.056  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:27.907  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:27.908  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:27.942  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:27.942  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:27.960  1583 18343 E ACDB    : AcdbCmdGetGraphAlias:4153 Error[19]: Graph Alias chunk data does not exist. Is it enabled?.
+09-21 21:55:27.960  1583 18343 E gsl     : gsl_get_graph_alias:2210 acdb get graph alias failed 19, len 255
+09-21 21:55:27.960  1583 18343 D AGM: graph: print_graph_alias: 2379 gsl_get_graph_alias failed: ret = 19
+09-21 21:55:27.960  1583 21677 E ACDB    : AcdbCmdGetGraphAlias:4153 Error[19]: Graph Alias chunk data does not exist. Is it enabled?.
+09-21 21:55:27.961  1583 21677 E gsl     : gsl_get_graph_alias:2210 acdb get graph alias failed 19, len 255
+09-21 21:55:27.961  1583 21677 D AGM: graph: print_graph_alias: 2379 gsl_get_graph_alias failed: ret = 19
+09-21 21:55:27.983  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:55:27.983  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:55:27.983  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:55:27.983  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:55:27.985  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:55:27.985  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:55:27.985  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:55:27.985  1583 18343 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:55:27.988  1583 21677 E ACDB    : AcdbCmdGetProcSubgraphCalDataPersist:8416 Error[19]: No calibration found
+09-21 21:55:28.518  1997 21310 W AMessage: failed to post message as target looper for handler 0 is gone.
+09-21 21:55:28.658  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:28.658  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:36.538 21891 21891 W PlatformAconfigPackage: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+09-21 21:55:36.543 21891 21891 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+09-21 21:55:36.572  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:36.572  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:36.685  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:36.685  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:37.606 21891 21924 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:55:37.606 21891 21926 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:55:37.611  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:37.611  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:37.738  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:37.738  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:38.873 16573 16777 E msys    : E[N WA]_WAJMNSStreamImplOnMNSFailure(298)=>[LogLevel:I] WAJMNSStream/impl/callback/onMNSFailure/p=0xb40000735d722f80 (error=SO_ERROR: Software caused connection abort)
+09-21 21:55:38.891 16573 16777 E msys    : E[N mns]_LogError(356)=>Failed to resolve using system DNS resolver, getaddrinfo(): No address associated with hostname
+09-21 21:55:38.932 16573 16777 E msys    : E[N mns]_LogError(356)=>Failed to resolve using secondary DNS resolver, ares error: Could not contact DNS servers, timeouts: 0
+09-21 21:55:44.444 16964 16964 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:55:44.449  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:44.449  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:44.451 16964 16964 I flutter : [SIM_STARTUP] LOCAL_MENU_AVAILABLE count=0
+09-21 21:55:45.620 16964 16964 I flutter : [SIM_STARTUP] REMOTE_SUMMARIES_DONE count=5
+09-21 21:55:45.628 16964 16964 I flutter : [SIM_STARTUP] LOCAL_MENU_AVAILABLE count=0
+09-21 21:55:45.779  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:45.779  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:47.939 22184 22184 W PlatformAconfigPackage: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+09-21 21:55:47.944 22184 22184 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+09-21 21:55:47.958  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:47.958  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:48.096  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:48.096  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:49.001 16964 16964 I flutter : [SIM_STARTUP] LOCAL_MENU_AVAILABLE count=0
+09-21 21:55:49.017 22184 22201 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:55:49.017 22184 22204 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:55:49.021 22184 22199 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:55:49.022  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:49.022  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:49.039 16964 16964 I flutter : [SIM_STARTUP] LOCAL_MENU_AVAILABLE count=0
+09-21 21:55:49.171  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:55:49.171  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:55:55.782  4642  4642 W ContentResolver: Failed to get type for: content://media/external/file/32758 (No item at content://media/external/file/32758)
+09-21 21:56:00.053  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:00.053  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:56:00.124 16964 16964 I flutter : [SIM_PERF] event=drawer_tap_lesson_start
+09-21 21:56:00.124 16964 16964 I flutter : [SIM_PERF] event=local_snapshot_lookup_start elapsedMs=0
+09-21 21:56:00.124 16964 16964 I flutter : [SIM_PERF] event=local_snapshot_lookup_end elapsedMs=0
+09-21 21:56:00.129 16964 16964 I flutter : [SIM_PERF] event=remote_hydration_start
+09-21 21:56:00.129 16964 16964 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:56:00.155  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:00.155  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:56:00.168  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:00.168  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:56:00.453  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:00.453  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:56:01.079 16964 16964 I flutter : [SIM_PERF] event=remote_hydration_end elapsedMs=950
+09-21 21:56:01.099 16964 16964 I flutter : [SIM_PERF] event=route_committed
+09-21 21:56:01.099 16964 16964 I flutter : [SIM_PERF] event=first_renderable_surface_start
+09-21 21:56:01.100 16964 16964 I flutter : [SIM_OBS] category=prepared-window operation=bom-prepared-experience-coordinator-paused result=rejected
+09-21 21:56:01.102 16964 16964 I flutter : [SIM_PERF] event=t02_start
+09-21 21:56:01.103 16964 16964 I flutter : [SIM_OBS] category=prepared-window operation=window-prepare-port-start result=accepted
+09-21 21:56:01.119 16964 16964 I flutter : [SIM_OBS] category=prepared-window operation=window-prepare-coordinator-queue result=accepted
+09-21 21:56:01.119 16964 16964 I flutter : [SIM_OBS] category=prepared-window operation=window-prepare-coordinator-drain result=accepted
+09-21 21:56:01.119 16964 16964 I flutter : [SIM_OBS] category=prepared-window operation=window-prepare-drain-start result=accepted
+09-21 21:56:01.119 16964 16964 I flutter : [SIM_OBS] category=prepared-window operation=window-prepare-drain-job result=accepted
+09-21 21:56:01.129 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-enter result=accepted
+09-21 21:56:01.129 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-run-start result=accepted
+09-21 21:56:01.130 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-state result=accepted
+09-21 21:56:01.130 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slots result=accepted
+09-21 21:56:01.130 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-maintain-start result=accepted
+09-21 21:56:01.144 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-first-slot-start result=accepted
+09-21 21:56:01.144 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slot-begin result=accepted
+09-21 21:56:01.144 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slot-readiness result=accepted
+09-21 21:56:01.160 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slot-t02-start result=accepted
+09-21 21:56:01.161 16964 16964 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:56:01.174 16964 16964 I flutter : [SIM_PERF] event=drawer_tap_lesson_start
+09-21 21:56:01.174 16964 16964 I flutter : [SIM_PERF] event=local_snapshot_lookup_start elapsedMs=0
+09-21 21:56:01.174 16964 16964 I flutter : [SIM_PERF] event=local_snapshot_lookup_end elapsedMs=0
+09-21 21:56:01.189  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:01.189  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:56:01.833 16964 16964 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:56:02.850 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slot-failed result=rejected errorType=runtime-exception
+09-21 21:56:02.870 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-first-slot-done result=accepted
+09-21 21:56:02.885 16964 16964 I flutter : [SIM_OBS] category=prepared-window operation=window-prepare-drain-wait-retry result=accepted
+09-21 21:56:03.500 16964 16964 I flutter : [SIM_OBS] category=prepared-window operation=window-prepare-drain-job result=accepted
+09-21 21:56:03.511 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-enter result=accepted
+09-21 21:56:03.511 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-run-start result=accepted
+09-21 21:56:03.511 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-state result=accepted
+09-21 21:56:03.511 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slots result=accepted
+09-21 21:56:03.511 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-maintain-start result=accepted
+09-21 21:56:03.529 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-first-slot-start result=accepted
+09-21 21:56:03.529 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slot-begin result=accepted
+09-21 21:56:03.529 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slot-readiness result=accepted
+09-21 21:56:03.546 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slot-t02-start result=accepted
+09-21 21:56:03.547 16964 16964 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:56:03.680 16964 16964 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:56:04.454 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slot-failed result=rejected errorType=runtime-exception
+09-21 21:56:04.476 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-first-slot-done result=accepted
+09-21 21:56:04.490 16964 16964 I flutter : [SIM_OBS] category=prepared-window operation=window-prepare-drain-wait-retry result=accepted
+09-21 21:56:05.147 16964 16964 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:56:05.678 16964 16964 I flutter : [SIM_OBS] category=prepared-window operation=window-prepare-drain-job result=accepted
+09-21 21:56:05.694 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-enter result=accepted
+09-21 21:56:05.694 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-run-start result=accepted
+09-21 21:56:05.694 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-state result=accepted
+09-21 21:56:05.694 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slots result=accepted
+09-21 21:56:05.695 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-maintain-start result=accepted
+09-21 21:56:05.713 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-first-slot-start result=accepted
+09-21 21:56:05.713 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slot-begin result=accepted
+09-21 21:56:05.713 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slot-readiness result=accepted
+09-21 21:56:05.730 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slot-t02-start result=accepted
+09-21 21:56:05.732 16964 16964 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:56:06.376 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-slot-failed result=rejected errorType=runtime-exception
+09-21 21:56:06.385 16964 16964 I flutter : [SIM_OBS] category=ready-window operation=window-engine-first-slot-done result=accepted
+09-21 21:56:06.394 16964 16964 I flutter : [SIM_PERF] event=t02_end elapsedMs=5291
+09-21 21:56:06.395 16964 16964 I flutter : [SIM_OBS] category=lesson-runtime operation=preparation-failure-surfaced lessonLocalId=cyber-15cy53v itemIdx=1 errorCode=CREDIT_OPERATION_REQUIRES_RECONCILIATION
+09-21 21:56:06.447 16964 16964 I flutter : [SIM_CFG] jsonHeaders prepared
+09-21 21:56:06.517  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:06.517  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:56:10.618 22640 22640 W PlatformAconfigPackage: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+09-21 21:56:10.624 22640 22640 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+09-21 21:56:10.640  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:10.640  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:56:10.768  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:10.768  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:56:11.690 22640 22657 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:56:11.690 22640 22662 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:56:11.694 22640 22655 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+09-21 21:56:11.699  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:11.699  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:56:11.814  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:11.814  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:56:22.224  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:22.224  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:56:22.818  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:22.818  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:56:29.818 22963 22963 W earchbox:search: Failed to find entry 'classes.dex': Entry not found
+09-21 21:56:29.821 22963 22963 W earchbox:search: Failed to find entry 'classes.dex': Entry not found
+09-21 21:56:29.823 22963 22963 W earchbox:search: Failed to find entry 'classes.dex': Entry not found
+09-21 21:56:29.987  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:29.987  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
+09-21 21:56:30.313  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
+09-21 21:56:30.313  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
