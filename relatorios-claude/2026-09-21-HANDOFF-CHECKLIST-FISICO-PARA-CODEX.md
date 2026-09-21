@@ -201,7 +201,8 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
    (`T00_CURRICULUM_MISSING`) e foi honesta, sem repetição paga.
 3. **Terceiro stall visual do Amparo: causa corrigida no app.** O artefato real
    já existia, mas o callback não promovia `imageStatus` para `ready`. Commit
-   BOM `0d422ad`, testes focados verdes e APK release reconstruído.
+   BOM `0d422ad`, 134 testes focados e suíte completa final com 1.486/1.486
+   testes verdes; APK release reconstruído.
 4. **Reteste do quinto agravante ainda bloqueado por produção:** instalação
    limpa pede material durável e o servidor devolve HTTP 409
    `CREDIT_OPERATION_REQUIRES_RECONCILIATION`. Esse bloqueio pertence à saga
@@ -213,6 +214,12 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
    avança. Não marcar os fluxos acima como OK apenas por teste automatizado.
 
 **Já resolvidos e confirmados fisicamente em produção, não repetir**: hydrate race (Amparo), gate `nextAdvanceReady` (freeze pós-item-3), `WarmupBridgeCoordinator` não resetado (freeze aquecimento→aula), TXT UTF-8 padrão, Menu/Drawer básico.
+
+**A lista numerada histórica abaixo fica preservada apenas como rastreabilidade.**
+Os itens 2 a 6 foram substituídos pela atualização acima: rename e UTF-16 já
+foram fechados; a instrumentação encontrou e corrigiu o stall visual. A ação
+ativa agora é a reconciliação RWR-001 em produção e, depois dela, o reteste
+físico dos fluxos materializados.
 
 1. `cd /root/BOM-APK-Downloads && git pull` e `cd /root/BOM && git pull` — confira se há commits mais novos que `f85bcfa`/`da63e22` (pode já ter avançado depois deste handoff).
 2. **Rename de aula (task #125, seção H acima)**: instrumente `renameCloudLesson` (`lib/features/session/lab_session_drawer_controller.dart:354`) e `renameLesson` (`lib/sim/workflow/lesson_workflow_coordinator.dart:863`) com `debugPrint` do `expectedRevision` vs. `state.stateRevision` e do `result.applied`/`result.reason`, via `flutter run -d 100.124.23.2:5555 --dart-define=FLUTTER_APP_MODE=production --dart-define=SIM_SERVER_URL=https://simaitutor.com`. Reproduza com a conta `qa-amparo-20260921@sim-internal-test.invalid`/`QaAmparo!20260921xZ`, menu → "⋮" em qualquer aula → Rename. Corrija a causa raiz confirmada e adicione feedback de erro visível ao usuário (hoje é 100% silencioso).

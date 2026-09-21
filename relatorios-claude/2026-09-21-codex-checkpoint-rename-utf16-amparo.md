@@ -28,7 +28,7 @@ Validação:
 
 - `git diff --check`: PASS;
 - `flutter analyze --no-pub`: PASS;
-- suíte completa: 1.484 testes PASS;
+- suíte completa após todos os alinhamentos deste checkpoint: 1.486 testes PASS;
 - APK release v110 instalado;
 - nome `QA-Rename-Passed` persistiu no servidor e reapareceu após reinstalação.
 
@@ -65,6 +65,7 @@ Validação:
 - `git diff --check`: PASS;
 - `flutter analyze --no-pub`: PASS;
 - 134 testes focados PASS, incluindo sala de aula e avanço oficial;
+- suíte completa final: 1.486 testes PASS;
 - regressões novas cobrem callback de sucesso e estado histórico inconsistente.
 
 Commit: `0d422ad` (`fix(classroom): settle completed lesson visuals`).
@@ -105,4 +106,3 @@ ser repetidos após a reconciliação econômica chegar à produção.
 - `evidencias/2026-09-21-codex-checkpoint/release-v110-reconciliation-blocker.png`
 - `evidencias/2026-09-21-codex-checkpoint/release-v110-logcat-filtered.txt`
 - `evidencias/2026-09-21-codex-checkpoint/production-reconciliation-logs.txt`
-
