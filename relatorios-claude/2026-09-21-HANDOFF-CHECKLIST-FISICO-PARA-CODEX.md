@@ -391,6 +391,14 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      retornou para a mesma aula e cursor, sem regressão para Item 4 e sem perda
      do histórico da Dúvida. Status: `OK_PRODUCTION` para restart/resume e
      Drawer básico no APK `28eda61`.
+0.5. **Revisão no APK `28eda61`: reteste físico sem robô entre questões.**
+     Entrei em `Review`, escolhi 5 perguntas, aguardei a preparação inicial
+     legítima uma única vez e toquei `Start review`. Q1 abriu como `Review 1/5`;
+     após resposta+sinal, `Continue` levou a `Review 2/5` sem tela
+     `Preparing your review...` entre as questões. Em Q2, após resposta+sinal,
+     `Continue` levou a `Review 3/5`, também sem robô/tela intermediária.
+     Status: `OK_PRODUCTION` preservado para o bug original da Revisão no APK
+     atual `28eda61`.
 1. **Rename #125: OK_PRODUCTION.** Corrigido e comprovado após reinstalação.
    Commit BOM `792e3ec`. Não repetir. Relatório:
    `2026-09-21-codex-checkpoint-rename-utf16-amparo.md`.
