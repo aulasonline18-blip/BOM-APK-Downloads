@@ -323,6 +323,11 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      após erro+sinal forte nesse cenário. Observação: este teste não abriu a
      sala de Recuperação; Recuperação explícita ainda precisa de corredor
      próprio se o checklist exigir a sala dedicada.
+0.1.G. **Restart/resume no APK `3c3c83c`:** após o avanço para Item 4/E1, fiz
+     `force-stop` + reabertura do app no Samsung. O app retomou em `Item 4 / 20
+     · ... 1/2`, progresso `15%`, com explicação, visual, pergunta e alternativa
+     visíveis. Status: `OK_PRODUCTION` para restart/resume básico no APK
+     `3c3c83c` nesse ponto da aula.
 0.2. **Revisão: robô entre questões tratado no APP e certificado fisicamente
      em produção.** O comportamento observado pelo usuário era: entrar na
      Revisão, responder Q1, tocar Continue e ver novamente o robô/tela de
