@@ -193,6 +193,16 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
 
 ### ATUALIZACAO CODEX (mais recente)
 
+0. **RWR-001 reidratação em instalação limpa: bloqueio reproduzido foi resolvido
+   em produção.** Servidor corrigido no commit `42d541d`
+   (`fix(cost): recover captured T02 material on clean reinstall`), implantado
+   em `/opt/sim/releases/42d541dafab17a99fc8d55c1470d8abcb24ea8ce`.
+   Health público `https://simaitutor.com/api/health` voltou HTTP 200. A aula
+   `cyber-15cy53v`/`M0002`, que antes devolvia HTTP 409
+   `CREDIT_OPERATION_REQUIRES_RECONCILIATION`, passou a devolver HTTP 200 com
+   `SIM109_ITEM_PACKAGE_V1`; segunda chamada igual também HTTP 200 e log
+   sanitizado com `duplicateSuppressed: true`. Relatório:
+   `2026-09-21-rwr001-clean-install-rehydration-fix.md`.
 1. **Rename #125: OK_PRODUCTION.** Corrigido e comprovado após reinstalação.
    Commit BOM `792e3ec`. Não repetir. Relatório:
    `2026-09-21-codex-checkpoint-rename-utf16-amparo.md`.
@@ -203,13 +213,12 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
    já existia, mas o callback não promovia `imageStatus` para `ready`. Commit
    BOM `0d422ad`, 134 testes focados e suíte completa final com 1.486/1.486
    testes verdes; APK release reconstruído.
-4. **Reteste do quinto agravante ainda bloqueado por produção:** instalação
-   limpa pede material durável e o servidor devolve HTTP 409
-   `CREDIT_OPERATION_REQUIRES_RECONCILIATION`. Esse bloqueio pertence à saga
-   econômica RWR-001 em andamento. Não criar bypass no app.
-5. **Próxima ação causal:** concluir/deployar a reconciliação RWR-001; depois
-   retestar no APK `SIM-v110-0d422ad-production.apk` o ciclo até o quinto erro,
-   Amparo, Dúvida/Revisão/Recuperação, Finalização, Placement e CG-1.
+4. **Reteste do quinto agravante desbloqueado para nova execução física:** o
+   bloqueio HTTP 409 da reidratação foi corrigido no servidor real. Agora retestar
+   no APK `SIM-v110-0d422ad-production.apk` o ciclo até o quinto erro, Amparo,
+   Dúvida/Revisão/Recuperação, Finalização, Placement e CG-1.
+5. **Próxima ação causal:** retomar o checklist físico em produção real a partir
+   dos fluxos que dependiam da reidratação do material remoto.
 6. Itens independentes do material remoto podem continuar enquanto RWR-001
    avança. Não marcar os fluxos acima como OK apenas por teste automatizado.
 
@@ -217,9 +226,10 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
 
 **A lista numerada histórica abaixo fica preservada apenas como rastreabilidade.**
 Os itens 2 a 6 foram substituídos pela atualização acima: rename e UTF-16 já
-foram fechados; a instrumentação encontrou e corrigiu o stall visual. A ação
-ativa agora é a reconciliação RWR-001 em produção e, depois dela, o reteste
-físico dos fluxos materializados.
+foram fechados; a instrumentação encontrou e corrigiu o stall visual; a
+reidratação RWR-001 que devolvia 409 foi corrigida e comprovada no caso
+reproduzido. A ação ativa agora é o reteste físico dos fluxos materializados em
+produção real.
 
 1. `cd /root/BOM-APK-Downloads && git pull` e `cd /root/BOM && git pull` — confira se há commits mais novos que `f85bcfa`/`da63e22` (pode já ter avançado depois deste handoff).
 2. **Rename de aula (task #125, seção H acima)**: instrumente `renameCloudLesson` (`lib/features/session/lab_session_drawer_controller.dart:354`) e `renameLesson` (`lib/sim/workflow/lesson_workflow_coordinator.dart:863`) com `debugPrint` do `expectedRevision` vs. `state.stateRevision` e do `result.applied`/`result.reason`, via `flutter run -d 100.124.23.2:5555 --dart-define=FLUTTER_APP_MODE=production --dart-define=SIM_SERVER_URL=https://simaitutor.com`. Reproduza com a conta `qa-amparo-20260921@sim-internal-test.invalid`/`QaAmparo!20260921xZ`, menu → "⋮" em qualquer aula → Rename. Corrija a causa raiz confirmada e adicione feedback de erro visível ao usuário (hoje é 100% silencioso).
