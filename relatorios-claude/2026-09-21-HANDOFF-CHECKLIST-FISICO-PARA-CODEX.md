@@ -376,8 +376,12 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      `Why_are_equal_fourths_requiredb` e o app recebeu resposta pedagógica real
      sobre frações/partes iguais. Em seguida `Continue to experience 2` abriu
      `Item 4 / 20 · ... experience prefix 2/2` sem nova pergunta muda e sem
-     travar o fluxo. Status: `OK_PRODUCTION` para Dúvida no feedback E1 com E2
-     preparado. Observação: o campo recebeu um `b` final por teclado físico
+     travar o fluxo. Continuidade pós-Dúvida também testada: em E2, respondi
+     `B. One-fourth`, marquei `I am sure`, recebi `Correct. You mastered this
+     point.`, toquei `Continue to next item` e o app abriu `Item 5 / 20 · ...
+     experience prefix 1/2`, progresso `20%`. Status: `OK_PRODUCTION` para
+     Dúvida no feedback E1 com E2 preparado e avanço E2->próximo item após a
+     Dúvida. Observação: o campo recebeu um `b` final por teclado físico
      (`requiredb`); isso não afetou a prova funcional.
 1. **Rename #125: OK_PRODUCTION.** Corrigido e comprovado após reinstalação.
    Commit BOM `792e3ec`. Não repetir. Relatório:
