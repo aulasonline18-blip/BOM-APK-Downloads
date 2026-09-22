@@ -165,7 +165,7 @@ Relato do usuário: "Estou tentando anexar um arquivo TXT e gerar uma aula anexa
 | Aula normal | OK_PRODUCTION | 9bf2eea | 5f7e0cf | `2026-09-21-fix-freeze-visual-nao-assentado-nextadvance.md` |
 | Anexos (geral) | RETEST_REQUIRED | — | — | pipeline testado em sessões anteriores na VM; não retestado em produção nesta rodada |
 | TXT (UTF-8 padrão) | OK_PRODUCTION | 9bf2eea | 5f7e0cf | ponta a ponta confirmado, ver `2026-09-21-txt-ok-e-novo-freeze-critico-continuar-aula.md` |
-| TXT (encoding não-UTF-8) | RETEST_REQUIRED | — | — | `teste-utf16.txt` já no tablet, não testado ainda |
+| TXT (encoding não-UTF-8) | OK_PRODUCTION | 7665118 | 519f3c8 | UTF-16LE aceito como conteúdo utilizável; aquecimento e aula principal derivados do arquivo em produção — Atualização 14 |
 | Transição aquecimento→aula ("Continuar para a aula") | OK_PRODUCTION | f85bcfa | 5f7e0cf | corrigido (`WarmupBridgeCoordinator` não resetava entre aulas), causa raiz + fix + suíte (1483/1483) + confirmação física em produção — ver Atualização 3/4 acima |
 | PDF | OK_PRODUCTION | 1e7b20b | 519f3c8 | producao real: upload aceito, aquecimento e aula derivados do PDF |
 | DOC/DOCX | OK_PRODUCTION | 1e7b20b | 519f3c8 | DOCX controlado com Oceano Pacifico/Fossa das Marianas/`TAVARUA` usado no aquecimento |
@@ -184,7 +184,7 @@ Relato do usuário: "Estou tentando anexar um arquivo TXT e gerar uma aula anexa
 | Menu | OK_PRODUCTION | 1e7b20b | 5f7e0cf | rechecado no APK atual: drawer abre, ações principais visíveis (New lesson/Credits/Privacy/Terms/Sign out/Delete/Export/Import) |
 | Drawer (lista de aulas) | OK_PRODUCTION | 1e7b20b | 5f7e0cf | rechecado no APK atual: lista aula ativa `fractions%20test` e aula renomeada `basic_fractions_QA`, com progresso e opções |
 | Rename | OK_PRODUCTION | 356fa93 | 5f7e0cf | retestado fisicamente: `Rename lesson` salvou `basic_fractions_QA`, drawer listou o novo nome e reabriu a aula; ver Atualização 7 |
-| Restart/Resume | OK_PRODUCTION | 1e7b20b | 5f7e0cf | além do básico anterior, reteste no meio da aula ativa: force-stop + reabrir retomou diretamente Item 5/40, experiência 2/2, progresso 10%, sem onboarding/menu/tela branca |
+| Restart/Resume | OK_PRODUCTION | 7665118 | 519f3c8 | reteste no APK atual: force-stop + reabrir retomou Item 4/20, experiência 1/2, progresso 15%, conteúdo e visual prontos; provas anteriores também preservadas — Atualização 14 |
 | Offline/Reconnect | OK_PRODUCTION (básico) | f85bcfa | 5f7e0cf | airplane mode on/off: sem crash, sessão/créditos intactos ao reconectar. Não testado: interromper uma chamada de rede ativa (ex.: durante geração de aula) |
 | Account isolation | NOT_STARTED | — | — | task #127 |
 | Microcrédito | NOT_STARTED | — | — | task #127; observar reserva/captura/release/custo/replay/idempotência quando testado |
@@ -427,6 +427,21 @@ Nada de segredo real neste documento ou em nenhum relatório desta sessão — a
      `Stop audio` e exibiu `Audio playing`, sem perder a aula, sem navegar e sem
      abrir efeito externo pago. Ao tocar novamente, voltou para `Play lesson
      audio`. Status: `OK_PRODUCTION` para áudio local básico nesse cenário.
+0.8. **Atualização 14 — Restart/Resume no APK `7665118` e TXT UTF-16 de ponta
+     a ponta: OK_PRODUCTION.** No Samsung, `force-stop` + reabertura retomou a
+     aula `Basic_addition_facts_1_to_10` exatamente no Item 4/20, experiência
+     1/2, progresso 15%, com conteúdo, pergunta e visual prontos. Em seguida,
+     criei uma aula nova e anexei `/sdcard/Download/teste-utf16.txt`, arquivo
+     controlado em UTF-16LE. O onboarding classificou o anexo como `Usable
+     content`, preservou `1 of 1 material(s) usable` até a confirmação final e
+     concluiu a preparação sem erro. O aquecimento foi derivado do arquivo,
+     explicando UTF-16 e perguntando quantos bits possui uma code unit; a
+     resposta correta recebeu feedback e `Continue to class` abriu a aula
+     principal. O Item 1/20 abordou o conteúdo do material (`Introduction to
+     SIM` e o propósito do sistema diagnóstico), provando processamento real,
+     e não apenas aceitação nominal do upload. APP `7665118`, SERVER de
+     produção `519f3c8`. Status: `OK_PRODUCTION` para TXT UTF-16 e
+     Restart/Resume no artefato atual.
 1. **Rename #125: OK_PRODUCTION.** Corrigido e comprovado após reinstalação.
    Commit BOM `792e3ec`. Não repetir. Relatório:
    `2026-09-21-codex-checkpoint-rename-utf16-amparo.md`.
