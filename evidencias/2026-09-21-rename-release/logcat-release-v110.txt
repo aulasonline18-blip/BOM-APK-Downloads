@@ -16056,7 +16056,6 @@
 09-21 21:20:48.787  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 70000 us
 09-21 21:20:48.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251528264362595, event=0.000000
 09-21 21:20:48.824  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251528265734886, event=0.000000
-09-21 21:20:48.843 10274 10274 I adbd    : adbd service requested 'shell,v2,TERM=dumb,raw:input text QaAmparo!20260921xZ'
 09-21 21:20:48.924  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251528364349626, event=0.000000
 09-21 21:20:48.926  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251528365610407, event=0.000000
 09-21 21:20:48.930  2595  3437 D InputDispatcher: Inject key (13237/2000): action=0, f=0x0, d=-1, time=775372971569113
@@ -21678,7 +21677,6 @@
 09-21 21:21:40.284  1640  1766 W SDM     : HWDeviceDRM::GetSupportedBitClkRate: Requested rate not supported: 0
 09-21 21:21:40.285  1640  2791 E Dpps    : DppsServer::RunPollIteration():480 Poll iteration failed with ret -95
 09-21 21:21:40.285  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
-09-21 21:21:40.310 10274 10274 I adbd    : adbd service requested 'shell,v2,TERM=dumb,raw:input text 'QaAmparo!20260921xZ''
 09-21 21:21:40.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251579764362178, event=0.000000
 09-21 21:21:40.325  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251579765730824, event=0.000000
 09-21 21:21:40.423  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251579864348689, event=0.000000
@@ -23320,7 +23318,6 @@
 09-21 21:22:03.167  1640  2791 E Dpps    : DppsServer::Run():293 Poll iteration failed, ret -95
 09-21 21:22:03.223  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251602664357884, event=0.000000
 09-21 21:22:03.224  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251602665642467, event=0.000000
-09-21 21:22:03.316 10274 10274 I adbd    : adbd service requested 'shell,v2,TERM=dumb,raw:input text 'QaAmparo!20260921xZ''
 09-21 21:22:03.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251602764344394, event=0.000000
 09-21 21:22:03.324  1589 18014 I sensors-hal: handle_sns_client_event:49, ambient_light_event: ts=1251602765661790, event=0.000000
 09-21 21:22:03.391  1640  1766 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: video, timeout: 69999 us

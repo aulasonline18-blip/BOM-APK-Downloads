@@ -92,7 +92,7 @@ RELEASE_CANDIDATE: NO
 
 ## CONTINUE DAQUI
 
-1. `flutter run -d 100.124.23.2:5555 --dart-define=FLUTTER_APP_MODE=production --dart-define=SIM_SERVER_URL=https://simaitutor.com --dart-define=SIM_CHECKOUT_RETURN_ORIGIN=https://simaitutor.com --dart-define=SIM_AUTH_REDIRECT_URL=simaitutor://login-callback` (modo debug attached, não `adb input tap` cego) com a conta `qa-amparo-20260921@sim-internal-test.invalid`/`QaAmparo!20260921xZ`.
+1. `flutter run -d 100.124.23.2:5555 --dart-define=FLUTTER_APP_MODE=production --dart-define=SIM_SERVER_URL=https://simaitutor.com --dart-define=SIM_CHECKOUT_RETURN_ORIGIN=https://simaitutor.com --dart-define=SIM_AUTH_REDIRECT_URL=simaitutor://login-callback` (modo debug attached, não `adb input tap` cego) com uma conta de QA autorizada. Não registrar credenciais no repositório.
 2. Completar o onboarding, entrar numa aula, rolar manualmente para cima e para baixo várias vezes observando se o viewport nunca salta sozinho de volta (confirma `df09c02`).
 3. Responder um item normalmente e confirmar que o avanço para o próximo item/experiência continua funcionando sem depender do caminho removido (confirma `cdd09e2`).
 4. Se ambos passarem: gerar o AAB (`scripts/build-bom-production-aab.sh`, mesmas env vars), registrar `FINAL_AAB_SHA256`, e então `RELEASE_CANDIDATE` pode virar `YES`.

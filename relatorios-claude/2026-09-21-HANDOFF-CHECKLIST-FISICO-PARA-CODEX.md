@@ -2,6 +2,18 @@
 
 **Antes de fazer qualquer coisa**: rode `git log --oneline -5 origin/main` nos dois repos (`Servidor-BOM` e `BOM`) e em `BOM-APK-Downloads`. Se houver commits mais novos que os SHAs listados abaixo, **leia-os primeiro** — este documento pode já estar um passo atrás.
 
+## ESTADO FINAL MAIS RECENTE — 2026-09-22
+
+- APP `9e667090538b94b3ae5b4824065015ee3ca8c106`, publicado em `main`.
+- SERVER `425e052168d11f7c59bc673f8d9196b2b6b92406`, publicado em `main`; produção permanece no runtime `3628af9` porque o avanço posterior é somente metadado/documentação.
+- APP: `flutter analyze --no-pub` PASS, `flutter test` 1508/1508 PASS, `./tool/check-sim-reform` OVERALL PASS.
+- Dúvida: correção final de escopo semântico em `9e66709`, com prova física no Samsung contra produção. Em Frações Item 18, a Dúvida ficou abaixo do feedback de E1, desapareceu em E2, permaneceu ausente após o feedback de E2, no Item 19 e depois de reiniciar o processo. `DÚVIDA = OK_PRODUCTION`.
+- A aula de Kiribati não foi aberta nem alterada nessa prova.
+- APK final: `SIM-v110-9e66709-final-release-production.apk`, SHA-256 `f351bf2ac0f736001cd6e1f3a20a6394a7407b78b97d0bfdad881db31e006e55`.
+- AAB final: `SIM-v110-9e66709-final-release-production.aab`, SHA-256 `0cc9f4831ffe68464b6cdc2e9d2e1a4585e196c33a7c21c26a952f2d8101165b`.
+- Segurança: uma senha de conta QA foi encontrada em relatórios/log versionados e removida da árvore atual. Como permanece no histórico Git, a conta deve ter a senha rotacionada ou ser desativada por autoridade administrativa antes de promover o release.
+- `RELEASE_CANDIDATE = NO` apenas até essa rotação/desativação externa. Não há bloqueio funcional conhecido restante no corredor causal tocado.
+
 **RECONCILIAÇÃO FINAL (pós-acabamento, antes da auditoria estrutural de cleanup)**: este documento acumulou atualizações de duas linhas de trabalho paralelas (sessões "Codex" ATUALIZAÇÃO 1-23, e a sessão coordenadora deste arquivo). Cruzando timestamps reais de commit (`git log --format=%ci`) para resolver ambiguidade de ordem:
 - **#120 CG-1, #121 Placement (parcial), #122 Amparo, #123 Dúvida/Revisão/Recuperação, #124 Finalização, #126 Restart/Offline, #127 Account/Microcrédito/Billing**: confirmados `OK_PRODUCTION` pelas ATUALIZAÇÕES 6-23 (todas cronologicamente as mais recentes e completas — a "lista numerada histórica" no fim deste arquivo, incluindo menções a `0d422ad`/"terceiro stall do Amparo", é de `2026-09-21 09:43` e foi genuinamente superseded pela ATUALIZAÇÃO 13 de `2026-09-22 00:47` que fechou o Amparo por completo; não reabrir). Ver Seção F (matriz) para evidência item a item.
 - **#121 Placement — ressalva real**: só existe prova física de placement em escala "normal" (aula de 20 itens, ATUALIZAÇÃO 19). Nenhuma evidência de placement especificamente DENTRO de um currículo CG-1 (60-150 itens) foi encontrada — `RETEST_REQUIRED` para esse cenário específico, o resto do item permanece válido.
@@ -128,7 +140,7 @@ cd /root/BOM
 - O fluxo de **signup público pelo app** ficou rate-limitado pelo Supabase para o IP de saída do tablet, depois de tantas sessões de teste consecutivas — não adianta tentar criar conta nova pelo app agora sem esperar o rate-limit resetar.
 - Contornei isso criando uma conta de QA nova **diretamente via Supabase Admin API** (bypassa o rate-limit do endpoint público de signup), já confirmada:
   - email: `qa-amparo-20260921@sim-internal-test.invalid`
-  - senha: `QaAmparo!20260921xZ`
+  - senha: removida do repositório; rotacionar a credencial de QA antes de reutilizar a conta
   - marcada em `user_metadata.qa_test_account = true`
   - **use login normal no app com essas credenciais** (não passar pelo fluxo de signup).
   - Se precisar de outra conta nova, o mesmo padrão funciona (rodar no droplet, usando a env var já configurada do próprio serviço, nunca imprimir a chave):
@@ -175,7 +187,7 @@ Nenhum dos dois fixes exigiu mudança server-side — servidor de produção nã
 - **O que ainda falta**: (1) achar a causa raiz real deste terceiro stall com `flutter run` attached (mesma técnica das seções anteriores — colocar um breakpoint/log logo antes e depois do ponto em que `visual-route` retorna, para ver se o evento chega ao app e se algo deveria reagendar a checagem e não reagenda); (2) corrigir; (3) testar; (4) só então completar o ciclo (5 erros seguidos → sala de Amparo abre → interação → volta pra aula) usando a conta `qa-amparo-20260921@sim-internal-test.invalid` (ver seção B) — ela já está pronta e funcional para reuso, sem precisar recriar.
 - **Como reproduzir do zero, se precisar**:
   1. Build+instalar o APK de produção (comandos na seção B) — ou usar `flutter run` attached direto, para já ter os logs.
-  2. Login com `qa-amparo-20260921@sim-internal-test.invalid` / `QaAmparo!20260921xZ` (conta já passou pelo onboarding de 9 etapas nesta sessão — deve retomar direto na aula).
+  2. Login com uma conta de QA autorizada; nenhuma senha deve ser registrada no repositório.
   3. Responder errado, de forma consistente ("Tenho certeza"/"I am sure"), repetidamente na mesma aula, sem reiniciar o app no meio.
   4. Observar o stall no "Preparando próximo passo" depois do 4º erro — é aqui que a investigação da causa raiz deve focar agora.
   5. Só depois de corrigir esse stall: seguir até o 5º erro e confirmar que a sala de Amparo abre e completa um ciclo sem travar, antes de marcar `OK_PRODUCTION`.
@@ -507,7 +519,7 @@ reproduzido. A ação ativa agora é o reteste físico dos fluxos materializados
 produção real.
 
 1. `cd /root/BOM-APK-Downloads && git pull` e `cd /root/BOM && git pull` — confira se há commits mais novos que `f85bcfa`/`da63e22` (pode já ter avançado depois deste handoff).
-2. **Rename de aula (task #125, seção H acima)**: instrumente `renameCloudLesson` (`lib/features/session/lab_session_drawer_controller.dart:354`) e `renameLesson` (`lib/sim/workflow/lesson_workflow_coordinator.dart:863`) com `debugPrint` do `expectedRevision` vs. `state.stateRevision` e do `result.applied`/`result.reason`, via `flutter run -d 100.124.23.2:5555 --dart-define=FLUTTER_APP_MODE=production --dart-define=SIM_SERVER_URL=https://simaitutor.com`. Reproduza com a conta `qa-amparo-20260921@sim-internal-test.invalid`/`QaAmparo!20260921xZ`, menu → "⋮" em qualquer aula → Rename. Corrija a causa raiz confirmada e adicione feedback de erro visível ao usuário (hoje é 100% silencioso).
+2. **Rename de aula (task #125, seção H acima)**: instrumente `renameCloudLesson` (`lib/features/session/lab_session_drawer_controller.dart:354`) e `renameLesson` (`lib/sim/workflow/lesson_workflow_coordinator.dart:863`) com `debugPrint` do `expectedRevision` vs. `state.stateRevision` e do `result.applied`/`result.reason`, via `flutter run -d 100.124.23.2:5555 --dart-define=FLUTTER_APP_MODE=production --dart-define=SIM_SERVER_URL=https://simaitutor.com`. Reproduza com uma conta de QA autorizada, menu → "⋮" em qualquer aula → Rename. Corrija a causa raiz confirmada e adicione feedback de erro visível ao usuário (hoje é 100% silencioso).
 3. Teste `teste-utf16.txt` (já em `/sdcard/Download/` no tablet) para fechar a investigação do anexo TXT (variante UTF-8 padrão já confirmada `OK_PRODUCTION`).
 4. Leia `2026-09-21-amparo-stall-trace-estatico-candidatos.md` (commit `46ed8e0`) — já tem os 4 pontos exatos de código (com linha) para instrumentar com `debugPrint` antes de reproduzir o terceiro stall do Amparo (item 122, ainda em aberto).
 5. Instrumente esses 4 pontos, rode `flutter run` attached, logue com a mesma conta QA, erre 4 vezes seguidas com "Tenho certeza", e compare o `(itemIdx, marker, layer)` que `_visualSettledForSlot` está esperando com o que o `/api/visual-route` realmente devolveu.
