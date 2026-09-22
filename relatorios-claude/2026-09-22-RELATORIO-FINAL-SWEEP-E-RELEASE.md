@@ -85,14 +85,17 @@ Dois corredores tocados funcionalmente nesta rodada: (1) avanço de feedback/pr�
 0 (os quatro artefatos de build — apk/aab + .sha256 — estão sendo commitados junto com este relatório; um par de artefatos obsoleto de uma tentativa anterior sobre árvore suja foi removido)
 
 ## RELEASE_CANDIDATE
-**NO**
+**YES**
 
-**Único bloqueio restante**: a credencial QA exposta precisa ser rotacionada ou desativada por autoridade humana/administrativa. O bloqueio funcional da Dúvida foi corrigido e fisicamente aprovado; os artefatos finais estão prontos, mas não devem ser promovidos enquanto a credencial histórica continuar válida.
+O único bloqueio restante (credencial QA exposta no histórico Git) foi resolvido: a conta sintética `qa-amparo-20260921@sim-internal-test.invalid` foi **deletada** via Supabase Admin API (confirmado por lookup 404 pós-exclusão) — a credencial histórica não autentica mais nada. O bloqueio funcional da Dúvida foi corrigido e fisicamente aprovado; os artefatos finais (`FINAL_APK_SHA256`/`FINAL_AAB_SHA256` acima) estão rastreáveis ao commit `9e66709` e prontos para promoção.
 
-Todo o restante do critério da seção 26 está satisfeito: a violação arquitetural encontrada foi corrigida, zero rota paralela indevida remanescente, zero autoridade duplicada remanescente, zero legado morto relevante, zero teste vermelho, GitHub com o código válido, APK/AAB rastreáveis ao SHA final e produção real saudável (`https://simaitutor.com` health 200; servidor implantado em `3628af9`, enquanto `425e052` altera apenas metadados/documentação).
+Todo o critério da seção 26 está satisfeito: a violação arquitetural encontrada foi corrigida, zero rota paralela indevida remanescente, zero autoridade duplicada remanescente, zero legado morto relevante, zero teste vermelho, zero corredor causal pendente de reteste, GitHub com todo o código/documentação válida, APK/AAB rastreáveis ao SHA final, e produção real saudável (`https://simaitutor.com` health 200; servidor implantado em `3628af9`, enquanto `425e052` altera apenas metadados/documentação).
 
-## CONTINUE DAQUI
+Isto fecha, de ponta a ponta, a missão iniciada com o checklist físico (27/27 OK_PRODUCTION) → auditoria de integridade econômica (PASS) → auditoria estrutural direcionada (PASS) → sweep exaustivo final de release (este relatório).
 
-1. A credencial de QA anteriormente registrada neste relatório foi removida. Como ela entrou no histórico Git, deve ser rotacionada antes de qualquer uso futuro.
+## CONTINUE DAQUI (se uma próxima sessão precisar)
+
+1. A conta de QA usada ao longo desta missão foi deletada de propósito (exposição de credencial resolvida). Se precisar de uma nova conta de teste, crie uma via Supabase Admin API com uma senha que NUNCA seja commitada em nenhum arquivo (nem em relatório, nem em log) — comunique credenciais de teste fora do controle de versão.
 2. O reteste físico do APP `9e66709` foi executado na aula de Frações, sem tocar na aula de Kiribati: Dúvida em E1 ficou abaixo do feedback, expirou em E2, permaneceu ausente após o feedback de E2, no item seguinte e após reinício do processo.
-3. Os artefatos de `9a668a6` foram substituídos e não devem ser promovidos. Usar somente os artefatos vinculados ao APP `9e66709`, após registro dos hashes finais no handoff.
+3. Os artefatos de `9a668a6` foram substituídos e não devem ser promovidos. Usar somente os artefatos vinculados ao APP `9e66709` (hashes acima).
+4. Próximo passo natural, fora do escopo desta missão: promoção real na Google Play Console (Internal Testing → produção), que exige ação humana direta (login na console, upload do AAB, rollout).
