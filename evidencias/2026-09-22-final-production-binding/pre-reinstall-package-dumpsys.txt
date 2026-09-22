@@ -1,0 +1,315 @@
+Activity Resolver Table:
+  Schemes:
+      simaitutor:
+        95d477c com.simaitutor.app/.MainActivity filter c97005a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "simaitutor"
+          Authority: "login-callback": -1
+
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        95d477c com.simaitutor.app/.MainActivity filter e676805
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      androidx.profileinstaller.action.SAVE_PROFILE:
+        e02c28b com.simaitutor.app/androidx.profileinstaller.ProfileInstallReceiver filter 3b4c826
+          Action: "androidx.profileinstaller.action.SAVE_PROFILE"
+      androidx.profileinstaller.action.INSTALL_PROFILE:
+        e02c28b com.simaitutor.app/androidx.profileinstaller.ProfileInstallReceiver filter f55f68
+          Action: "androidx.profileinstaller.action.INSTALL_PROFILE"
+      androidx.profileinstaller.action.SKIP_FILE:
+        e02c28b com.simaitutor.app/androidx.profileinstaller.ProfileInstallReceiver filter dfb7f81
+          Action: "androidx.profileinstaller.action.SKIP_FILE"
+      androidx.profileinstaller.action.BENCHMARK_OPERATION:
+        e02c28b com.simaitutor.app/androidx.profileinstaller.ProfileInstallReceiver filter c58fc67
+          Action: "androidx.profileinstaller.action.BENCHMARK_OPERATION"
+
+Service Resolver Table:
+  Non-Data Actions:
+      com.google.android.gms.metadata.MODULE_DEPENDENCIES:
+        d750a14 com.simaitutor.app/com.google.android.gms.metadata.ModuleDependencies filter 35f92bd
+          Action: "com.google.android.gms.metadata.MODULE_DEPENDENCIES"
+
+Preferred Activities User 0:
+  Schemes:
+      simaitutor:
+        b993e32 com.simaitutor.app/.MainActivity
+         mMatch=0x300000 mAlways=false
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.BROWSABLE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "simaitutor"
+          Authority: "login-callback": -1
+
+Domain verification status:
+
+Permissions:
+  Permission [com.simaitutor.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION] (f518f9e):
+    sourcePackage=com.simaitutor.app
+    uid=10359 gids=[] type=0 prot=signature
+    perm=PermissionInfo{6556713 com.simaitutor.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION}
+    flags=0x0
+
+Registered ContentProviders:
+  com.simaitutor.app/io.flutter.plugins.imagepicker.ImagePickerFileProvider:
+    Provider{376dd50 com.simaitutor.app/io.flutter.plugins.imagepicker.ImagePickerFileProvider}
+  com.simaitutor.app/androidx.startup.InitializationProvider:
+    Provider{ceacb49 com.simaitutor.app/androidx.startup.InitializationProvider}
+
+ContentProvider Authorities:
+  [com.simaitutor.app.androidx-startup]:
+    Provider{ceacb49 com.simaitutor.app/androidx.startup.InitializationProvider}
+      applicationInfo=ApplicationInfo{1b07a7f com.simaitutor.app}
+  [com.simaitutor.app.flutter.image_provider]:
+    Provider{376dd50 com.simaitutor.app/io.flutter.plugins.imagepicker.ImagePickerFileProvider}
+      applicationInfo=ApplicationInfo{ab10a4c com.simaitutor.app}
+
+Key Set Manager:
+  [com.simaitutor.app]
+      Signing KeySets: 139
+
+Packages:
+  Package [com.simaitutor.app] (14cba95):
+    appId=10359
+    pkg=Package{e8bd305 com.simaitutor.app}
+    codePath=/data/app/~~vzBD04qihlFavwIxD48kDw==/com.simaitutor.app-Xtek0lo8SYfl5s4VdeFF4w==
+    resourcePath=/data/app/~~vzBD04qihlFavwIxD48kDw==/com.simaitutor.app-Xtek0lo8SYfl5s4VdeFF4w==
+    legacyNativeLibraryDir=/data/app/~~vzBD04qihlFavwIxD48kDw==/com.simaitutor.app-Xtek0lo8SYfl5s4VdeFF4w==/lib
+    extractNativeLibs=false
+    primaryCpuAbi=arm64-v8a
+    secondaryCpuAbi=null
+    cpuAbiOverride=null
+    versionCode=110 minSdk=24 targetSdk=36
+    minExtensionVersions=[]
+    versionName=1.0.0
+    hiddenApiEnforcementPolicy=2
+    usesNonSdkApi=false
+    splits=[base]
+    apkSigningVersion=2
+    flags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    forceQueryable=false
+    pageSizeCompat=0
+    queriesIntents=[Intent { act=android.intent.action.PROCESS_TEXT dat=content://*/... typ=text/plain }, Intent { act=android.intent.action.GET_CONTENT dat=content://*/... typ=*/* }, Intent { act=com.android.vending.billing.InAppBillingService.BIND }, Intent { act=com.google.android.apps.play.billingtestcompanion.BillingOverrideService.BIND }]
+    scannedAsStoppedSystemApp=false
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesOptionalLibraries:
+      androidx.window.extensions
+      androidx.window.sidecar
+    usesLibraryFiles:
+      /system_ext/framework/androidx.window.extensions.jar
+      /system_ext/framework/androidx.window.sidecar.jar
+    timeStamp=2026-09-23 00:24:14
+    lastUpdateTime=2026-09-23 00:24:22
+    installerPackageName=null
+    installerPackageUid=-1
+    initiatingPackageName=com.android.shell
+    originatingPackageName=null
+    category=manifest: -1, override: -1, by user: -1
+    packageSource=1
+    appMetadataFilePath=null
+    appMetadataSource=0
+    signatures=PackageSignatures{6b28f5a version:2, signatures:[18447c5e], past signatures:[]}
+    installPermissionsFixed=false
+    pkgFlags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    privatePkgFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    apexModuleName=null
+    componentsDeclared=15
+    declared permissions:
+      com.simaitutor.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: prot=signature
+    requested permissions:
+      android.permission.USE_CREDENTIALS
+      com.simaitutor.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+      android.permission.INTERNET
+      com.android.vending.BILLING
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.CAMERA
+      android.permission.CREDENTIAL_MANAGER_SET_ORIGIN
+      android.permission.USE_BIOMETRIC
+    install permissions:
+      android.permission.USE_CREDENTIALS: granted=true
+      com.simaitutor.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.INTERNET: granted=true
+      com.android.vending.BILLING: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.CREDENTIAL_MANAGER_SET_ORIGIN: granted=true
+      android.permission.USE_BIOMETRIC: granted=true
+    User 0: ceDataInode=173316 deDataInode=166843 installed=true hidden=false suspended=false distractionFlags=0 stopped=false notLaunched=false enabled=0 instant=false virtual=false quarantined=false
+      installReason=0
+      dataDir=/data/user/0/com.simaitutor.app
+      firstInstallTime=2026-09-23 00:24:22
+      uninstallReason=0
+      overlay paths:
+        /product/overlay/NavigationBarMode3Button/NavigationBarMode3ButtonOverlay.apk
+      legacy overlay paths:
+        /product/overlay/NavigationBarMode3Button/NavigationBarMode3ButtonOverlay.apk
+      gids=[3003]
+      runtime permissions:
+        android.permission.CAMERA: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+
+Queries:
+  system apps queryable: false
+  queries via forceQueryable:
+  queries via package name:
+  queries via component:
+    com.android.settings.intelligence:
+      com.simaitutor.app
+    com.google.android.as:
+      com.simaitutor.app
+    com.google.android.as.oss:
+      com.simaitutor.app
+    com.google.android.apps.messaging:
+      com.simaitutor.app
+    com.whatsapp:
+      com.simaitutor.app
+    com.tradingview.tradingviewapp:
+      com.simaitutor.app
+    com.zhiliaoapp.musically:
+      com.simaitutor.app
+    com.instagram.android:
+      com.simaitutor.app
+    com.whatsapp.w4b:
+      com.simaitutor.app
+    com.simaitutor.app:
+      com.google.android.documentsui
+      com.microsoft.skydrive
+      com.samsung.android.app.contacts
+      com.google.android.googlequicksearchbox
+      com.google.android.photopicker
+      com.openai.chatgpt
+      com.deepseek.chat
+      com.microsoft.office.officehubrow
+      com.google.android.apps.docs
+      com.google.android.apps.photos
+      com.google.android.apps.translate
+      mega.privacy.android.app
+      com.google.android.apps.play.billingtestcompanion
+      com.sirma.mobile.bible.android
+  queryable via interaction:
+    User 0:
+      [com.android.providers.settings,com.samsung.android.lool,com.sec.modem.settings,com.sec.android.app.personalization,com.sec.android.app.servicemodeapp,com.android.keychain,com.sec.epdg,android,com.sec.android.iaft,com.sec.android.sdhms,com.samsung.android.simagent,com.qti.snapdragon.qdcm_ff,com.sec.android.app.quicktool,com.android.dynsystem,com.sec.android.app.SecSetupWizard,com.sem.factoryapp,com.samsung.android.fmm,com.samsung.android.secondconnection,com.samsung.android.mdecservice,com.samsung.aasaservice,com.sec.android.app.RilPhoneNumberService,com.sec.imsservice,com.samsung.android.biometrics.app.setting,com.sec.bcservice,com.samsung.android.dqagent,com.samsung.android.knox.attestation,com.android.location.fused,com.android.inputdevices,com.sec.sve,com.samsung.android.forest,com.samsung.android.app.omcagent,com.sec.usbsettings,com.samsung.android.themecenter,com.samsung.android.bbc.bbcagent,com.sec.app.RilErrorNotifier,com.sec.android.app.factorykeystring,com.samsung.android.smartswitchassistant,com.sec.android.diagmonagent,com.wssyncmldm,com.samsung.android.da.daagent,com.factory.mmigroup,com.android.localtransport,com.samsung.sait.sohservice,com.samsung.android.emergency,com.sec.android.soagent,com.sec.android.app.camerasaver,com.sec.imslogger,com.sec.android.emergencylauncher,com.android.server.telecom,com.sec.android.app.applinker,com.samsung.android.stickercenter,com.android.settings,com.samsung.android.app.dressroom,com.skms.android.agent,com.samsung.accessibility,com.sec.android.app.parser,com.samsung.SMT,com.sec.mhs.smarttethering,com.sec.automation]:
+        com.simaitutor.app
+      com.google.android.documentsui:
+        com.simaitutor.app
+      com.samsung.android.honeyboard:
+        com.simaitutor.app
+      com.google.android.photopicker:
+        com.simaitutor.app
+      com.google.android.providers.media.module:
+        com.simaitutor.app
+      com.simaitutor.app:
+        com.google.android.providers.media.module
+  queryable via uses-library:
+
+Dexopt state:
+  [com.simaitutor.app]
+    path: /data/app/~~vzBD04qihlFavwIxD48kDw==/com.simaitutor.app-Xtek0lo8SYfl5s4VdeFF4w==/base.apk
+      arm64: [status=verify] [reason=install] [primary-abi]
+        [location is /data/app/~~vzBD04qihlFavwIxD48kDw==/com.simaitutor.app-Xtek0lo8SYfl5s4VdeFF4w==/oat/arm64/base.odex]
+
+SPEG state:
+  Event #22: 22-09-2026 21:48:02.790 Success com.simaitutor.app took 2496 ms
+  Event #21: 22-09-2026 20:14:36.435 Success com.simaitutor.app took 2441 ms
+  Event #20: 21-09-2026 21:17:43.937 Success com.simaitutor.app took 2412 ms
+  Event #19: 21-09-2026 19:48:27.321 Success com.simaitutor.app took 2456 ms
+  Event #18: 08-09-2026 21:52:56.770 Success com.simaitutor.app took 2314 ms
+  Event #17: 06-09-2026 06:44:33.877 Success com.simaitutor.app took 2702 ms
+  Event #16: 04-09-2026 20:54:37.890 Success org.chromium.webapk.ae5e7da12878c997a_v2 took 2326 ms
+  Event #15: 28-08-2026 17:55:55.345 Success com.simaitutor.app took 2458 ms
+  Event #14: 25-08-2026 11:46:01.499 Success com.simaitutor.app took 2382 ms
+  Event #13: 29-07-2026 18:20:37.120 Success app.lovable.gemini_aid_pal.twa took 2358 ms
+  Event #12: 29-07-2026 05:44:03.096 Success com.example.sim_mobile took 2330 ms
+  Event #11: 27-07-2026 22:46:05.529 Success com.example.sim_mobile took 2400 ms
+  Event #10: 26-07-2026 18:31:19.789 Success com.example.sim_mobile took 2371 ms
+  Event #9: 21-07-2026 10:28:26.185 Failure app.lovable.gemini_aid_pal.twa took 2087 ms
+  Event #8: 17-07-2026 09:17:55.458 Success com.example.sim_mobile took 2348 ms
+  Event #7: 16-07-2026 15:42:38.292 Success com.example.sim_mobile took 2339 ms
+  Event #6: 16-07-2026 13:30:45.632 Success app.lovable.gemini_aid_pal.twa took 2395 ms
+  Event #5: 09-07-2026 16:19:46.330 Success com.example.sim_mobile took 2367 ms
+  Event #4: 09-07-2026 09:43:25.305 Success app.lovable.gemini_aid_pal.twa took 2452 ms
+  Event #3: 07-07-2026 19:32:29.991 Success com.example.sim_mobile took 2346 ms
+  Event #2: 07-07-2026 09:07:50.370 Success com.example.sim_mobile took 2397 ms
+  Event #1: 04-07-2026 20:40:18.088 Success com.samsung.android.galaxy took 2419 ms
+  Event #0: 04-07-2026 20:35:44.903 Success com.sec.android.app.popupcalculator took 2415 ms
+
+Profile utilization state:
+  Current state:
+    Version: 2.1.1
+    Start reason: boot-no-update
+    Start time: not started
+    Finish time: not finished
+    PU_StatusWatcher:
+      Initial thermal status: 0
+      Thermal status: 0
+      Screen off: false
+      Low battery: true
+    PU_DexoptTrigger:
+      Dexopt concurrency: 4
+      Dexopting: false
+    PU_Storage:
+      Stored apps:
+        com.example.sim_mobile 41
+        com.tailscale.ipn 45
+        com.google.android.googlequicksearchbox 57
+        com.google.android.gm 62
+        com.android.settings 63
+        com.samsung.android.calendar 63
+        com.android.vending 65
+        com.google.android.apps.messaging 73
+        com.google.android.apps.tachyon 75
+        com.sec.android.easyMover 75
+        com.sec.android.app.camera 81
+        com.samsung.android.app.notes 83
+        com.sec.android.app.clockpackage 83
+        com.samsung.android.dialer 84
+        com.samsung.android.messaging 86
+        com.samsung.android.app.contacts 92
+    Stored PU state:
+      Service:
+        Version: 2.1.1
+        Start reason: boot-after-mainline-update
+        Start time: Sat Aug 08 19:22:10 GMT+12:00 2026 ts=1786173730347
+        Finish time: Sat Aug 08 21:35:46 GMT+12:00 2026 ts=1786181746448
+        Took time 8016sec
+      Watcher:
+        Initial thermal status: 0
+        Thermal status: 0
+        Screen off: true
+        Low battery: false
+      Trigger:
+        Dexopt concurrency: 4
+        Dexopting: false
+        Hot apps list:
+          com.example.sim_mobile, w=41, s=OPTIMIZED, optTimeMs=1786180387037, cancelCount=0, dexopt=PERFORMED, [primaryDex=true, reason=profile-utilization, dex2oatTimeMs=1710, filter=speed-profile]
+          com.tailscale.ipn, w=45, s=OPTIMIZED, optTimeMs=1786180438881, cancelCount=0, dexopt=PERFORMED, [primaryDex=true, reason=profile-utilization, dex2oatTimeMs=4028, filter=speed-profile]
+          com.google.android.googlequicksearchbox, w=57, s=OPTIMIZED, optTimeMs=1786181737956, cancelCount=0, dexopt=PERFORMED, [primaryDex=true, reason=profile-utilization, dex2oatTimeMs=59392, filter=speed-profile]
+          com.google.android.gm, w=62, s=OPTIMIZED, optTimeMs=1786181741040, cancelCount=0, dexopt=PERFORMED, [primaryDex=true, reason=profile-utilization, dex2oatTimeMs=62489, filter=speed-profile]
+          com.android.settings, w=63, s=OPTIMIZED, optTimeMs=1786180506102, cancelCount=0, dexopt=PERFORMED, [primaryDex=true, reason=profile-utilization, dex2oatTimeMs=3373, filter=speed-profile]
+          com.samsung.android.calendar, w=63, s=OPTIMIZED, optTimeMs=1786180512453, cancelCount=0, dexopt=PERFORMED, [primaryDex=true, reason=profile-utilization, dex2oatTimeMs=7589, filter=speed-profile]
+          com.android.vending, w=65, s=OPTIMIZED, optTimeMs=1786181739479, cancelCount=0, dexopt=PERFORMED, [primaryDex=true, reason=profile-utilization, dex2oatTimeMs=54692, filter=speed-profile], [primaryDex=false, reason=vdex, dex2oatTimeMs=0, filter=verify], [primaryDex=false, reason=profile-utilization, dex2oatTimeMs=244, filter=verify], [primaryDex=false, reason=vdex, dex2oatTimeMs=0, filter=verify]
+          com.google.android.apps.messaging, w=73, s=OPTIMIZED, optTimeMs=1786181738385, cancelCount=0, dexopt=PERFORMED, [primaryDex=true, reason=profile-utilization, dex2oatTimeMs=47618, filter=speed-profile]
+          com.google.android.apps.tachyon, w=75, s=OPTIMIZED, optTimeMs=1786181746447, cancelCount=0, dexopt=PERFORMED, [primaryDex=true, reason=profile-utilization, dex2oatTimeMs=8212, filter=speed-profile]
+          com.sec.android.easyMover, w=75, s=OPTIMIZED, optTimeMs=1786181743931, cancelCount=0, dexopt=PERFORMED, [primaryDex=true, reason=profile-utilization, dex2oatTimeMs=5323, filter=speed-profile]
+          com.sec.android.app.camera, w=81, s=OPTIMIZED, optTimeMs=1786181739622, cancelCount=0, dexopt=SKIPPED, [primaryDex=true, reason=boot-after-mainline-update, dex2oatTimeMs=0, filter=speed-profile]
+    Stored SCPM state:
+      packages-9a07:
+        [                                            ]
+      disable-2bb4:
+        [                                            ]
+
+Compiler stats:
+  [com.simaitutor.app]
+     base.apk - 1409
+
+HeimdAllFS state:
+  [com.simaitutor.app]
+    path: /data/app/~~vzBD04qihlFavwIxD48kDw==/com.simaitutor.app-Xtek0lo8SYfl5s4VdeFF4w==/base.apk
+    Compressed? False
+  [ Summary ]
+    # of packages: 1 / # of packages in DATA: 1 (1)
+    Compressed apks info - sum of orig size: 18876 / sum of compr size : 18876
