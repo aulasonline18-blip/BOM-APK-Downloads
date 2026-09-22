@@ -11,8 +11,8 @@
 - A aula de Kiribati não foi aberta nem alterada nessa prova.
 - APK final: `SIM-v110-9e66709-final-release-production.apk`, SHA-256 `f351bf2ac0f736001cd6e1f3a20a6394a7407b78b97d0bfdad881db31e006e55`.
 - AAB final: `SIM-v110-9e66709-final-release-production.aab`, SHA-256 `0cc9f4831ffe68464b6cdc2e9d2e1a4585e196c33a7c21c26a952f2d8101165b`.
-- Segurança: uma senha de conta QA foi encontrada em relatórios/log versionados e removida da árvore atual. Como permanece no histórico Git, a conta deve ter a senha rotacionada ou ser desativada por autoridade administrativa antes de promover o release.
-- `RELEASE_CANDIDATE = NO` apenas até essa rotação/desativação externa. Não há bloqueio funcional conhecido restante no corredor causal tocado.
+- Segurança: uma senha de conta QA foi encontrada em relatórios/log versionados e removida da árvore atual. A conta sintética correspondente foi excluída pela API administrativa; verificação independente confirmou que ela não existe mais.
+- `RELEASE_CANDIDATE = YES`. Não há bloqueio funcional ou de segurança conhecido restante no corredor causal tocado.
 
 **RECONCILIAÇÃO FINAL (pós-acabamento, antes da auditoria estrutural de cleanup)**: este documento acumulou atualizações de duas linhas de trabalho paralelas (sessões "Codex" ATUALIZAÇÃO 1-23, e a sessão coordenadora deste arquivo). Cruzando timestamps reais de commit (`git log --format=%ci`) para resolver ambiguidade de ordem:
 - **#120 CG-1, #121 Placement (parcial), #122 Amparo, #123 Dúvida/Revisão/Recuperação, #124 Finalização, #126 Restart/Offline, #127 Account/Microcrédito/Billing**: confirmados `OK_PRODUCTION` pelas ATUALIZAÇÕES 6-23 (todas cronologicamente as mais recentes e completas — a "lista numerada histórica" no fim deste arquivo, incluindo menções a `0d422ad`/"terceiro stall do Amparo", é de `2026-09-21 09:43` e foi genuinamente superseded pela ATUALIZAÇÃO 13 de `2026-09-22 00:47` que fechou o Amparo por completo; não reabrir). Ver Seção F (matriz) para evidência item a item.
