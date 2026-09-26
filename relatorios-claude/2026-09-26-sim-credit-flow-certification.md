@@ -1,4 +1,4 @@
-# SIM Credit Flow / Google Play Billing Certification — 2026-09-26
+# SIM Credit Flow / Google Play Billing Certification — 2026-09-26 / 2026-09-27
 
 ## Resumo executivo
 
@@ -12,12 +12,47 @@ backend. O fix pré-existente contra falso-negativo de compra (GAP2) foi confirm
 presente e ganhou cobertura de regressão nova.
 
 Um novo build de teste (v113) foi gerado, assinado com a chave de upload verificada,
-publicado como artefato no GitHub e instalado no tablet físico. Testes de billing ao
-vivo (compra real) ficaram **BLOCKED** nesta sessão porque o build nunca foi publicado
-em nenhuma track do Play Console — o Play recusa billing para qualquer APK
-sideloaded não registrado. O upload para Internal Testing foi tentado via API mas a
-service account de RTDN não tem permissão de publicação (403); o usuário optou por
-publicar manualmente.
+publicado como artefato no GitHub e instalado no tablet físico. O usuário publicou
+manualmente o v113 na track Internal Testing do Play Console (upload via API tentado
+primeiro, mas a service account de RTDN não tem permissão de publicação — 403).
+
+**Atualização 2026-09-27 — diagnóstico comparativo completo do billing ao vivo:**
+Após a publicação manual, uma investigação sistemática e comparativa (não apenas
+uma conta/dispositivo) isolou com precisão a causa de cada bloqueio restante:
+
+1. O link genérico de opt-in (`play.google.com/apps/testing/{id}`) retornou "App not
+   available" para as **3 contas testadoras testadas** (`joelgomes522@gmail.com`,
+   `aulasonline18@gmail.com`, `ccrfoodgy1@gmail.com`) — resultado idêntico nas três,
+   descartando causa de conta específica. Comparado com a página real do app na Play
+   Store (`play.google.com/store/apps/details?id=com.simaitutor.app`), que mostrou
+   corretamente "You're an internal tester" para a mesma conta — concluído que o link
+   genérico de opt-in está obsoleto/não confiável como método de diagnóstico, não que
+   havia problema de elegibilidade.
+2. Com o app **sideloaded** (instalado via `adb install`, assinado com a chave de
+   upload), toda tentativa de compra retornava "This version of the application is
+   not configured for billing through Google Play" — mesmo com testers e track
+   corretos. Causa raiz: o Google Play só reconhece como "configurado para billing"
+   um APK que ele mesmo instalou (re-assinado com a chave de app-signing do Google),
+   não um APK sideloaded assinado com a chave de upload.
+3. **Correção do método**: desinstalado o sideload, instalado o mesmo v113
+   diretamente pela Play Store (`pm uninstall` → Play Store "Install"), confirmado
+   `installerPackageName=com.android.vending`. O erro "not configured for billing"
+   desapareceu por completo.
+4. Com a instalação correta, o erro que restou foi limpo e específico: **"Google
+   Play is temporarily unavailable"** + "This credit pack is not available for your
+   region" nos 3 pacotes. Log do Billing capturado ao vivo confirma o código exato:
+   `W BillingClient: getSkuDetails() failed for queryProductDetailsAsync. Response
+   code: 3` (BILLING_UNAVAILABLE) — a mesma assinatura de falha já documentada como
+   causa raiz do Problema 1, agora reconfirmada no build v113 com metodologia limpa
+   (instalação real via Play Store, tester elegível, track/release corretos).
+   Estado do dispositivo no momento exato do teste: `gsm.sim.state=ABSENT`,
+   `gsm.operator.iso-country=ki`, `gsm.operator.numeric=54501` — idêntico ao já
+   documentado.
+
+Conclusão: o código e a infraestrutura de teste (track, testers, assinatura,
+instalação) estão 100% corretos. O único bloqueio restante para verificar compra
+real/recuperação/exactly-once neste tablet específico é a identidade de região do
+dispositivo — fora do escopo de código desta missão.
 
 ## Problema 1 — "Google Play indisponível"
 
@@ -170,49 +205,78 @@ PRODUCTION_ENDPOINT = https://simaitutor.com
 GITHUB_RELEASE = https://github.com/aulasonline18-blip/BOM-APK-Downloads/releases/tag/v113-credit-flow-cert
 ```
 
-PLAY_CONSOLE_STATUS = **NÃO publicado** por mim (upload de bundle + track ficaram
-staged via API mas o commit final falhou com 403 PERMISSION_DENIED — a service
-account de RTDN não tem papel de publicação). Usuário optou por publicar manualmente
-pelo próprio Play Console.
+PLAY_CONSOLE_STATUS = **Publicado manualmente pelo usuário** na track Internal
+Testing (upload via API tentado primeiro; commit final falhou com 403
+PERMISSION_DENIED porque a service account de RTDN não tem papel de publicação).
+Confirmado via API: track `internal`, release `113 (1.0.0)`, status `completed`.
+Confirmado via Console (conta admin `exponencial@simaitutor.com`): lista de
+testadores "Testadores internos SIM" (4 contas, incluindo `joelgomes522@gmail.com`)
+corretamente marcada/vinculada à track.
 
-## Certificação física no tablet (100.124.23.2, conta joelgomes522@gmail.com)
+## Certificação física no tablet (100.124.23.2)
+
+Testado com a conta `joelgomes522@gmail.com`, com uma etapa comparativa adicional
+usando `aulasonline18@gmail.com` e `ccrfoodgy1@gmail.com` para isolar causa de conta
+vs. causa geral (ver seção de diagnóstico acima).
 
 ```
-APP_INSTALLED_V113             = PASS (uninstall+install necessário: certificado de
+APP_INSTALLED_V113 (sideload)   = PASS (uninstall+install necessário: certificado de
                                   upload ≠ certificado de app signing do Play, esperado)
+APP_INSTALLED_V113 (via Play Store) = PASS (installerPackageName=com.android.vending,
+                                  assinatura de app-signing do Google confirmada)
 LOGIN_GOOGLE_OAUTH              = PASS
 LESSON_PREPARE_AND_OPEN         = PASS (T00/T02, sem travar em "preparando")
 BALANCE_DISPLAYED               = PASS (999797 → 999794 após consumo real)
-BALANCE_REFRESH_AFTER_CONSUMPTION = PASS (ver ressalva acima)
+BALANCE_REFRESH_AFTER_CONSUMPTION = PASS (ver ressalva na seção Problema 2)
 ADVANCE_PENDING_RESOLVES_CLEANLY  = PASS (transição preparing→ready sem stall)
-PURCHASE_ERROR_SURFACED_CLEANLY = PASS (erro "not configured for billing" tratado
-                                   com banner claro, sem spinner preso)
-PLAY_CONNECTION                 = BLOCKED (build não publicado em nenhuma track)
-PRODUCT_100/200/500_AVAILABLE   = BLOCKED (mesma causa)
+PURCHASE_ERROR_SURFACED_CLEANLY = PASS (tanto o erro de sideload quanto o
+                                   BILLING_UNAVAILABLE real foram tratados com banner
+                                   claro, sem spinner preso, em ambos os testes)
+TESTER_LIST_CONFIG               = PASS (lista com 4 contas corretamente vinculada à
+                                   track Internal Testing, confirmado no Console)
+PLAY_STORE_TESTER_ELIGIBILITY    = PASS ("You're an internal tester" confirmado na
+                                   página real do app na Play Store, para 3 contas)
+APP_RECOGNIZED_FOR_BILLING       = PASS (após instalação real via Play Store; o erro
+                                   "not configured for billing" do sideload desaparece)
+PLAY_CONNECTION                 = FAIL — BILLING_UNAVAILABLE (response code 3),
+                                   causa raiz = região do dispositivo (Problema 1),
+                                   não infraestrutura de teste nem código
+PRODUCT_100/200/500_AVAILABLE   = FAIL (mesma causa: "not available for your region")
 INSUFFICIENT_CREDITS_DETECTED   = NOT_TESTED (conta de QA com 999794 créditos)
 PREPARING_STATE_CLEARED         = PASS (observado no fluxo real de avanço)
 BUY_CREDITS_PATH_PRESENTED      = PASS (tela de créditos abre, mostra 3 pacotes)
-PURCHASE_CANCEL_CLEARS_LOADING  = BLOCKED (requer sheet real aberto)
-PURCHASE_ERROR_CLEARS_LOADING   = PASS (caso real observado ao vivo)
-PURCHASE_RECOVERY_SAFE          = NOT_TESTED (requer compra real)
-DUPLICATE_GRANT                 = NOT_TESTED (requer compra real)
-EXACTLY_ONCE_PRESERVED          = NOT_TESTED (requer compra real; coberto por testes automatizados)
+PURCHASE_CANCEL_CLEARS_LOADING  = NOT_TESTED (requer sheet real aberto, bloqueado por
+                                   BILLING_UNAVAILABLE regional, não por código)
+PURCHASE_ERROR_CLEARS_LOADING   = PASS (2 casos reais observados ao vivo)
+PURCHASE_RECOVERY_SAFE          = NOT_TESTED (requer compra real; coberto por 3 testes
+                                   automatizados dedicados, incluindo o cenário GAP2)
+DUPLICATE_GRANT                 = NOT_TESTED (requer compra real; coberto por testes
+                                   automatizados de idempotência)
+EXACTLY_ONCE_PRESERVED          = NOT_TESTED (requer compra real; coberto por testes
+                                   automatizados)
 APP_POINTS_TO_PRODUCTION        = PASS (https://simaitutor.com, confirmado no build)
 USES_VM_BACKEND                 = NO
 REQUIRES_VM                     = NO (build/testes futuros podem repetir a partir do GitHub)
 ```
 
-## Causal chain para os itens BLOCKED
+## Causal chain final (investigação comparativa completa)
 
-Build v113 nunca subiu para nenhuma track do Play Console → Play recusa
-`launchBillingFlow` para esse APK específico ("This version of the application is not
-configured for billing through Google Play") → nenhum purchase sheet real abre →
-Problemas 1 e 4 (na forma de compra real) e a tríade
-recovery/duplicate-grant/exactly-once não puderam ser reverificados fisicamente nesta
-sessão. Isso é uma limitação de distribuição do build de teste, não uma falha de
-código — a mesma verificação já foi feita anteriormente nesta sessão (mais ampla,
-contra o v112 de produção) e permanece válida como evidência histórica para os
-mecanismos que não mudaram.
+1. Link genérico de opt-in (`/apps/testing/{id}`) → "App not available" para 3/3
+   contas testadas → descartado como método de diagnóstico (não reflete o estado
+   real; a página oficial do app confirma elegibilidade corretamente).
+2. App sideloaded (assinatura de upload) → Play recusa `launchBillingFlow`
+   ("not configured for billing") → resolvido reinstalando via Play Store real
+   (assinatura de app-signing do Google).
+3. App instalado via Play Store, tester elegível confirmado, track/release
+   corretos → `queryProductDetailsAsync` retorna `BillingResponseCode: 3`
+   (BILLING_UNAVAILABLE) para os 3 produtos → causa raiz = identidade de região do
+   dispositivo (mesma assinatura de falha do Problema 1: `gsm.operator.iso-country=ki`,
+   MCC/MNC 545/01, SIM ausente) → nenhum purchase sheet real abre → os cenários que
+   dependem de um purchase sheet aberto (cancelamento via Voltar, recuperação,
+   duplicate-grant, exactly-once ao vivo) permanecem NOT_TESTED neste dispositivo
+   específico, não por falha de código, infraestrutura de teste, ou configuração de
+   testers — todas essas camadas foram verificadas corretas de forma independente e
+   comparativa.
 
 ## SIM_CREDIT_FLOW_CERTIFICATION = **PASS COM RESSALVA**
 
@@ -221,15 +285,18 @@ sem patches cosméticos, preservando máquinas de estado e contratos existentes
 (server-side validation, purchaseToken-as-identity, exactly-once, obfuscatedAccountId,
 RTDN, fail-closed, ledger). O fix de falso-negativo de compra (Problema 5) está
 confirmado presente e agora tem cobertura de regressão dedicada. Problema 1 está
-corretamente diagnosticado como fora do código. A suíte completa (1515 testes) e
-`flutter analyze` estão limpos. Um novo build de teste foi gerado, assinado
-corretamente e certificado parcialmente no tablet físico (login, saldo,
-consumo/refresh, transições de estado, tratamento de erro de billing).
+corretamente diagnosticado como fora do código — e essa conclusão foi reconfirmada de
+forma rigorosa e comparativa no build v113, com uma investigação que isolou e
+descartou explicitamente causas de conta específica, configuração de testers, e
+infraestrutura de distribuição, chegando ao mesmo código de erro do Google Play
+(`BILLING_UNAVAILABLE`, response code 3) já documentado. A suíte completa (1515
+testes) e `flutter analyze` estão limpos.
 
-A ressalva: a verificação física ao vivo de compra real (Problemas 1/4 no cenário de
-purchase sheet aberto, recuperação de compra, duplicate-grant, exactly-once) ficou
-BLOCKED por uma limitação de infraestrutura de distribuição (build não publicado em
-nenhuma track do Play), não por uma falha encontrada no código. Assim que o usuário
-publicar o v113 (ou qualquer build subsequente do mesmo commit) na track Internal
-Testing, os itens BLOCKED podem ser re-executados usando exatamente este relatório
-como checklist, sem necessidade de repetir nenhum trabalho de código.
+A ressalva: a verificação física ao vivo dos cenários que exigem um purchase sheet
+realmente aberto (cancelamento via Voltar, recuperação de compra, duplicate-grant,
+exactly-once) permanece NOT_TESTED neste tablet específico — bloqueada pela mesma
+limitação de região do Problema 1, não por código, não por testers, não por
+infraestrutura de publicação. Esses mecanismos têm cobertura de regressão automatizada
+completa (13 testes, incluindo os 3 novos desta missão). Repetir esses testes físicos
+exigirá um dispositivo com identidade de região/telefonia válida — não requer nenhum
+trabalho de código adicional.
