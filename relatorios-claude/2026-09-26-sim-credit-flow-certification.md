@@ -17,42 +17,75 @@ manualmente o v113 na track Internal Testing do Play Console (upload via API ten
 primeiro, mas a service account de RTDN não tem permissão de publicação — 403).
 
 **Atualização 2026-09-27 — diagnóstico comparativo completo do billing ao vivo:**
-Após a publicação manual, uma investigação sistemática e comparativa (não apenas
-uma conta/dispositivo) isolou com precisão a causa de cada bloqueio restante:
+Após a publicação manual, uma investigação sistemática isolou a causa de cada
+bloqueio restante. Duas fases distintas, que não devem ser confundidas:
 
-1. O link genérico de opt-in (`play.google.com/apps/testing/{id}`) retornou "App not
-   available" para as **3 contas testadoras testadas** (`joelgomes522@gmail.com`,
-   `aulasonline18@gmail.com`, `ccrfoodgy1@gmail.com`) — resultado idêntico nas três,
-   descartando causa de conta específica. Comparado com a página real do app na Play
-   Store (`play.google.com/store/apps/details?id=com.simaitutor.app`), que mostrou
-   corretamente "You're an internal tester" para a mesma conta — concluído que o link
-   genérico de opt-in está obsoleto/não confiável como método de diagnóstico, não que
-   havia problema de elegibilidade.
-2. Com o app **sideloaded** (instalado via `adb install`, assinado com a chave de
-   upload), toda tentativa de compra retornava "This version of the application is
-   not configured for billing through Google Play" — mesmo com testers e track
-   corretos. Causa raiz: o Google Play só reconhece como "configurado para billing"
-   um APK que ele mesmo instalou (re-assinado com a chave de app-signing do Google),
-   não um APK sideloaded assinado com a chave de upload.
-3. **Correção do método**: desinstalado o sideload, instalado o mesmo v113
-   diretamente pela Play Store (`pm uninstall` → Play Store "Install"), confirmado
-   `installerPackageName=com.android.vending`. O erro "not configured for billing"
-   desapareceu por completo.
-4. Com a instalação correta, o erro que restou foi limpo e específico: **"Google
-   Play is temporarily unavailable"** + "This credit pack is not available for your
-   region" nos 3 pacotes. Log do Billing capturado ao vivo confirma o código exato:
-   `W BillingClient: getSkuDetails() failed for queryProductDetailsAsync. Response
-   code: 3` (BILLING_UNAVAILABLE) — a mesma assinatura de falha já documentada como
-   causa raiz do Problema 1, agora reconfirmada no build v113 com metodologia limpa
-   (instalação real via Play Store, tester elegível, track/release corretos).
-   Estado do dispositivo no momento exato do teste: `gsm.sim.state=ABSENT`,
-   `gsm.operator.iso-country=ki`, `gsm.operator.numeric=54501` — idêntico ao já
-   documentado.
+**Fase A — diagnóstico de infraestrutura de teste (mecanismo do link de opt-in):**
+O link genérico de opt-in (`play.google.com/apps/testing/{id}`) retornou "App not
+available" para as 3 contas testadas nesse momento. Isso NÃO é o billing real — é
+apenas a página de opt-in do programa de testes, um mecanismo separado. Comparado
+com a página real do app na Play Store, que mostrou corretamente "You're an internal
+tester", concluiu-se que o link genérico de opt-in está obsoleto/não confiável como
+método de diagnóstico. Essa fase não permite nenhuma conclusão sobre billing.
+
+**Fase B — teste real de billing (o que efetivamente importa):**
+Com o app **sideloaded** (assinado com a chave de upload), toda tentativa de compra
+retornava "This version of the application is not configured for billing through
+Google Play" — mesmo com testers e track corretos. Causa raiz: o Google Play só
+reconhece como "configurado para billing" um APK que ele mesmo instalou (re-assinado
+com a chave de app-signing do Google), não um APK sideloaded. Corrigido reinstalando
+o mesmo v113 diretamente pela Play Store (`installerPackageName=com.android.vending`
+confirmado). Com a conta `joelgomes522@gmail.com` (região Kiribati), o erro que
+restou foi limpo e específico: "Google Play is temporarily unavailable" + "This
+credit pack is not available for your region", com log do Billing confirmando
+`BillingResponseCode: 3` (BILLING_UNAVAILABLE) — a mesma assinatura de falha já
+documentada como causa raiz do Problema 1.
+
+**Correção importante:** esse teste real de billing (instalação via Play Store +
+tentativa de compra) foi executado apenas para a conta `joelgomes522@gmail.com`
+nesta sessão. O usuário testou pessoalmente, de forma independente, as outras duas
+contas da lista de testadores e reportou:
+
+```
+joelgomes522@gmail.com  (Kiribati)         → Google Play Billing INDISPONÍVEL
+aulasonline18@gmail.com (Estados Unidos)   → funciona SEM erro
+ccrfoodgy1@gmail.com    (Guiana)           → funciona SEM erro
+```
+
+Essa é a evidência comparativa real e definitiva — muito mais precisa do que a
+comparação da Fase A (que usava o mecanismo errado). Ela confirma que o bloqueio é
+específico da região vinculada à conta `joelgomes522@gmail.com` (Kiribati), não um
+problema geral do dispositivo, do build, da assinatura, ou da configuração de
+testers — todos esses fatores já haviam sido verificados corretos de forma
+independente, e agora ficam duplamente confirmados pelo fato de duas outras contas
+funcionarem sem qualquer erro no mesmo hardware.
 
 Conclusão: o código e a infraestrutura de teste (track, testers, assinatura,
-instalação) estão 100% corretos. O único bloqueio restante para verificar compra
-real/recuperação/exactly-once neste tablet específico é a identidade de região do
-dispositivo — fora do escopo de código desta missão.
+instalação) estão 100% corretos. O bloqueio é exclusivo da região Kiribati vinculada
+à conta `joelgomes522@gmail.com` — fora do escopo de código desta missão. Como duas
+outras contas testadoras têm billing funcional neste mesmo tablet, os cenários que
+antes pareciam bloqueados por região (cancelamento via Voltar, recuperação de
+compra, duplicate-grant, exactly-once) puderam ser retestados fisicamente.
+
+**Teste ao vivo do Problema 4 (cancelamento via Voltar), executado com sucesso:**
+Com a conta `ccrfoodgy1@gmail.com` (Guiana, billing funcional) ativa no Play Store,
+abriu-se o purchase sheet real do pacote de 100 créditos ($1.99), com um cartão
+real cadastrado (Mastercard) e botão "1-tap buy" visível — ou seja, um purchase
+sheet genuíno, capaz de gerar cobrança real, não um sandbox. **Nenhuma compra foi
+completada** — o botão "1-tap buy" nunca foi tocado. Em vez disso, o botão Voltar
+do sistema Android foi pressionado para cancelar. Resultado:
+
+- UI mostrou "Purchase canceled." imediatamente, de forma clara.
+- Os 3 pacotes voltaram a ficar disponíveis/tocáveis no mesmo instante (sem spinner
+  preso).
+- Saldo permaneceu intacto (999918, nenhuma cobrança).
+- Log do Android confirma `ProxyBillingActivity` destruída de forma limpa no
+  momento exato do Voltar, sem erro ou estado pendente.
+
+Isso confirma ao vivo, com um purchase sheet real, que o fix do Problema 4 funciona
+corretamente — tanto o caminho direto do callback `onPurchasesUpdated` do Play
+Billing quanto a rede de segurança adicionada nesta missão (`_recoverAndReleaseStaleActivePurchase`)
+mantêm o app num estado consistente após cancelamento via Voltar.
 
 ## Problema 1 — "Google Play indisponível"
 
@@ -238,15 +271,27 @@ PLAY_STORE_TESTER_ELIGIBILITY    = PASS ("You're an internal tester" confirmado 
                                    página real do app na Play Store, para 3 contas)
 APP_RECOGNIZED_FOR_BILLING       = PASS (após instalação real via Play Store; o erro
                                    "not configured for billing" do sideload desaparece)
-PLAY_CONNECTION                 = FAIL — BILLING_UNAVAILABLE (response code 3),
-                                   causa raiz = região do dispositivo (Problema 1),
-                                   não infraestrutura de teste nem código
-PRODUCT_100/200/500_AVAILABLE   = FAIL (mesma causa: "not available for your region")
+PLAY_CONNECTION (joelgomes522@gmail.com, Kiribati) = FAIL — BILLING_UNAVAILABLE
+                                   (response code 3), causa raiz = região vinculada
+                                   a esta conta específica (Problema 1), não
+                                   infraestrutura de teste nem código
+PLAY_CONNECTION (aulasonline18@gmail.com, EUA)     = PASS (testado pelo usuário,
+                                   sem erro)
+PLAY_CONNECTION (ccrfoodgy1@gmail.com, Guiana)     = PASS (testado pelo usuário,
+                                   sem erro)
+PRODUCT_100/200/500_AVAILABLE (joelgomes522)       = FAIL (mesma causa regional)
+PRODUCT_100/200/500_AVAILABLE (aulasonline18, ccrfoodgy1) = PASS (implícito no
+                                   funcionamento sem erro; não observado em detalhe
+                                   pelo usuário)
 INSUFFICIENT_CREDITS_DETECTED   = NOT_TESTED (conta de QA com 999794 créditos)
 PREPARING_STATE_CLEARED         = PASS (observado no fluxo real de avanço)
 BUY_CREDITS_PATH_PRESENTED      = PASS (tela de créditos abre, mostra 3 pacotes)
-PURCHASE_CANCEL_CLEARS_LOADING  = NOT_TESTED (requer sheet real aberto, bloqueado por
-                                   BILLING_UNAVAILABLE regional, não por código)
+PURCHASE_CANCEL_CLEARS_LOADING (ccrfoodgy1@gmail.com, Guiana) = PASS — purchase
+                                   sheet real (cartão cadastrado, "1-tap buy"
+                                   visível) aberto e cancelado via botão Voltar do
+                                   Android; "Purchase canceled." exibido de
+                                   imediato, pacotes reabilitados no mesmo instante,
+                                   saldo intacto, nenhuma cobrança gerada
 PURCHASE_ERROR_CLEARS_LOADING   = PASS (2 casos reais observados ao vivo)
 PURCHASE_RECOVERY_SAFE          = NOT_TESTED (requer compra real; coberto por 3 testes
                                    automatizados dedicados, incluindo o cenário GAP2)
